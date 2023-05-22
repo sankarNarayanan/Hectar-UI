@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import Link from "next/link";
-import linesLeft from "@/assets/lines_left.svg"
-import linesRight from "@/assets/lines_right.svg"
+import linesLeft from "@/assets/lines_left.svg";
+import linesRight from "@/assets/lines_right.svg";
 import Image from "next/image";
 
 /**
@@ -10,9 +10,9 @@ import Image from "next/image";
 export function HeroBanner() {
   return (
     <div className="container relative mx-auto bg-grad-primary pb-[100px] rounded-t-2xl">
-      <div >
-      <Image className="absolute left-0 bottom-[70px]" src={linesLeft} />
-      <Image className="absolute right-0 top-[150px]" src={linesRight} />
+      <div>
+        <Image className="absolute left-0 bottom-[70px]" src={linesLeft} />
+        <Image className="absolute right-0 top-[150px]" src={linesRight} />
       </div>
       <h1 className="text-5xl text-white pt-[100px] text-center">
         Agri Commodities Trade, <br />
@@ -30,11 +30,23 @@ export function HeroBanner() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
+export function DashboardDummy() {
+  return <div className="container mx-auto bg-gray-200 w-full h-[500px] flex items-center justify-center">
+    <p className="text-white text-3xl">Work In progress Dash board</p>
+  </div>;
+}
+
+/**
+ * Hone Page Component
+ */
 export default function HomePage() {
   return (
-    <HeroBanner/>
+    <>
+      <HeroBanner />
+      <DashboardDummy />
+    </>
   );
 }
