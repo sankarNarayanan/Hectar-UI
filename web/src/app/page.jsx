@@ -4,7 +4,10 @@ import linesLeft from "@/assets/lines_left.svg"
 import linesRight from "@/assets/lines_right.svg"
 import Image from "next/image";
 
-export default function HomePage() {
+/**
+ * Hero banner Component
+ */
+export function HeroBanner() {
   return (
     <div className="container relative mx-auto bg-grad-primary pb-[100px] rounded-t-2xl">
       <div >
@@ -27,5 +30,11 @@ export default function HomePage() {
         </Link>
       </div>
     </div>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <HeroBanner/>
   );
 }
