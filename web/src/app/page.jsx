@@ -3,6 +3,7 @@ import Link from "next/link";
 import linesLeft from "@/assets/lines_left.svg";
 import linesRight from "@/assets/lines_right.svg";
 import Image from "next/image";
+import ProductPortfolio from "./ProductPortfolio";
 
 /**
  * Hero banner Component
@@ -14,7 +15,7 @@ export function HeroBanner() {
         <Image className="absolute left-0 bottom-[70px]" src={linesLeft} />
         <Image className="absolute right-0 top-[150px]" src={linesRight} />
       </div>
-      <h1 className="text-5xl text-white pt-[100px] text-center">
+      <h1 className="text-[64px] text-white pt-[100px] text-center">
         Agri Commodities Trade, <br />
         <span className="font-bold">Reimagined! 🚜</span>
       </h1>
@@ -34,9 +35,11 @@ export function HeroBanner() {
 }
 
 export function DashboardDummy() {
-  return <div className="container mx-auto bg-gray-200 w-full h-[500px] flex items-center justify-center">
-    <p className="text-white text-3xl">Work In progress Dash board</p>
-  </div>;
+  return (
+    <div className="container mx-auto bg-gray-200 w-full h-[500px] flex items-center justify-center">
+      <p className="text-white text-3xl">Work In progress Dash board</p>
+    </div>
+  );
 }
 
 /**
@@ -47,6 +50,7 @@ export default function HomePage() {
     <>
       <HeroBanner />
       <DashboardDummy />
+      <ProductPortfolio />
     </>
   );
 }
