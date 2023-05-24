@@ -26,7 +26,7 @@ export default function ProductPortfolio() {
       <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
         <div className="flex justify-center">
           <div className="flex flex-wrap justify-end grow-0 items-center">
-            <div className={` m-2 w-[${Onion.width}px]`}>
+            <div className={` m-2 grow text-center w-[${Onion.width}px]`}>
               <h2 className="text-5xl">Product Portfolio</h2>
               <p>
                 This is a sample copy to talk about the diverse <br />
