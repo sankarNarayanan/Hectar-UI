@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#DBDAE1]">
-      <div className="container mx-auto my-8">
+      <div className="container mx-auto mt-8">
         <div className="flex p-4 justify-between items-center">
           <div>
             <Image src={HorizontalLogo} />

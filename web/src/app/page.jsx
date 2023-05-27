@@ -21,7 +21,7 @@ export function HeroBanner() {
         <Image className="absolute left-0 bottom-[70px]" src={linesLeft} />
         <Image className="absolute right-0 top-[150px]" src={linesRight} />
       </div>
-      <h1 className="text-[64px] text-white pt-[100px] text-center">
+      <h1 className="text-[64px] text-white pt-[100px] text-center font-normal">
         Agri Commodities Trade, <br />
         <span className="font-bold">Reimagined! 🚜</span>
       </h1>
@@ -116,13 +116,13 @@ export function Vision() {
 
 export function Review() {
   return (
-    <div className="bg-[#0156F7]">
+    <div className="relative before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
       <div className="container mx-auto p-6">
         <div
           className={
-            "bg-[#FFFEFF] relative  p-[50px] text-center rounded-xl my-[100px] z-1" +
+            "bg-[#FFFEFF] relative  p-[50px] text-center rounded-xl my-[100px] " +
             " before:content-[''] before:border before:border-solid before:rounded-xl before:border-[#background: #FFFEFF;]" +
-            " before:absolute before:w-full before:h-full before:left-0 before:top-0 before:rotate-6" +
+            " before:absolute before:w-full before:h-full before:left-0 before:top-0 before:rotate-[8deg] before:-z-10" +
             " after:content-[''] after:border after:border-solid after:rounded-xl after:border-[#background: #FFFEFF;]" +
             " after:absolute after:w-full after:h-full after:left-0 after:top-0 after:-rotate-3 after:-z-10"
           }
