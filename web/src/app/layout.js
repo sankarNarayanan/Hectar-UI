@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--primary-font",
 });
 
 export const metadata = {
@@ -16,8 +17,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang="en" className={`${poppins.variable}`}>
+      <body >
         <Header />
         {children}
         <Footer />
