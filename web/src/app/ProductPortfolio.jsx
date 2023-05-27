@@ -23,6 +23,7 @@ import Sugar from "@/assets/images/sugar.jpg";
 import Turmeric from "@/assets/images/turmeric.jpg";
 import Rice from "@/assets/images/rice.jpg";
 import { useState } from "react";
+import { Slide } from "react-awesome-reveal";
 
 export default function ProductPortfolio() {
   const [openIndex, setOpen] = useState(false);
@@ -37,68 +38,82 @@ export default function ProductPortfolio() {
               products from our portfolio.
             </p>
           </div>
-          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Rice.width}px]`}>
-            <a onClick={() => setOpen(0)}>
-              <Image alt="Rice" src={Rice} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Non Basmati Rice
-              </div>
-            </a>
-          </div>
-          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Onion.width}px]`}>
-            <a onClick={() => setOpen(1)}>
-              <Image alt="img1" src={Onion} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Onions
-              </div>
-            </a>
-          </div>
-          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Turmeric.width}px]`}>
-            <a onClick={() => setOpen(2)}>
-              <Image alt="img1" src={Turmeric} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Turmeric
-              </div>
-            </a>
-          </div>
-          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Corriander.width}px]`}>
-            <a onClick={() => setOpen(3)}>
-              <Image alt="img1" src={Corriander} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Corriander
-              </div>
-            </a>
-          </div>
-          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Fenugric.width}px]`}>
-            <a onClick={() => setOpen(4)}>
-              <Image alt="img1" src={Fenugric} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Fenugreek
-              </div>
-            </a>
-          </div>
+          <Slide>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Rice.width}px]`}
+            >
+              <a onClick={() => setOpen(0)}>
+                <Image alt="Rice" src={Rice} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Non Basmati Rice
+                </div>
+              </a>
+            </div>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Onion.width}px]`}
+            >
+              <a onClick={() => setOpen(1)}>
+                <Image alt="img1" src={Onion} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Onions
+                </div>
+              </a>
+            </div>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Turmeric.width}px]`}
+            >
+              <a onClick={() => setOpen(2)}>
+                <Image alt="img1" src={Turmeric} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Turmeric
+                </div>
+              </a>
+            </div>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Corriander.width}px]`}
+            >
+              <a onClick={() => setOpen(3)}>
+                <Image alt="img1" src={Corriander} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Corriander
+                </div>
+              </a>
+            </div>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Fenugric.width}px]`}
+            >
+              <a onClick={() => setOpen(4)}>
+                <Image alt="img1" src={Fenugric} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Fenugreek
+                </div>
+              </a>
+            </div>
+          </Slide>
         </div>
         <div className={`flex flex-col shrink-0 items-center`}>
-          <div
-            className={` m-2 relative rounded-3xl overflow-hidden w-[${Sugar.width}px] h-[${Sugar.height}px]`}
-          >
-            <a onClick={() => setOpen(5)}>
-              <Image alt="img1" src={Sugar} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Sugar
-              </div>
-            </a>
-          </div>
-          <div
-            className={` m-2 relative rounded-3xl overflow-hidden w-[${RedChilli.width}px] h-[${RedChilli.height}px]`}
-          >
-            <a onClick={() => setOpen(6)}>
-              <Image alt="img1" src={RedChilli} />
-              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                Red Dried Chillie
-              </div>
-            </a>
-          </div>
+          <Slide>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${Sugar.width}px] h-[${Sugar.height}px]`}
+            >
+              <a onClick={() => setOpen(5)}>
+                <Image alt="img1" src={Sugar} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Sugar
+                </div>
+              </a>
+            </div>
+            <div
+              className={` m-2 relative rounded-3xl overflow-hidden w-[${RedChilli.width}px] h-[${RedChilli.height}px]`}
+            >
+              <a onClick={() => setOpen(6)}>
+                <Image alt="img1" src={RedChilli} />
+                <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Red Dried Chillie
+                </div>
+              </a>
+            </div>
+          </Slide>
         </div>
       </div>
 
