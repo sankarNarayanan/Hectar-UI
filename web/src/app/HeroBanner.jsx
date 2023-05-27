@@ -24,7 +24,7 @@ export default function HeroBanner() {
           alt="right design icons"
         />
       </div>
-      <Fade cascade>
+      <Fade triggerOnce cascade>
         <h1 className="text-[64px] text-white pt-[100px] text-center font-light leading-[80px]">
           Agri Commodities Trade, <br />
           <span className="font-bold">Reimagined! 🚜</span>

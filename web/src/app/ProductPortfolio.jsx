@@ -1,5 +1,4 @@
 "use client";
-import LightGallery from "lightgallery/react";
 
 // import styles
 import "lightgallery/css/lightgallery.css";
@@ -11,8 +10,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 // import plugins if you need
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
+
 import Image from "next/image";
 
 import Onion from "@/assets/images/onion.jpg";
@@ -38,7 +36,7 @@ export default function ProductPortfolio() {
               products from our portfolio.
             </p>
           </div>
-          <Slide>
+          <Slide triggerOnce>
             <div
               className={` m-2 relative rounded-3xl overflow-hidden w-[${Rice.width}px]`}
             >
@@ -92,7 +90,7 @@ export default function ProductPortfolio() {
           </Slide>
         </div>
         <div className={`flex flex-col shrink-0 items-center`}>
-          <Slide>
+          <Slide triggerOnce>
             <div
               className={` m-2 relative rounded-3xl overflow-hidden w-[${Sugar.width}px] h-[${Sugar.height}px]`}
             >
