@@ -31,49 +31,72 @@ export default function ProductPortfolio() {
       <div className="flex justify-center">
         <div className="flex flex-wrap justify-end grow-0 items-center">
           <div className={` m-2 grow text-center w-[${Onion.width}px]`}>
-            <h2 className="text-5xl">Product Portfolio</h2>
-            <p>
+            <h2 className="text-5xl font-medium">Product Portfolio</h2>
+            <p className="text-xl pt-3 opacity-70">
               This is a sample copy to talk about the diverse <br />
               products from our portfolio.
             </p>
           </div>
-          <div className={` m-2 w-[${Rice.width}px]`}>
+          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Rice.width}px]`}>
             <a onClick={() => setOpen(0)}>
               <Image alt="Rice" src={Rice} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Non Basmati Rice
+              </div>
             </a>
           </div>
-          <div className={` m-2 w-[${Onion.width}px]`}>
+          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Onion.width}px]`}>
             <a onClick={() => setOpen(1)}>
               <Image alt="img1" src={Onion} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Onions
+              </div>
             </a>
           </div>
-          <div className={` m-2 w-[${Turmeric.width}px]`}>
+          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Turmeric.width}px]`}>
             <a onClick={() => setOpen(2)}>
               <Image alt="img1" src={Turmeric} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Turmeric
+              </div>
             </a>
           </div>
-          <div className={` m-2 w-[${Corriander.width}px]`}>
+          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Corriander.width}px]`}>
             <a onClick={() => setOpen(3)}>
               <Image alt="img1" src={Corriander} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Corriander
+              </div>
             </a>
           </div>
-          <div className={` m-2 w-[${Fenugric.width}px]`}>
+          <div className={` m-2 relative rounded-3xl overflow-hidden w-[${Fenugric.width}px]`}>
             <a onClick={() => setOpen(4)}>
               <Image alt="img1" src={Fenugric} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Fenugreek
+              </div>
             </a>
           </div>
         </div>
         <div className={`flex flex-col shrink-0 items-center`}>
-          <div className={` m-2 w-[${Sugar.width}px] h-[${Sugar.height}px]`}>
+          <div
+            className={` m-2 relative rounded-3xl overflow-hidden w-[${Sugar.width}px] h-[${Sugar.height}px]`}
+          >
             <a onClick={() => setOpen(5)}>
               <Image alt="img1" src={Sugar} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Sugar
+              </div>
             </a>
           </div>
           <div
-            className={` m-2 w-[${RedChilli.width}px] h-[${RedChilli.height}px]`}
+            className={` m-2 relative rounded-3xl overflow-hidden w-[${RedChilli.width}px] h-[${RedChilli.height}px]`}
           >
             <a onClick={() => setOpen(6)}>
               <Image alt="img1" src={RedChilli} />
+              <div className="absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                Red Dried Chillie
+              </div>
             </a>
           </div>
         </div>

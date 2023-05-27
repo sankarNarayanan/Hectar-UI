@@ -5,11 +5,17 @@ import linesRight from "@/assets/lines_right.svg";
 import Happy from "@/assets/svg/happy.svg";
 import Tick from "@/assets/svg/tick.svg";
 import Country from "@/assets/svg/country.svg";
+import CalenderImage from "@/assets/svg/icon-calendar.svg";
+import PricesImage from "@/assets/svg/prices.svg";
 import Image from "next/image";
 import ProductPortfolio from "./ProductPortfolio";
 import AnalyticsImage from "@/assets/images/analytics.jpg";
 import MapImage from "@/assets/images/map.svg";
 import LocationImage from "@/assets/images/locations.jpg";
+import TrackImage from "@/assets/svg/track.svg";
+import DocumentImage from "@/assets/svg/documentation.svg";
+import LocationIconImage from "@/assets/svg/icon-location.svg";
+import DocumentIconImage from "@/assets/svg/icon-document.svg";
 
 /**
  * Hero banner Component
@@ -21,7 +27,7 @@ export function HeroBanner() {
         <Image className="absolute left-0 bottom-[70px]" src={linesLeft} />
         <Image className="absolute right-0 top-[150px]" src={linesRight} />
       </div>
-      <h1 className="text-[64px] text-white pt-[100px] text-center font-normal">
+      <h1 className="text-[64px] text-white pt-[100px] text-center font-light leading-[80px]">
         Agri Commodities Trade, <br />
         <span className="font-bold">Reimagined! 🚜</span>
       </h1>
@@ -54,20 +60,20 @@ export function Analytics() {
       <div className="container mx-auto">
         <div className="flex my-[100px] items-center">
           <div className="w-1/2 px-12">
-            <h2 className="text-5xl">
+            <h2 className="text-5xl leading-[64px] font-medium">
               AI Driven Insights & Predictive Analysis
             </h2>
-            <p className="text-3xl pt-8">
+            <p className="text-xl opacity-70 pt-8">
               Get ahead of the curve with exclusive access to cutting-edge
               trading tools and insights that will help you stay ahead of the
               curve in the fast-paced world of agri commodities trading.
             </p>
-            <p className="text-3xl pt-5">
+            <p className="text-xl opacity-70 pt-5">
               With our Private Beta, you'll be at the forefront of innovation,
               gaining a competitive edge in the market and maximising your
               profits.
             </p>
-            <p className="text-3xl pt-5">
+            <p className="text-xl opacity-70 pt-5">
               Don't leave your trades to chance - our data-driven price
               assistance ensures smarter trades and better outcomes - every time
               for every customer.
@@ -88,16 +94,16 @@ export function Vision() {
       <div className="container mx-auto">
         <div className="flex my-[100px] items-center">
           <div className="w-1/2 px-12">
-            <h2 className="text-5xl">
+            <h2 className="text-5xl leading-[64px] font-medium">
               Trading Without Borders - Is Our Ultimate Vision
             </h2>
-            <p className="text-3xl pt-8">
+            <p className="text-xl pt-8 opacity-70">
               We believe in leveraging technology to create a seamless global
               network for movement of food products. By doing so, we are not
               only reducing food waste, but also lowering the net cost of
               imported food.
             </p>
-            <p className="text-3xl pt-5">
+            <p className="text-xl pt-5 opacity-70">
               Our global presence spans six countries, as we work towards
               achieving this.
             </p>
@@ -116,7 +122,7 @@ export function Vision() {
 
 export function Review() {
   return (
-    <div className="relative before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
+    <div className="relative mt-[100px] before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
       <div className="container mx-auto p-6">
         <div
           className={
@@ -127,11 +133,11 @@ export function Review() {
             " after:absolute after:w-full after:h-full after:left-0 after:top-0 after:-rotate-3 after:-z-10"
           }
         >
-          <h2 className="text-5xl">
+          <h2 className="text-5xl font-medium leading-[64px]">
             Trust Hectar For A Sourcing Partner <br />
             That Adapts To Your Needs
           </h2>
-          <p className="text-xl pt-[20px]">
+          <p className="text-xl pt-[20px] opacity-70">
             Our flexible order and shipping options are designed to accommodate
             your
             <br /> business demands.
@@ -142,8 +148,8 @@ export function Review() {
                 <Image src={Happy}></Image>
               </div>
               <div className="content ms-4 text-left">
-                <p className="text-bold text-2xl">1000+</p>
-                <p className="text-xl">Happy Users</p>
+                <p className="font-semibold text-2xl">1000+</p>
+                <p className="text-xl opacity-70">Happy Users</p>
               </div>
             </div>
             <div className="flex me-[50px]">
@@ -151,8 +157,8 @@ export function Review() {
                 <Image src={Tick}></Image>
               </div>
               <div className="content ms-4 text-left">
-                <p className="text-bold text-2xl">1000+</p>
-                <p className="text-xl">Completed Orders</p>
+                <p className="font-semibold text-2xl">1000+</p>
+                <p className="text-xl opacity-70">Completed Orders</p>
               </div>
             </div>
             <div className="flex">
@@ -160,8 +166,8 @@ export function Review() {
                 <Image src={Country}></Image>
               </div>
               <div className="content ms-4 text-left">
-                <p className="text-bold text-2xl">6</p>
-                <p className="text-xl">Countries</p>
+                <p className="font-semibold text-2xl">6</p>
+                <p className="text-xl opacity-70">Countries</p>
               </div>
             </div>
           </div>
@@ -193,6 +199,68 @@ export function GetStarted() {
   );
 }
 
+export function WhyHectar() {
+  return (
+    <section className="mt-[100px]">
+      <h2 className="text-[62px] font-light text-center">Why Hectar?</h2>
+
+      {/* Dont wait */}
+      <div className="container mx-auto bg-[#FCEB8F] mt-[50px] flex rounded-2xl p-[50px]">
+        <div className="w-1/2">
+          <Image src={CalenderImage} alt="calender Icon" />
+          <h2 className="text-5xl mt-[50px] leading-[64px] font-medium">
+            Don't Wait For <br />
+            Tomorrow's Prices
+          </h2>
+          <p className="text-xl mt-3 opacity-70">
+            Get real-time quotes and delivery dates to end ports to <br />
+            make informed decisions.
+          </p>
+        </div>
+        <div className="w-1/2">
+          <Image src={PricesImage} alt="prices image" />
+        </div>
+      </div>
+
+      {/* Track */}
+      <div className="container mx-auto bg-[#E6F5F9] mt-[50px] flex rounded-2xl p-[50px]">
+        <div className="w-1/2">
+          <Image src={LocationIconImage} alt="Track Icon" />
+          <h2 className="text-5xl mt-[50px] leading-[64px] font-medium">
+            Track And Trace <br />
+            Every Order
+          </h2>
+          <p className="text-xl mt-3 opacity-70">
+            Keep a tab on all your orders from one single <br />
+            Dashboard.
+          </p>
+        </div>
+        <div className="w-1/2">
+          <Image src={LocationImage} alt="prices image" />
+        </div>
+      </div>
+
+      {/* Document */}
+      <div className="container mx-auto bg-[#FCEB8F] mt-[50px] flex rounded-2xl p-[50px]">
+        <div className="w-1/2">
+          <Image src={DocumentIconImage} alt="Track Icon" />
+          <h2 className="text-5xl mt-[50px] leading-[64px] font-medium">
+            Streamlined Trade <br />
+            Documentation
+          </h2>
+          <p className="text-xl mt-3 opacity-70">
+            Let us handle the paperwork so you can focus on your <br />
+            Business.
+          </p>
+        </div>
+        <div className="w-1/2">
+          <Image src={DocumentImage} alt="prices image" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /**
  * Hone Page Component
  */
@@ -202,6 +270,7 @@ export default function HomePage() {
       <HeroBanner />
       <DashboardDummy />
       <ProductPortfolio />
+      <WhyHectar />
       <Review />
       <Analytics />
       <Vision />

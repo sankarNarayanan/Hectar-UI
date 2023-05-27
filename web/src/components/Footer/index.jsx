@@ -1,8 +1,8 @@
 import HorizontalLogo from "@/assets/logo/Horizontal_Logo.png";
-import InstagramImage from "@/assets/images/icon-instagram.svg";
-import FacebookImage from "@/assets/images/icon-facebook.svg";
-import TwitterImage from "@/assets/images/icon-twitter.svg";
-import LinkedinImage from "@/assets/images/icon-linkedin.svg";
+import InstagramImage from "@/assets/svg/icon-instagram.svg";
+import FacebookImage from "@/assets/svg/icon-facebook.svg";
+import TwitterImage from "@/assets/svg/icon-twitter.svg";
+import LinkedinImage from "@/assets/svg/icon-linkedin.svg";
 
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-[#DBDAE1]">
       <div className="container mx-auto mt-8">
         <div className="flex p-4 justify-between items-center">
-          <div>
+          <div className="mt-[30px]">
             <Image src={HorizontalLogo} />
             <p className="mt-6">Support@hectar.global</p>
             <p className="mt-3">+91 80561 51588</p>
