@@ -22,8 +22,8 @@ export default function WhyHectar() {
           <Fade triggerOnce>
             <Image src={CalenderImage} alt="calender Icon" />
             <h2 className="text-5xl mt-[50px] leading-[64px] font-medium">
-              Don't Wait For <br />
-              Tomorrow's Prices
+              Don&apos;t Wait For <br />
+              Tomorrow&apos;s Prices
             </h2>
             <p className="text-xl mt-3 opacity-70">
               Get real-time quotes and delivery dates to end ports to <br />
