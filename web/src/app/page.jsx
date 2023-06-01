@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Analytics from "./Analytics";
 import GetStarted from "./GettingStarted";
 import HeroBanner from "./HeroBanner";
@@ -6,6 +7,9 @@ import ProductPortfolio from "./ProductPortfolio";
 import Review from "./Review";
 import Vision from "./Vision";
 import WhyHectar from "./WhyHectar";
+import ContactFormDrawer from "./ContactFormDrawer";
+import { ThemeProvider } from "@material-tailwind/react";
+
 
 export function DashboardDummy() {
   return (
@@ -19,9 +23,10 @@ export function DashboardDummy() {
  * Hone Page Component
  */
 export default function HomePage() {
+  const [drawerOpen, setDrawer] = useState(false);
   return (
-    <>
-      <HeroBanner />
+    <ThemeProvider>
+      <HeroBanner setDrawer={setDrawer}/>
       <DashboardDummy />
       <ProductPortfolio />
       <WhyHectar />
@@ -29,6 +34,7 @@ export default function HomePage() {
       <Analytics />
       <Vision />
       <GetStarted />
-    </>
+      <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
+    </ThemeProvider>
   );
 }

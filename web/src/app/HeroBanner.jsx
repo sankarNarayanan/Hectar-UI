@@ -9,7 +9,7 @@ import { Fade } from "react-awesome-reveal";
 /**
  * Hero banner Component
  */
-export default function HeroBanner() {
+export default function HeroBanner({setDrawer}) {
   return (
     <div className="container relative mx-auto bg-grad-primary pb-[100px] rounded-t-2xl">
       <div>
@@ -36,7 +36,7 @@ export default function HeroBanner() {
           source efficiently.
         </p>
         <div className="flex justify-center items-center pt-[50px]">
-          <Button>Get Instant Quote</Button>
+          <Button onClick={() => setDrawer(true)}>Get Instant Quote</Button>
           <Link href="/" className="text-xl ps-5 text-white underline">
             How It works
           </Link>
