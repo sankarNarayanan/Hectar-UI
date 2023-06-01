@@ -16,6 +16,12 @@ module.exports = withMT({
       fontFamily: {
         poppins: ["var(--primary-font)"],
       },
+      spacing: {
+        20: "20px",
+        30: "30px",
+        50: "50px",
+        100: "100px",
+      },
     },
   },
   plugins: [],
