@@ -9,7 +9,7 @@ import { ImproperConfiguration } from '@/Exceptions'
  */
 export default function getValidator(validator) {
     try {
-        return validators[validator]
+        return validators[validator + 'Validator']
     }
     catch(exception) {
         console.log("Exception", exception)

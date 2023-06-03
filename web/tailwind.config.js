@@ -19,6 +19,7 @@ module.exports = withMT({
       spacing: {
         20: "20px",
         30: "30px",
+        40: "40px",
         50: "50px",
         100: "100px",
       },

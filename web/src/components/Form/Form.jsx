@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
  * and allows to use React Hook form in Fields
  * @returns {JSX}
  */
-export default function Form({ methods, onSubmit, children, ...formProps}) {
+export default function Form({ methods, onSubmit, onError, children, ...formProps}) {
   if (!onSubmit) onSubmit = () => {};
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} {...formProps}>{children}</form>
+      <form onSubmit={methods.handleSubmit(onSubmit, onError)} {...formProps}>{children}</form>
     </FormProvider>
   );
 }
