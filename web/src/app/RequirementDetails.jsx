@@ -1,6 +1,6 @@
 import Form from "@/components/Form";
 
-export default function () {
+export default function RequiremenrDetails() {
   return (
     <>
       <div className="mt-100">

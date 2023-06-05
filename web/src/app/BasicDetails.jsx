@@ -1,7 +1,7 @@
 import CountryPhone from "@/components/Country";
 import Form from "@/components/Form";
 
-export default function () {
+export default function BasicDetails() {
   return (
     <>
       <div className="mt-100">
