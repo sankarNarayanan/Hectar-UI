@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="container mx-auto">
       <div className="flex my-12 justify-between">
-        <Image src={HorizontalLogo} />
+        <Image alt="Header Logo" src={HorizontalLogo} />
         <div>
           <Button variant="outline" size="xs" className="me-3">
             Login

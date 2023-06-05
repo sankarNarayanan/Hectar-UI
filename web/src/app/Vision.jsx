@@ -27,13 +27,13 @@ export default function Vision() {
           </div>
           <div className="w-1/2 pt-5">
             <Zoom triggerOnce direction="in">
-              <Image src={MapImage} />
+              <Image alt="Map Image" src={MapImage} />
             </Zoom>
           </div>
         </div>
         <div>
           <Slide triggerOnce direction="up">
-            <Image className="mx-auto" src={LocationImage} />
+            <Image alt="Location image" className="mx-auto" src={LocationImage} />
           </Slide>
         </div>
       </div>

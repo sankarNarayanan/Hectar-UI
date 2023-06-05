@@ -31,7 +31,7 @@ export default function Analytics() {
           </div>
           <div className="w-1/2 pt-5">
             <Slide triggerOnce direction="right">
-              <Image src={AnalyticsImage} />
+              <Image alt="Analytics Image" src={AnalyticsImage} />
             </Slide>
           </div>
         </div>

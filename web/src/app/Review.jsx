@@ -31,7 +31,7 @@ export default function Review() {
             <div className="flex justify-center mt-[30px]">
               <div className="flex me-[50px]">
                 <div className="icon">
-                  <Image src={Happy}></Image>
+                  <Image alt="happy Icon" src={Happy}></Image>
                 </div>
                 <div className="content ms-4 text-left">
                   <p className="font-semibold text-2xl">1000+</p>
@@ -40,7 +40,7 @@ export default function Review() {
               </div>
               <div className="flex me-[50px]">
                 <div className="icon">
-                  <Image src={Tick}></Image>
+                  <Image alt="tick icon" src={Tick}></Image>
                 </div>
                 <div className="content ms-4 text-left">
                   <p className="font-semibold text-2xl">1000+</p>
@@ -49,7 +49,7 @@ export default function Review() {
               </div>
               <div className="flex">
                 <div className="icon">
-                  <Image src={Country}></Image>
+                  <Image alt="tick Icon" src={Country}></Image>
                 </div>
                 <div className="content ms-4 text-left">
                   <p className="font-semibold text-2xl">6</p>

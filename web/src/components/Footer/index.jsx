@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container mx-auto mt-8">
         <div className="flex p-4 justify-between items-center">
           <div className="mt-[30px]">
-            <Image src={HorizontalLogo} />
+            <Image alt="Footer Logo" src={HorizontalLogo} />
             <p className="mt-6">Support@hectar.global</p>
             <p className="mt-3">+91 80561 51588</p>
             <div className="flex mt-8">

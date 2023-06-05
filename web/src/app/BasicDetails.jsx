@@ -1,3 +1,4 @@
+import CountryPhone from "@/components/Country";
 import Form from "@/components/Form";
 
 export default function () {
@@ -5,43 +6,30 @@ export default function () {
     <>
       <div className="mt-100">
         <Form.TextField
-          name="basic-marketDetails"
-          label="Basic details"
+          name="fullname"
+          label="FULL NAME"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.TextField
-          name="basic-another1"
-          label="Basic details"
+          name="businessname"
+          label="BUSINESS NAME"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.TextField
-          name="basic-another2"
-          label="Basic details"
-          validators={["required"]}
+          name="bisonessemail"
+          label="BUSINESS EMAIL"
+          validators={["required", "email"]}
         />
       </div>
+      
       <div className="mt-20">
-        <Form.TextField
-          name="basic-another3"
-          label="Basic details"
-          validators={["required"]}
-        />
-      </div>
-      <div className="mt-20">
-        <Form.TextField
-          name="basic-another3"
-          label="Basic details"
-          validators={["required"]}
-        />
-      </div>
-      <div className="mt-20">
-        <Form.Textarea
-          name="basic-textarea1"
-          label="Some details"
+        <CountryPhone
+          name="bisonessemail"
+          label="BUSINESS EMAIL"
           validators={["required"]}
         />
       </div>
