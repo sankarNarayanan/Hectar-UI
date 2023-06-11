@@ -3,6 +3,8 @@ import TextField from "./TextField";
 import Checkbox from "./Checkbox";
 import Textarea from "./Textarea";
 import Select from "./SelectBox";
+import AutoComplete from "./AutoComplete";
+import DatePicker from "./DatePicker";
 import { Option } from "@material-tailwind/react";
 // import { FormControlLabel } from "@mui/material";
 
@@ -12,6 +14,8 @@ Object.assign(Form, {
   Textarea,
   Select,
   Option,
+  AutoComplete,
+  DatePicker,
   // ControlLabel: FormControlLabel
 });
 

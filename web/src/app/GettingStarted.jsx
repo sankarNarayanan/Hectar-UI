@@ -4,7 +4,7 @@ import { Bounce, Fade } from "react-awesome-reveal";
 export default function GetStarted() {
   return (
     <section>
-      <div className="container mx-auto bg-grad-primary rounded-2xl py-[100px] my-[100px]">
+      <div className="max-w-6xl mx-auto bg-grad-primary rounded-2xl py-[100px] my-[100px]">
         <h2 className="text-[64px] text-white text-center">
           <Bounce triggerOnce cascade damping={0.2}>
             Start Trading Now!

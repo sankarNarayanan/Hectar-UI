@@ -8,8 +8,8 @@ export default function Header() {
       <div className="flex my-12 justify-between">
         <Image alt="Header Logo" src={HorizontalLogo} />
         <div>
-          <Button variant="outline" size="xs" className="me-3">
-            Login
+          <Button size="xs" className="me-3">
+            Get Private Beta Access
           </Button>
           <Button variant="outline" size="xs">
             Get Instant Quote
