@@ -13,7 +13,7 @@ import ShippingModeImage from "@/assets/svg/shipping_mode.svg";
 import AutoComplete from "@/components/Form/AutoComplete";
 import Form from "@/components/Form";
 import ShippingMode from "./ShippingMode";
-
+import GetQuoteForm from "./GetQuoteForm";
 
 const localtionItems = [
   { title: "Chennai, In", subtitle: "Port Of madras" },
@@ -60,7 +60,7 @@ export default function HeroBanner({ setDrawer }) {
           </Link>
         </div>
 
-        <div className="mx-130 bg-white rounded-lg p-30">
+        {/* <div className="mx-130 bg-white rounded-lg p-30">
           <div className="flex gap-2">
             <Chip
               value="Rates"
@@ -93,7 +93,7 @@ export default function HeroBanner({ setDrawer }) {
               label={() => <AutoComplete.Label content="To" imageSrc={LocationImage} />}
             />
 
-            {/* <AutoComplete
+            <AutoComplete
               items={[
                 "Request",
                 "Quote",
@@ -104,13 +104,14 @@ export default function HeroBanner({ setDrawer }) {
               ]}
               placeholder="Date"
               label={() => <Label content="Date" imageSrc={DateImage} />}
-            /> */}
+            />
 
             <Form.DatePicker/>
 
             <ShippingMode/>
           </div>
-        </div>
+        </div> */}
+        <GetQuoteForm />
       </Fade>
     </div>
   );

@@ -33,7 +33,7 @@ function Select({
   return (
     <label>
       <div className="relative w-full">
-        <div className="absolute w-full left-0 top-0 border border-gray-200 py-3 px-5">
+        <div className="absolute w-full left-0 top-0">
           {Label ? <Label /> : <div>Custom label</div>}
           <div className="text-lg font-medium text-black">
             {parsedValue?.value || "Select"}
@@ -54,7 +54,7 @@ function Select({
               isSearchable={true}
               {...inputProps}
               classNames={{
-                menuButton: ({ isDisabled }) => "opacity-0 w-full",
+                menuButton: ({ isDisabled }) => "opacity-0 w-full flex",
               }}
             >
               {children}

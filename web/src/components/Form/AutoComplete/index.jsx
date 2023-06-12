@@ -2,10 +2,8 @@ import Turnstone from "turnstone";
 import Label from "../Label";
 // Tailwind classes for Turnstone elements
 const styles = {
-  input:
-    "w-full h-12 border border-blue-gray-200 py-2 pl-10 pr-9 text-xl text-oldsilver-800 outline-none rounded-md",
-  inputFocus:
-    "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-10 pr-9 text-xl text-oldsilver-800 outline-none sm:rounded-md sm:border",
+  input: "w-full h-6  pt-2 text-xl text-oldsilver-800 outline-none rounded-md",
+  inputFocus: "w-full h-6 pt-2 text-xl  outline-none rounded-md ",
   query: "text-oldsilver-800 placeholder-oldsilver-400",
   typeahead: "text-oldsilver-400 border-white",
   cancelButton: `absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 text-crystal-600 inline-flex sm:hidden`,
@@ -36,8 +34,8 @@ function Item(props) {
 
   return (
     <div className="bg-white w-full">
-      <h3>{item.title}</h3>
-      <p>{item.subtitle}</p>
+      <h3 className="text-xl">{item.title}</h3>
+      <p className="text-sm opacity-70">{item.subtitle}</p>
     </div>
   );
 }
