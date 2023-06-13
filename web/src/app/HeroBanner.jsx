@@ -53,12 +53,7 @@ export default function HeroBanner({ setDrawer }) {
           <br />
           source efficiently.
         </p>
-        <div className="flex justify-center items-center pt-[50px]">
-          <Button onClick={() => setDrawer(true)}>Get Instant Quote</Button>
-          <Link href="/" className="text-xl ps-5 text-white underline">
-            How It works
-          </Link>
-        </div>
+
 
         {/* <div className="mx-130 bg-white rounded-lg p-30">
           <div className="flex gap-2">
