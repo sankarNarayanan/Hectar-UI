@@ -11,7 +11,6 @@ export function useFormControl(name, validatorArray, errorMessage) {
   const isSuccess = isDirty && !invalid;
   // Computing isError
   const isError = invalid;
-  console.log("Error state", fieldState);
 
   let validatorConfig = {};
   // Prepare the validator config

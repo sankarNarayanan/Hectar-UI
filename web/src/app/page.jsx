@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <ThemeProvider>
       <HeroBanner setDrawer={setDrawer}/>
-      <DashboardDummy />
+      {/* <DashboardDummy /> */}
       <ProductPortfolio />
       <WhyHectar />
       <Review />

@@ -5,6 +5,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Sannam 334",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "40 Ft",
         loadingPort: { port: "Chennai", country: "India" },
         description: [
@@ -16,6 +17,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Teja S17",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "40 Ft",
         loadingPort: { port: "Chennai", country: "India" },
         description: [
@@ -27,6 +29,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Byadgi Chilli",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "40 Ft",
         loadingPort: { port: "Mangalore", country: "India" },
         description: [{ name: "Kaddi" }, { name: "Dabbi" }, { name: "Deluxe" }],
@@ -34,6 +37,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Ramnad Mundu chilli",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "40 Ft",
         loadingPort: { port: "Tuticorin", country: "India" },
         description: [{ name: "Ist grade" }, { name: "IInd grade" }],
@@ -46,6 +50,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Erode Turmeric",
         typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
         containerType: "20 Ft",
         loadingPort: { port: "Chennai", country: "India" },
         description: [{ name: "Sannam" }, { name: "Bold" }],
@@ -53,6 +58,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Nizamabad Turmeric",
         typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
         containerType: "20 Ft",
         loadingPort: {
           port: "Chennai",
@@ -64,6 +70,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Sangli Turmeric / Rajpuri Turmeric",
         typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
         containerType: "20 Ft",
         loadingPort: { port: "Mumbai", country: "India" },
         description: [{ name: "Sannam" }, { name: "Bold" }],
@@ -71,6 +78,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Allepey Turmeric",
         typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
         containerType: "20 Ft",
         loadingPort: { port: "Chennai", country: "India" },
         description: [{ name: "Whole Turmeric finger" }],
@@ -83,6 +91,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Single parrot",
         typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [{ name: "Green colour" }],
@@ -90,6 +99,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Double parrot",
         typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [{ name: "Green colour" }],
@@ -97,6 +107,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Eagle",
         typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [{ name: "Medium green colour" }],
@@ -104,6 +115,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Scooter",
         typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [{ name: "Medium green colour" }],
@@ -111,6 +123,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Badami",
         typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [{ name: "Brown colour" }],
@@ -123,6 +136,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "European Quality cumin",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [
@@ -134,6 +148,7 @@ export const PRODUCT_DETAILS = [
       {
         name: "Gulf Quality cumin",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [
@@ -144,6 +159,174 @@ export const PRODUCT_DETAILS = [
       {
         name: "Singapore Quality cumin",
         typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [
+          { name: "CRE 106 - 99% Purity" },
+          { name: "CRE 107 - 98% Purity" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Fennel",
+    variants: [
+      {
+        name: "USA Quality Fennel",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "99.5" }, { name: "99%" }],
+      },
+      {
+        name: "European Quality Fennel",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "99.5%" }, { name: "99% " }, { name: "98%" }],
+      },
+      {
+        name: "Gulf Quality Fennel",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "99%" }, { name: "98" }, { name: "97" }],
+      },
+      {
+        name: "Singapore quality Fennel",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "99%" }, { name: "98%" }, { name: "97%" }],
+      },
+    ],
+  },
+  {
+    name: "Dried Ginger",
+    variants: [
+      {
+        name: "Calicut Quality Dried Ginger",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "kochi", country: "India" },
+        description: [
+          { name: "Non-Bleached Garbled Calicut Dried Ginger(NGK)" },
+          { name: "Non-Bleached Un-Garbled Calicut Dried Ginger(NUGK)" },
+        ],
+      },
+      {
+        name: "Cochin Quality Dried Ginger ",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: {
+          port: "kochi",
+          country: "India",
+        },
+        description: [
+          { name: "Non-Bleached Garbled Cochin Dried Ginger(NGC)" },
+          { name: "Non-Bleached Un-Garbled Cochin Dried Ginger(NUGC)" },
+        ],
+      },
+      {
+        name: "Sangli Turmeric / Rajpuri Turmeric",
+        typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mumbai", country: "India" },
+        description: [{ name: "Sannam" }, { name: "Bold" }],
+      },
+      {
+        name: "Allepey Turmeric",
+        typicalLoadability: "17 MT",
+        typicalLoadabilityValue: 17,
+        containerType: "20 Ft",
+        loadingPort: { port: "Chennai", country: "India" },
+        description: [{ name: "Whole Turmeric finger" }],
+      },
+    ],
+  },
+  {
+    name: "Coriander",
+    variants: [
+      {
+        name: "Single parrot",
+        typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "Green colour" }],
+      },
+      {
+        name: "Double parrot",
+        typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "Green colour" }],
+      },
+      {
+        name: "Eagle",
+        typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "Medium green colour" }],
+      },
+      {
+        name: "Scooter",
+        typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "Medium green colour" }],
+      },
+      {
+        name: "Badami",
+        typicalLoadability: "10 MT",
+        typicalLoadabilityValue: 10,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [{ name: "Brown colour" }],
+      },
+    ],
+  },
+  {
+    name: "Cumin ",
+    variants: [
+      {
+        name: "European Quality cumin",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [
+          { name: "CRE 101 - 99.5 % Purity" },
+          { name: "CRE 102 - 99% Purity" },
+          { name: "CRE 103 - 98% Purity" },
+        ],
+      },
+      {
+        name: "Gulf Quality cumin",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
+        containerType: "20 Ft",
+        loadingPort: { port: "Mundra", country: "India" },
+        description: [
+          { name: "CRE 104 - 99% Purity" },
+          { name: "CRE 105 - 98% Purity" },
+        ],
+      },
+      {
+        name: "Singapore Quality cumin",
+        typicalLoadability: "14 MT",
+        typicalLoadabilityValue: 14,
         containerType: "20 Ft",
         loadingPort: { port: "Mundra", country: "India" },
         description: [

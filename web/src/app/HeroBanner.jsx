@@ -43,12 +43,12 @@ export default function HeroBanner({ setDrawer }) {
         />
       </div>
       <Fade triggerOnce cascade>
-        <h1 className="text-[64px] text-white pt-[100px] text-center font-light leading-[80px]">
+        <h1 className="text-2xl lg:text-[64px] text-white pt-[100px] text-center font-light lg:leading-[80px]">
           Agri Commodities Trade, <br />
           <span className="font-bold">Reimagined! 🚜</span>
         </h1>
 
-        <p className="text-[#FFFEFF] opacity-70 text-center text-2xl pt-5">
+        <p className="text-[#FFFEFF] opacity-70 text-center text-sm lg:text-2xl pt-5">
           Enabling global wholesalers, manufacturers and retailers
           <br />
           source efficiently.

@@ -10,6 +10,7 @@ function Select({
   validators,
   errorMessage,
   children,
+  onChange,
   ...inputProps
 }) {
   const {
@@ -21,13 +22,19 @@ function Select({
     isError,
     setValue,
     watch,
+    message,
   } = useFormControl(name, validators, errorMessage);
 
   const value = watch(name);
   const parsedValue = value && JSON.parse(value);
-  const handleChange = (value) => {
-    console.log("value:", value);
+  const handleChange = (value, onChangeFromController) => {
+    // caling the onChange from the controller
+    typeof onChangeFromController === "function" &&
+      onChangeFromController(value);
     setValue(name, JSON.stringify(value));
+
+    // Call the onChange from props if passed and is a function
+    typeof onChange === "function" && onChange(value);
   };
 
   return (
@@ -44,10 +51,9 @@ function Select({
           name={name}
           control={control}
           rules={{ validate: validatorConfig }}
-          onChange={() => console.log("This should not be called")}
           render={({ field: { onChange, onBlur, value: inputValue } }) => (
             <SelectBox
-              onChange={handleChange}
+              onChange={(value) => handleChange(value, onChange)}
               onBlur={onBlur}
               value={inputValue && JSON.parse(inputValue)}
               options={options}
@@ -61,6 +67,7 @@ function Select({
             </SelectBox>
           )}
         />
+        {isError && <div className="text-red-500 text-sm pt-2">{message}</div>}
       </div>
     </label>
   );
@@ -71,6 +78,7 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   validators: PropTypes.array,
   errorMessage: PropTypes.object,
+  onChange: PropTypes.func,
 };
 
 Object.assign(Select, {
