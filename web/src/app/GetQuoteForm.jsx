@@ -225,11 +225,11 @@ export default function GetQuoteForm() {
         </div>
       </div>
 
-      <Dialog open={dialogOpen} handler={() => setDialogOpen(!dialogOpen)}>
+      <Dialog size="xs" open={dialogOpen} handler={() => setDialogOpen(!dialogOpen)}>
         <DialogBody>
           <div className="text-black m-5 font-normal">
-            <p className="text-lg opacity-50 font-light">Approximate Cost</p>
-            <div className="text-5xl font-semibold">
+            <p className="lg:text-lg opacity-50 font-light">Approximate Cost</p>
+            <div className="text-3xl lg:text-5xl font-semibold">
               ${2400 * (selectedVariant?.typicalLoadabilityValue || 0)}
             </div>
             <p className="text-xs p-2">
