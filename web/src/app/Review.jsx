@@ -5,7 +5,7 @@ import Country from "@/assets/svg/country.svg";
 import Image from "next/image";
 import { Bounce } from "react-awesome-reveal";
 
-export default function Review() {
+export default function Review({setDrawer}) {
   return (
     <div className="relative mt-[100px] before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
       <div className="container mx-auto p-6">
@@ -59,7 +59,9 @@ export default function Review() {
             </div>
 
             <div className="flex mt-[50px] justify-center">
-              <Button className="me-[30px]" variant="outline">
+              <Button className="me-[30px]" variant="outline" onClick={() => {
+                setDrawer(true);
+              }}>
                 Submit Your Request
               </Button>
               <Button>Get Instant Quote</Button>

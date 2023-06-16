@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* <DashboardDummy /> */}
       <ProductPortfolio />
       <WhyHectar />
-      <Review />
+      <Review setDrawer={setDrawer}/>
       <Analytics />
       <Vision />
       <GetStarted />
