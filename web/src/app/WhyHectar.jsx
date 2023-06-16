@@ -9,7 +9,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 export default function WhyHectar() {
   return (
-    <section className="mt-[100px]">
+    <section className="mt-50 lg:mt-100 px-4 lg:px-0">
       <h2 className="text-2xl lg:text-[62px] font-light text-center">
         <Fade triggerOnce cascade damping={0.2}>
           Why Hectar?
