@@ -15,7 +15,7 @@ export default function Button({
   if (size === "xs") {
     className += " text-base py-2 px-[20px]";
   } else {
-    className += " text-xl py-4 px-[50px]";
+    className += " text-sm lg:text-xl py-3 lg:py-4 lg:px-50 w-full lg:w-auto";
   }
   return (
     <button className={className} {...orgProps}>

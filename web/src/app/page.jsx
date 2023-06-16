@@ -10,7 +10,6 @@ import WhyHectar from "./WhyHectar";
 import ContactFormDrawer from "./ContactFormDrawer";
 import { ThemeProvider } from "@material-tailwind/react";
 
-
 export function DashboardDummy() {
   return (
     <div className="container mx-auto bg-gray-200 w-full h-[500px] flex items-center justify-center">
@@ -26,15 +25,17 @@ export default function HomePage() {
   const [drawerOpen, setDrawer] = useState(false);
   return (
     <ThemeProvider>
-      <HeroBanner setDrawer={setDrawer}/>
-      {/* <DashboardDummy /> */}
-      <ProductPortfolio />
-      <WhyHectar />
-      <Review />
-      <Analytics />
-      <Vision />
-      <GetStarted />
-      <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
+      <div className="w-screen overflow-hidden">
+        <HeroBanner setDrawer={setDrawer} />
+        {/* <DashboardDummy /> */}
+        <ProductPortfolio />
+        <WhyHectar />
+        <Review />
+        <Analytics />
+        <Vision />
+        <GetStarted />
+        <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
+      </div>
     </ThemeProvider>
   );
 }
