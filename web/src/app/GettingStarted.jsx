@@ -10,11 +10,9 @@ export default function GetStarted() {
             Start Trading Now!
           </Bounce>
         </h2>
-        <Fade triggerOnce>
           <div className="text-center mt-8 lg:mt-50">
             <Button className="px-50 w-auto">Get Quotes</Button>
           </div>
-        </Fade>
       </div>
     </section>
   );
