@@ -1,4 +1,3 @@
-import CountryPhone from "@/components/Country";
 import Form from "@/components/Form";
 
 export default function BasicDetails() {
