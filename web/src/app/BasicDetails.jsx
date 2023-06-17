@@ -6,21 +6,21 @@ export default function BasicDetails() {
     <>
       <div className="mt-100">
         <Form.TextField
-          name="fullname"
+          name="name"
           label="FULL NAME"
           validators={["required"]}
         />
       </div>
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <Form.TextField
           name="businessname"
           label="BUSINESS NAME"
           validators={["required"]}
         />
-      </div>
+      </div> */}
       <div className="mt-20">
         <Form.TextField
-          name="bisonessemail"
+          name="email"
           label="BUSINESS EMAIL"
           validators={["required", "email"]}
         />
@@ -28,8 +28,8 @@ export default function BasicDetails() {
       
       <div className="mt-20">
         <CountryPhone
-          name="bisonessemail"
-          label="BUSINESS EMAIL"
+          name="phoneNumber"
+          label="PHONE NUMBER"
           validators={["required"]}
         />
       </div>
