@@ -1,6 +1,4 @@
 import CalenderImage from "@/assets/svg/icon-calendar.svg";
-// import PricesImage from "@/assets/svg/prices.svg";
-//import PricesAnimation from "@/gif/TomorrowPrice.gif";
 import Image from "next/image";
 import LocationIconImage from "@/assets/svg/icon-location.svg";
 import DocumentIconImage from "@/assets/svg/icon-document.svg";
@@ -37,7 +35,7 @@ export default function WhyHectar() {
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce>
             <img
-              src="/gif/TomorrowPrice.gif"
+              src="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />
@@ -68,7 +66,7 @@ export default function WhyHectar() {
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce direction="right">
             <img
-              src="/gif/TracknTrace2.gif"
+              src="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />
@@ -98,7 +96,7 @@ export default function WhyHectar() {
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce>
             <img
-              src="/gif/Documents.gif"
+              src="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />

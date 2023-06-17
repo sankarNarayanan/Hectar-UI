@@ -33,7 +33,7 @@ export default function Vision() {
           </div>
           <div className="w-1/2 pt-5 hidden lg:block">
             <Zoom triggerOnce direction="in">
-              <img alt="Map Image" src="/gif/Borders-Line.gif" />
+              <img alt="Map Image" src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Line.gif" />
             </Zoom>
           </div>
         </div>

@@ -38,7 +38,7 @@ export default function Analytics() {
           </div>
           <div className="w-full lg:w-1/2 pt-5 hidden lg:block">
             <Slide triggerOnce direction="right">
-              <img alt="Analytics Image" src="/gif/AI-model.gif" />
+              <img alt="Analytics Image" src="https://temp-hectar-s3.s3.amazonaws.com/AI-model.gif" />
             </Slide>
           </div>
         </div>
