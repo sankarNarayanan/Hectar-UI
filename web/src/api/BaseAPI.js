@@ -22,10 +22,20 @@ export const BaseAPI = createApi({
         body: data,
       }),
     }),
+    submitEnquiry: builder.mutation({
+      query: (data) => ({
+        url: "submitenquiry",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { usePrivateBetaEnquiryMutation, useRequestQuoteMutation } =
-  BaseAPI;
+export const {
+  usePrivateBetaEnquiryMutation,
+  useRequestQuoteMutation,
+  useSubmitEnquiryMutation,
+} = BaseAPI;

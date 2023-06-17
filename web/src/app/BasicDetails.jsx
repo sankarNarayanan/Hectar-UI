@@ -27,9 +27,9 @@ export default function BasicDetails() {
       </div>
       
       <div className="mt-20">
-        <CountryPhone
+        <Form.TextField
           name="phoneNumber"
-          label="PHONE NUMBER"
+          label="BUSINESS PHONE NO"
           validators={["required"]}
         />
       </div>
