@@ -3,7 +3,7 @@ import CalenderImage from "@/assets/svg/icon-calendar.svg";
 import PricesAnimation from "@/assets/gif/TomorrowPrice.gif";
 import Image from "next/image";
 // import TrackImage from "@/assets/svg/track.svg";
-import TrackAnimation from "@/assets/gif/Track.gif";
+import TrackAnimation from "@/assets/gif/TracknTrace2.gif";
 //import DocumentImage from "@/assets/svg/documentation.svg";
 import DocumentAnimation from "@/assets/gif/Documents.gif";
 import LocationIconImage from "@/assets/svg/icon-location.svg";
