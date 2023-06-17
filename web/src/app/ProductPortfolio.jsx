@@ -148,11 +148,14 @@ export function ProductPortfolioOld() {
 }
 
 export default function ProductPortfolio() {
-  const [openIndex, setOpen] = useState(false);
   return (
     <>
       <div className="container mx-auto py-100 px-3 lg:hidden">
-        <Carousel>
+        <Carousel
+          navigation={({ setActiveIndex, activeIndex, length }) => {
+            return <></>;
+          }}
+        >
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-3 gap-2">
               <div className="h-[120px] lg:h-[240px] col-span-3">
@@ -386,8 +389,12 @@ export default function ProductPortfolio() {
           </div>
         </Carousel>
       </div>
-      <div className="container mx-auto py-100 px-3 hidden lg:block">
-        <Carousel>
+      <div className="container mx-auto mt-150 px-3 hidden lg:block">
+        <Carousel
+          navigation={({ setActiveIndex, activeIndex, length }) => {
+            return <></>;
+          }}
+        >
           <div className="relative ">
             <div className="grid grid-cols-4 grid-rows-3 gap-2">
               <div className=" col-span-2 self-center">

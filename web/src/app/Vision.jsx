@@ -36,7 +36,7 @@ export default function Vision() {
             </Zoom>
           </div>
         </div>
-        <div className="p-20 lg:p-50 lg:relative lg:-top-[360px]">
+        <div className="p-20 lg:p-50 lg:relative lg:-top-[360px] lg:-mb-[360px]">
           <p className="font-semibold lg:text-2xl">Our Offices</p>
           <div className="lg:flex lg:flex-wrap lg:gap-14">
             <div className="mt-20 lg:w-1/3">

@@ -28,9 +28,9 @@ export default function HomePage() {
       <div className="w-screen overflow-hidden">
         <HeroBanner setDrawer={setDrawer} />
         {/* <DashboardDummy /> */}
-        <ProductPortfolio />
         <WhyHectar />
-        <Review setDrawer={setDrawer}/>
+        <ProductPortfolio />
+        <Review setDrawer={setDrawer} />
         <Analytics />
         <Vision />
         <GetStarted />

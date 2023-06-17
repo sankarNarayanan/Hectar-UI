@@ -3,13 +3,11 @@ import Happy from "@/assets/svg/happy.svg";
 import Tick from "@/assets/svg/tick.svg";
 import CountryIcon from "@/assets/svg/icon-countries.svg";
 import Image from "next/image";
-import { Bounce } from "react-awesome-reveal";
 
 export default function Review({setDrawer}) {
   return (
-    <div className="relative mt-50 lg:mt-100 before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
+    <div className="relative mt-50 lg:mt-150 before:content-[''] before:w-full before:h-full before:absolute before:bg-[#0156F7] before:-z-20">
       <div className="container mx-auto p-6">
-        <Bounce triggerOnce>
           <div
             className={
               "bg-[#FFFEFF] relative p-20 lg:p-50 text-center rounded-xl my-50 lg:my-100 " +
@@ -71,7 +69,6 @@ export default function Review({setDrawer}) {
               </Button>
             </div>
           </div>
-        </Bounce>
       </div>
     </div>
   );

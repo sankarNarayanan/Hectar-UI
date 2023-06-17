@@ -176,7 +176,7 @@ export default function HeroBanner() {
   const [quoteState, setQuoteState] = useState({ isSubmitted: false });
   return (
     <section className="px-4 lg:px-0">
-      <div className="container relative mx-auto bg-grad-primary rounded-2xl">
+      <div className="container relative mx-auto bg-grad-primary pb-6 lg:pb-100 rounded-2xl">
         {!quoteState.isSubmitted && (
           <>
             <div>
