@@ -5,44 +5,37 @@ export default function RequiremenrDetails() {
     <>
       <div className="mt-100">
         <Form.TextField
-          name="marketDetails"
-          label="Market Details"
+          name="baseLocation"
+          label="WHERE ARE YOU FROM?"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.TextField
-          name="another1"
-          label="Market Details"
+          name="compantName"
+          label="COMPANY NAME"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.TextField
-          name="another2"
-          label="Market Details"
+          name="companyRevenue"
+          label="COMPANY REVENUE"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.TextField
-          name="another3"
-          label="Market Details"
-          validators={["required"]}
-        />
-      </div>
-      <div className="mt-20">
-        <Form.TextField
-          name="another3"
-          label="Market Details"
+          name="interestedCommodities"
+          label="INTERESTED COMMODITIES"
           validators={["required"]}
         />
       </div>
       <div className="mt-20">
         <Form.Textarea
-          name="textarea1"
-          label="Some details"
-          validators={["required"]}
+          name="moreDetails"
+          label="TELL US MORE"
+          validators={["optional"]}
         />
       </div>
     </>
