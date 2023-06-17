@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import "./globals.css";
 import "@/styles/custom.scss";
@@ -23,7 +23,7 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <body className="font-poppins">
+      <body className="font-poppins text-black">
         <Provider store={store}>
           <Header />
           {children}
