@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AnalyticsImage from "@/assets/svg/insights-image.svg";
+// import AnalyticsImage from "@/assets/svg/insights-image.svg";
 import AnalyticsMobileImage from "@/assets/svg/insights-mobile-image.svg";
 import { Slide } from "react-awesome-reveal";
 
@@ -38,7 +38,7 @@ export default function Analytics() {
           </div>
           <div className="w-full lg:w-1/2 pt-5 hidden lg:block">
             <Slide triggerOnce direction="right">
-              <Image alt="Analytics Image" src={AnalyticsImage} />
+              <img alt="Analytics Image" src="/gif/AI-model.gif" />
             </Slide>
           </div>
         </div>

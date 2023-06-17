@@ -132,7 +132,7 @@ export default function GetQuoteForm() {
         setDialogOpen(true);
       }}
     >
-      <div className="bg-white rounded-lg m-3 lg:mx-130 p-30 mt-50 w-auto">
+      <div className="bg-white rounded-lg m-3 lg:mx-130 p-30 mt-20 w-auto">
         <div className="flex lg:border border-gray-300 rounded-lg w-full place-content-stretch py-2 flex-col lg:flex-row gap-2">
           <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
