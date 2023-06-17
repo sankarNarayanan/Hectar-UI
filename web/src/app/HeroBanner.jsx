@@ -1,12 +1,10 @@
 import Button from "@/components/Button";
-import { Chip, Typography } from "@/components";
-import Link from "next/link";
+import { Typography } from "@/components";
 import linesLeft from "@/assets/lines_left.svg";
 import linesRight from "@/assets/lines_right.svg";
 import Image from "next/image";
 import ImageSubmitted from "@/assets/svg/img-submitted.svg";
 
-import { Fade } from "react-awesome-reveal";
 import SuccessPoppersTopImage from "@/assets/svg/success-poppers-top.svg";
 import SuccessPoppersBottomImage from "@/assets/svg/success-poppers-bottom.svg";
 import GetQuoteForm from "./GetQuoteForm";
@@ -16,14 +14,14 @@ import Form, { useForm } from "@/components/Form";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
 
 const quoteBaseValue = 2400;
-const localtionItems = [
-  { title: "Chennai, In", subtitle: "Port Of madras" },
-  { title: "Mumbai, In", subtitle: "Port Of mumbai" },
-  { title: "Kolkatta, In", subtitle: "Port Of Kolkatta" },
-  { title: "Vizag, In", subtitle: "Port Of vizag" },
-  { title: "Cochi, In", subtitle: "Port Of cochi" },
-  { title: "Goa, In", subtitle: "Port Of Goa" },
-];
+// const localtionItems = [
+//   { title: "Chennai, In", subtitle: "Port Of madras" },
+//   { title: "Mumbai, In", subtitle: "Port Of mumbai" },
+//   { title: "Kolkatta, In", subtitle: "Port Of Kolkatta" },
+//   { title: "Vizag, In", subtitle: "Port Of vizag" },
+//   { title: "Cochi, In", subtitle: "Port Of cochi" },
+//   { title: "Goa, In", subtitle: "Port Of Goa" },
+// ];
 
 function QuoteSuccess({ quoteState, setQuoteState }) {
   const methods = useForm();
@@ -52,34 +50,41 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
     });
   };
   return (
-    <div className="flex items-stretch">
-      <div className="flex flex-col justify-between w-1/2 text-white">
+    <div className="flex flex-col lg:flex-row items-stretch">
+      <div className="flex flex-col justify-between lg:w-1/2 text-white">
         <div>
-          <Image src={SuccessPoppersTopImage} alt="successPoppers" />
+          <Image
+            src={SuccessPoppersTopImage}
+            alt="successPoppers"
+            className="w-[218px] lg:w-auto"
+          />
         </div>
         <div className="self-center text-center">
           <Image
             alt="Image Submitted"
             src={SubmittedBlackImage}
-            className="mx-auto"
+            className="w-[60px] lg:w-auto mx-auto"
           />
-          <p className="text-2xl mt-30">
+          <p className="lg:text-2xl mt-3">
             Congratulations!
             <br /> Your quote is now ready.
           </p>
 
-          <p className="text-3xl lg:text-5xl font-semibold mt-30">
+          <p className="text-3xl lg:text-5xl font-semibold mt-6">
             ${quoteValue}
           </p>
+          <p className="text-xs lg:text-sm opacity-70">
+            This is a computer generated quote and could vary.
+          </p>
         </div>
-        <div className="self-end">
+        <div className="self-end hidden lg:block">
           <Image src={SuccessPoppersBottomImage} alt="successPoppers" />
         </div>
       </div>
-      <div className="w-0 border border-[#FFFEFF] opacity-30 my-30 ml-4"></div>
-      <div className=" w-1/2">
+      <div className="lg:w-0 h-0 lg:h-auto border border-[#FFFEFF] opacity-30 m-30 ml-4"></div>
+      <div className=" lg:w-1/2">
         {formState ? (
-          <div className="flex flex-col items-center align-middle justify-center m-50 p-30 rounded-lg bg-white">
+          <div className="flex flex-col items-center align-middle justify-center m-3 lg:m-50 p-3 lg:p-30 rounded-lg bg-white">
             <Image alt="Image Submitted" src={ImageSubmitted} />
             <Typography variant="h4" className="font-medium pt-30">
               Request Submitted
@@ -92,20 +97,23 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
               <br /> team is looking into it. You will hear back from our
               <br /> team shortly.
             </Typography>
-            <Button onClick={() => setQuoteState(false)} className="w-full mt-40">
+            <Button
+              onClick={() => setQuoteState(false)}
+              className="w-full mt-40"
+            >
               Close
             </Button>
           </div>
         ) : (
           <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
-            <div className="m-50 p-30 rounded-lg bg-white">
-              <p className="text-2xl font-medium">Submit Your request</p>
-              <p className="opacity-70 mt-3">
+            <div className="mx-3 lg:m-50 px-3 py-30 lg:p-30 rounded-lg bg-white">
+              <p className="lg:text-2xl font-medium">Submit Your request</p>
+              <p className="text:xs lg:text-base opacity-70 mt-3">
                 This is an approximate quote and would change depending on your
                 requirement. Please fill the form below to get the exact quote
                 from our expert team.
               </p>
-              <div className="mt-30">
+              <div className="mt-20 lg:mt-30">
                 <Form.TextField
                   name="name"
                   label="Full Name"
@@ -183,7 +191,7 @@ export default function HeroBanner() {
                 alt="right design icons"
               />
             </div>
-            <Fade triggerOnce cascade>
+            <div>
               <h1 className="text-2xl lg:text-[64px] text-white pt-[100px] text-center font-light lg:leading-[80px]">
                 Agri Commodities Trade, <br />
                 <span className="font-bold">Reimagined! 🚜</span>
@@ -196,11 +204,13 @@ export default function HeroBanner() {
               </p>
 
               <GetQuoteForm setQuoteState={setQuoteState} />
-            </Fade>
+            </div>
           </>
         )}
 
-        {quoteState.isSubmitted && <QuoteSuccess quoteState={quoteState} setQuoteState={setQuoteState} />}
+        {quoteState.isSubmitted && (
+          <QuoteSuccess quoteState={quoteState} setQuoteState={setQuoteState} />
+        )}
       </div>
     </section>
   );
