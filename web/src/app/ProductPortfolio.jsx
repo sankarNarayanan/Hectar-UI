@@ -23,7 +23,7 @@ import Rice from "@/assets/images/rice.jpg";
 import { useState } from "react";
 import { Slide } from "react-awesome-reveal";
 
-export default function ProductPortfolio() {
+export function ProductPortfolioOld() {
   const [openIndex, setOpen] = useState(false);
   return (
     <div className="container mx-auto py-[100px]">
@@ -129,6 +129,17 @@ export default function ProductPortfolio() {
           { src: RedChilli.src },
         ]}
       />
+    </div>
+  );
+}
+
+export default function ProductPortfolio() {
+  const [openIndex, setOpen] = useState(false);
+  return (
+    <div className="container mx-auto py-[100px]">
+      <div className="grid-cols-10 grid-rows-3 gap-3">
+        <div className="w-[120px] h-[120px]">1</div>
+      </div>
     </div>
   );
 }

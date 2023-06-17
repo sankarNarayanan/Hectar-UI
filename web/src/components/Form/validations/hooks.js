@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import getValidator from ".";
 
 export function useFormControl(name, validatorArray, errorMessage) {
-  const { control, getFieldState, formState, getValues, setValue, watch } =
+  const { control, getFieldState, formState, getValues, setValue, watch, resetField } =
     useFormContext();
   // Subscribing for error state changes
   const fieldState = getFieldState(name, formState);
@@ -31,5 +31,6 @@ export function useFormControl(name, validatorArray, errorMessage) {
     isError,
     setValue,
     watch,
+    resetField
   };
 }

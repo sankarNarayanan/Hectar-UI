@@ -3,6 +3,33 @@ import { Controller } from "react-hook-form";
 import PropTypes from "prop-types";
 import { useFormControl } from "./validations/hooks";
 import Label from "./Label";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+function RenderValue({ variant, parsedValue, isMultiple, Label, reset }) {
+  if (!parsedValue) {
+    return variant === "bordered" ? <></> : "Select";
+  }
+  if (isMultiple) {
+    return null;
+    return (
+      <div className="flex w-full">
+        <span className="w-full">
+          {parsedValue
+            .reduce((acc, item) => acc + ", " + item.value, "")
+            .replace(", ", "")}
+        </span>
+        <span className="bg-black hover:bg-red-50">
+          <XMarkIcon
+            strokeWidth={2}
+            className="h-5 w-5 cursor-pointer z-[9999999999]"
+            onClick={() => reset()}
+          />
+        </span>
+      </div>
+    );
+  }
+  return parsedValue.value;
+}
 
 function Select({
   name,
@@ -11,6 +38,9 @@ function Select({
   errorMessage,
   children,
   onChange,
+  variant = "",
+  isMultiple = false,
+  placeholder = "Select...",
   ...inputProps
 }) {
   const {
@@ -23,6 +53,7 @@ function Select({
     setValue,
     watch,
     message,
+    resetField,
   } = useFormControl(name, validators, errorMessage);
 
   const value = watch(name);
@@ -37,13 +68,28 @@ function Select({
     typeof onChange === "function" && onChange(value);
   };
 
+  const reset = () => {
+    resetField(name);
+  };
+
   return (
     <label>
       <div className="relative w-full">
         <div className="absolute w-full left-0 top-0">
-          {Label ? <Label /> : <div>Custom label</div>}
-          <div className="text-lg font-medium text-black">
-            {parsedValue?.value || "Select"}
+          {variant !== "bordered" &&
+            (Label ? <Label /> : <div>Custom label</div>)}
+          <div
+            className={
+              variant === "bordered" ? "" : "text-lg font-medium text-black"
+            }
+          >
+            <RenderValue
+              Label={Label}
+              variant={variant}
+              parsedValue={parsedValue}
+              isMultiple={isMultiple}
+              reset={reset}
+            />
           </div>
         </div>
 
@@ -57,10 +103,17 @@ function Select({
               onBlur={onBlur}
               value={inputValue && JSON.parse(inputValue)}
               options={options}
+              isMultiple={isMultiple}
+              placeholder={placeholder}
               isSearchable={true}
               {...inputProps}
               classNames={{
-                menuButton: ({ isDisabled }) => "opacity-0 w-full flex",
+                menuButton: ({ isDisabled }) => {
+                  if (variant === "bordered")
+                    return "border border-gray-400 w-full flex rounded-lg";
+
+                  return "opacity-0 w-full flex";
+                },
               }}
             >
               {children}

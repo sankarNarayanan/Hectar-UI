@@ -5,7 +5,6 @@ import {
   Typography,
   Stepper,
   Step,
-  stepper,
 } from "@/components";
 import Form, { useForm } from "@/components/Form";
 import { XMarkIcon } from "@heroicons/react/24/outline";
