@@ -95,7 +95,7 @@ const getUnloadingPortFromValue = (unloadingPort) => {
   return unloadingPort && JSON.parse(unloadingPort);
 };
 
-export default function GetQuoteForm() {
+export default function GetQuoteForm({ setQuoteState }) {
   const methods = useForm({
     mode: "onChange",
     reValidateMode: "onChange",
@@ -127,9 +127,15 @@ export default function GetQuoteForm() {
   return (
     <Form
       methods={methods}
-      onSubmit={() => {
-        console.log("Submitted");
-        setDialogOpen(true);
+      onSubmit={(formData) => {
+        // setDialogOpen(true);
+        setQuoteState({
+          isSubmitted: true,
+          selectedVariant,
+          selectedUnloadingPort,
+          selectedProduct,
+          selectedDescription,
+        });
       }}
     >
       <div className="bg-white rounded-lg m-3 lg:mx-130 p-30 mt-50 w-auto">
@@ -221,11 +227,17 @@ export default function GetQuoteForm() {
           </div>
         </div>
         <div className="relative lg:-bottom-50 text-center mt-5 lg:mt-0">
-          <Button className="text-center lg:!px-100 text-sm lg:text-base">Get Quotes</Button>
+          <Button className="text-center lg:!px-100 text-sm lg:text-base">
+            Get Quotes
+          </Button>
         </div>
       </div>
 
-      <Dialog size="xs" open={dialogOpen} handler={() => setDialogOpen(!dialogOpen)}>
+      <Dialog
+        size="xs"
+        open={dialogOpen}
+        handler={() => setDialogOpen(!dialogOpen)}
+      >
         <DialogBody>
           <div className="text-black m-5 font-normal">
             <p className="lg:text-lg opacity-50 font-light">Approximate Cost</p>
