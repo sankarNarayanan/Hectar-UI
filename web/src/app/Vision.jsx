@@ -1,5 +1,6 @@
 import Image from "next/image";
-import MapImage from "@/assets/images/map.svg";
+//import MapImage from "@/assets/images/map.svg";
+import MapAnimation from "@/assets/gif/Borders-Line.gif";
 import MapMobileImage from "@/assets/svg/map-image-mobile.svg";
 import LocationImage from "@/assets/images/locations.jpg";
 import LocationMobileImage from "@/assets/svg/locations-mobile-image.svg";
@@ -34,7 +35,7 @@ export default function Vision() {
           </div>
           <div className="w-1/2 pt-5 hidden lg:block">
             <Zoom triggerOnce direction="in">
-              <Image alt="Map Image" src={MapImage} />
+              <Image alt="Map Image" src={MapAnimation} />
             </Zoom>
           </div>
         </div>
