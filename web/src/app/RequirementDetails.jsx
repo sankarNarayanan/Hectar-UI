@@ -1,6 +1,18 @@
 import Form from "@/components/Form";
+import { PRODUCT_DETAILS } from "./ProductDetails";
+
+// Extract the product details from the base object and
+// format it to feed the Select input as options
+const getProductItems = () => {
+  // formatted data
+  return PRODUCT_DETAILS.map((item) => ({
+    value: item.name,
+    label: item.name,
+  }));
+};
 
 export default function RequiremenrDetails() {
+  const productItems = getProductItems();
   return (
     <>
       <div className="mt-100">
@@ -25,18 +37,22 @@ export default function RequiremenrDetails() {
         />
       </div>
       <div className="mt-20">
-        <Form.TextField
+        <Form.Select
           name="interestedCommodities"
-          label="INTERESTED COMMODITIES"
           validators={["required"]}
+          className="border border-blue-gray-500"
+          variant="bordered"
+          placeholder="Select Products"
+          isMultiple={true}
+          errorMessage={{
+            required: "Please select an option",
+          }}
+          label={() => <>product</>}
+          options={productItems}
         />
       </div>
       <div className="mt-20">
-        <Form.Textarea
-          name="moreDetails"
-          label="TELL US MORE"
-          validators={["optional"]}
-        />
+        <Form.Textarea name="moreDetails" label="TELL US MORE" />
       </div>
     </>
   );

@@ -12,9 +12,11 @@ import { useState } from "react";
 import RequirementDetails from "./RequirementDetails";
 import BasicDetails from "./BasicDetails";
 import FormSubmitted from "./FormSubmitted";
+import { useSubmitEnquiryMutation } from "@/api/BaseAPI";
 
 export default function ContactFormDrawer({ drawerOpen, setDrawer }) {
   const [activeStep, setActiveStep] = useState(0);
+  const [submitEnquiry] = useSubmitEnquiryMutation();
   const methods = useForm({
     mode: "onBlur",
     reValidateMode: "onSubmit",
@@ -23,23 +25,33 @@ export default function ContactFormDrawer({ drawerOpen, setDrawer }) {
     console.log("Error", value);
   };
 
-  const handleSubmit = (value) => {
+  const handleSubmit = (formData) => {
     if (activeStep === 0) {
       setActiveStep(1);
     }
     if (activeStep === 1) {
       // Submit the page here
-      console.log("page submitted");
-      setActiveStep("submitted");
+      console.log("page submitted", formData);
+      submitEnquiry({
+        ...formData,
+        interestedCommodities: JSON.stringify(
+          JSON.parse(formData.interestedCommodities).map((item) => item.value)
+        ),
+      }).then(() => {
+        setActiveStep("submitted");
+      });
+      // setActiveStep("submitted");
     }
-    console.log("Submit", value);
+    console.log("Submit", formData);
   };
 
   return (
-    <Drawer open={drawerOpen} 
-            onClose={() => setDrawer(false)} 
-            size={500} 
-            placement="right">
+    <Drawer
+      open={drawerOpen}
+      onClose={() => setDrawer(false)}
+      size={500}
+      placement="right"
+    >
       <div className="relative h-full">
         {activeStep !== "submitted" && (
           <Form
@@ -50,18 +62,19 @@ export default function ContactFormDrawer({ drawerOpen, setDrawer }) {
           >
             <div className="flex flex-col h-screen">
               <div className="flex-grow overflow-y-auto p-20">
-                
-
                 <div className="flex justify-between">
-                <div><Typography variant="h4">Submit Your Request</Typography></div>
-                <div><IconButton
-                  variant="text"
-                  color="blue-gray"
-                  onClick={() => setDrawer(false)}
-                >
-                  <XMarkIcon strokeWidth={2} className="h-5 w-5" />
-                </IconButton>
-                </div>
+                  <div>
+                    <Typography variant="h4">Submit Your Request</Typography>
+                  </div>
+                  <div>
+                    <IconButton
+                      variant="text"
+                      color="blue-gray"
+                      onClick={() => setDrawer(false)}
+                    >
+                      <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+                    </IconButton>
+                  </div>
                 </div>
                 <Typography variant="paragraph" className="opacity-70 pt-3">
                   Don't see what you are looking for? Please send us your

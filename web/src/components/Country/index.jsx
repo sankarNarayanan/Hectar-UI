@@ -28,7 +28,7 @@ export default function CountryPhone({
       <div className="relative flex w-full">
         <Menu placement="bottom-start">
           <MenuHandler>
-            <div className="flex h-10 items-center gap-2 rounded-lg rounded-r-none border border-r-0 border-blue-gray-200 pl-3 w-100">
+            <div className="flex h-10 text-sm .text-blue-gray-700 items-center gap-2 rounded-lg rounded-r-none border border-r-0 border-blue-gray-200 pl-3 w-100">
               <img
                 src={flags.svg}
                 alt={countryName}

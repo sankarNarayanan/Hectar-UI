@@ -10,7 +10,7 @@ export default function FormSubmitted({setDrawer}) {
       <Typography variant="h4" className="font-medium pt-30">
         Request Submitted
       </Typography>
-      <Typography variant="p" className="opacity-70 font-normal pt-3 text-center">
+      <Typography variant="paragraph" className="opacity-70 font-normal pt-3 text-center">
         Your request has been successfully submitted and our
         <br /> team is looking into it. You will hear back from our
         <br /> team shortly.

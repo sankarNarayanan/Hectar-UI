@@ -18,7 +18,7 @@ const getProductItems = () => {
   }));
 };
 
-function FormSubmitted() {
+function FormSubmitted({setDrawer}) {
   return (
     <div className="flex flex-col items-center align-middle justify-center h-full p-30">
       <Image alt="Image Submitted" src={ImageSubmitted} />
@@ -59,6 +59,8 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
       interestedCommodities: JSON.stringify(
         JSON.parse(formdata.interestedCommodities).map((item) => item.value)
       ),
+    }).then(() => {
+      setActiveStep("submitted")
     });
     console.log("Submit", value);
   };
