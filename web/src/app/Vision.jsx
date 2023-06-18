@@ -15,7 +15,7 @@ export default function Vision() {
               Trading Without Borders - Is Our Ultimate Vision
             </h2>
             <div className=" pt-5 lg:hidden relative -mx-5">
-              <Image alt="Map Image" src={MapAnimation} />
+              <img alt="Map Image" src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Line.gif" />
             </div>
             <p className="textsm lg:text-xl pt-8 opacity-70">
               We believe in leveraging technology to create a seamless global
