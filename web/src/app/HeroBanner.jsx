@@ -26,12 +26,12 @@ const quoteBaseValue = 2400;
 function QuoteSuccess({ quoteState, setQuoteState }) {
   const methods = useForm();
   const [formState, setFormState] = useState(false);
-  const [requestQuote] = useRequestQuoteMutation();
+  const [requestQuote, requestQuoteResult] = useRequestQuoteMutation();
+
   const quoteValue =
     quoteBaseValue * (quoteState.selectedVariant?.typicalLoadabilityValue || 0);
   const handleQuoteFormSubmit = (formData) => {
-    console.log("form data", formData);
-    console.log("quoteState", quoteState);
+    // Api call to submit the Quote request details using RTK Query hook
     requestQuote({
       ...formData,
       product: quoteState.selectedProduct.name,
@@ -157,7 +157,10 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
                 />
               </div>
               <div className="mt-30 px-30">
-                <Button className="!w-full" onClick={() => {}}>
+                <Button
+                  className="!w-full"
+                  isLoading={requestQuoteResult.isLoading}
+                >
                   Submit
                 </Button>
               </div>
@@ -192,12 +195,12 @@ export default function HeroBanner() {
               />
             </div>
             <div>
-              <h1 className="text-2xl lg:text-[64px] text-white pt-[100px] text-center font-light lg:leading-[80px]">
+              <h1 className="text-2xl lg:text-6xl text-white pt-50 text-center font-light lg:leading-[80px]">
                 Agri Commodities Trade, <br />
                 <span className="font-bold">Reimagined! 🚜</span>
               </h1>
 
-              <p className="text-[#FFFEFF] opacity-70 text-center text-sm lg:text-2xl pt-5">
+              <p className="text-[#FFFEFF] opacity-70 text-center text-sm lg:text-xl pt-5">
                 Enabling global wholesalers, manufacturers and retailers
                 <br />
                 source efficiently.

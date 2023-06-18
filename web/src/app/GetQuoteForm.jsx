@@ -5,8 +5,7 @@ import DescriptionIcon from "@/assets/svg/description-icon.svg";
 import VariantIcon from "@/assets/svg/variant-icon.svg";
 import ContainerIcon from "@/assets/svg/container-icon.svg";
 import { PRODUCT_DETAILS } from "./ProductDetails";
-import { Button, Dialog, DialogBody, dialog } from "@/components";
-import { useState } from "react";
+import { Button } from "@/components";
 const localtionItems = [
   { title: "Chennai, In", subtitle: "Port Of madras" },
   { title: "Mumbai, In", subtitle: "Port Of mumbai" },
@@ -100,7 +99,6 @@ export default function GetQuoteForm({ setQuoteState }) {
     mode: "onChange",
     reValidateMode: "onChange",
   });
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [product, variant, description, unloadingPort] = methods.watch([
     "product",
     "variant",
@@ -138,9 +136,9 @@ export default function GetQuoteForm({ setQuoteState }) {
         });
       }}
     >
-      <div className="bg-white rounded-lg m-3 lg:mx-130 p-30 mt-50 w-auto">
+      <div className="bg-white rounded-lg m-3 lg:mx-130 py-20 px-30 mt-30 w-auto">
         <div className="flex lg:border border-gray-300 rounded-lg w-full place-content-stretch py-2 flex-col lg:flex-row gap-2">
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="product"
               onChange={() => resetFields("product")}
@@ -154,7 +152,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={productItems}
             />
           </div>
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="variant"
               onChange={() => resetFields("variant")}
@@ -168,7 +166,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={variantItems}
             />
           </div>
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="description"
               validators={["required"]}
@@ -184,7 +182,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={descriptionItems}
             />
           </div>
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 border-r-gray-300">
+          <div className="w-full px-5 border rounded-lg lg:border-0 border-r-gray-300">
             <Form.AutoComplete.Label
               content="Loading port"
               imageSrc={LocationImage}
@@ -197,19 +195,19 @@ export default function GetQuoteForm({ setQuoteState }) {
             </div>
           </div>
         </div>
-        <div className="flex lg:border lg:mt-30 border-gray-300 rounded-lg w-full lg:w-9/12 place-content-stretch py-2 gap-2 flex-col lg:flex-row">
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+        <div className="flex lg:border lg:mt-20 border-gray-300 rounded-lg w-full lg:w-9/12 place-content-stretch py-2 gap-2 flex-col lg:flex-row">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select.Label
               content="Container Type"
               imageSrc={ContainerIcon}
             />
             <p>{selectedVariant?.containerType}</p>
           </div>
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select.Label content="Loadability" imageSrc={ProductIcon} />
             <p>{selectedVariant?.typicalLoadability}</p>
           </div>
-          <div className="w-full px-5 py-2 border rounded-lg lg:border-0 lg:border-r ">
+          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r ">
             <Form.Select
               name="unloadingport"
               validators={["required"]}
@@ -226,81 +224,12 @@ export default function GetQuoteForm({ setQuoteState }) {
             />
           </div>
         </div>
-        <div className="relative lg:-bottom-50 text-center mt-5 lg:mt-0">
+        <div className="relative lg:-bottom-50 text-center mt-5 lg:-mt-30">
           <Button className="text-center lg:!px-100 text-sm lg:text-base">
             Get Quotes
           </Button>
         </div>
       </div>
-
-      <Dialog
-        size="xs"
-        open={dialogOpen}
-        handler={() => setDialogOpen(!dialogOpen)}
-      >
-        <DialogBody>
-          <div className="text-black m-5 font-normal">
-            <p className="lg:text-lg opacity-50 font-light">Approximate Cost</p>
-            <div className="text-3xl lg:text-5xl font-semibold">
-              ${2400 * (selectedVariant?.typicalLoadabilityValue || 0)}
-            </div>
-            <p className="text-xs p-2">
-              This is an computer generated quote and could vary.
-            </p>
-            <div className="flex pt-30 gap-8">
-              <div>
-                <p className="opacity-50 text-xs">Product</p>
-                <p>{selectedProduct?.name}</p>
-              </div>
-              <div>
-                <p className="opacity-50 text-xs">Variant</p>
-                <p>{selectedVariant?.name}</p>
-              </div>
-              <div>
-                <p className="opacity-50 text-xs">Description</p>
-                <p>{selectedDescription?.label}</p>
-              </div>
-            </div>
-            <div className="flex pt-30 gap-8">
-              <div>
-                <p className="opacity-50 text-xs">Container Type</p>
-                <p>{selectedVariant?.containerType}</p>
-              </div>
-              <div>
-                <p className="opacity-50 text-xs">Loadability</p>
-                <p>{selectedVariant?.typicalLoadability}</p>
-              </div>
-              <div>
-                <p className="opacity-50 text-xs">Ports</p>
-                <p>
-                  {selectedVariant?.loadingPort?.port} to{" "}
-                  {selectedUnloadingPort?.label}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex w-full gap-5 mt-50">
-              <div className="w-1/2">
-                <Button
-                  variant="outline"
-                  className="!text-base !py-3 w-full"
-                  onClick={() => {
-                    setDialogOpen(false);
-                    methods.reset({});
-                  }}
-                >
-                  Request new quote
-                </Button>
-              </div>
-              <div className="w-1/2">
-                <Button className="!text-base !py-3  w-full">
-                  Continue to book
-                </Button>
-              </div>
-            </div>
-          </div>
-        </DialogBody>
-      </Dialog>
     </Form>
   );
 }
