@@ -28,6 +28,7 @@ import CoconutImage from "@/assets/images/coconut-image.jpg";
 import TamarindImage from "@/assets/images/tamarind-image.jpg";
 import BlackPepperImage from "@/assets/images/black-pepper-image.jpg";
 import GingerImage from "@/assets/images/ginger-image.jpg";
+import ChevronRightIcon from "@/assets/svg/chevron-right.svg";
 
 import ChickPeasImage from "@/assets/images/chickpeas-image.jpg";
 import MaizeImage from "@/assets/images/maize-image.jpg";
@@ -35,18 +36,67 @@ import CuminImage from "@/assets/images/cumin-image.jpg";
 import TapiocaImage from "@/assets/images/tapioca-image.jpg";
 import { useState } from "react";
 import { Slide } from "react-awesome-reveal";
-import { Carousel } from "@material-tailwind/react";
+import { Button, Carousel } from "@material-tailwind/react";
 
+const CustomPrevArrow = (props) => {
+  console.log("props", props);
+  return (
+    <button
+      className={`!absolute -bottom-50 lg:-bottom-100 lg:left-[300px] z-10 ${
+        props.firstIndex && "opacity-50"
+      }`}
+      onClick={() => props.handlePrev()}
+    >
+      <Image
+        className="rotate-180"
+        src={ChevronRightIcon}
+        alt="ChevronRightIcon"
+      />
+    </button>
+  );
+};
 
+const CustomNextArrow = (props) => {
+  return (
+    <button
+      className={`!absolute -bottom-50 lg:-bottom-100 z-10 !right-0 lg:!right-[300px] ${
+        props.lastIndex && "opacity-50"
+      }`}
+      onClick={() => props.handleNext()}
+    >
+      <Image src={ChevronRightIcon} alt="ChevronRightIcon" />
+    </button>
+  );
+};
+
+const CustomNavigation = ({ setActiveIndex, activeIndex, length }) => {
+  const LEFT_MAP = {
+    0: "left-0",
+    1: "left-1/4 lg:left-2/4 lg:-ml-[65px]",
+    2: "left-3/4 -ml-10 lg:left-full lg:-ml-130",
+    3: "left-full -ml-10",
+  };
+  const left = LEFT_MAP[activeIndex];
+  return (
+    <div className="flex justify-center px-50 !absolute !-bottom-[35px] lg:!-bottom-[87px] w-full">
+      <div className=" w-[600px] h-[3px] lg:h-[5px] bg-gray-300 rounded-full relative">
+        <div
+          className={`absolute bg-blue-600 rounded-full transition-all duration-500 w-10 lg:w-130 h-[3px] lg:h-[5px] ${left}`}
+        ></div>
+      </div>
+    </div>
+  );
+};
 
 export default function ProductPortfolio() {
   return (
     <>
       <div className="container mx-auto py-100 px-3 lg:hidden">
         <Carousel
-          navigation={({ setActiveIndex, activeIndex, length }) => {
-            return <></>;
-          }}
+          className="!overflow-x-clip"
+          navigation={CustomNavigation}
+          prevArrow={CustomPrevArrow}
+          nextArrow={CustomNextArrow}
         >
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-3 gap-2">
@@ -59,25 +109,25 @@ export default function ProductPortfolio() {
                   our portfolio.
                 </p>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image alt="Rice" src={Rice} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Non Basmati Rice
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image alt="img1" src={Sugar} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Sugar
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image alt="img1" src={Onion} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Onions
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Rice"
                   src={Turmeric}
@@ -92,7 +142,7 @@ export default function ProductPortfolio() {
           </div>
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-3 gap-2">
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Corriander"
                   src={Corriander}
@@ -103,7 +153,7 @@ export default function ProductPortfolio() {
                   Corriander
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Fenugric"
                   src={Fenugric}
@@ -114,7 +164,7 @@ export default function ProductPortfolio() {
                   Fenugric
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Groundnuts"
                   src={GroundnutsImage}
@@ -125,7 +175,7 @@ export default function ProductPortfolio() {
                   Groundnuts
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Green Cardamom"
                   src={GreenCardomomImage}
@@ -136,7 +186,7 @@ export default function ProductPortfolio() {
                   Green Cardamom
                 </div>
               </div>
-              <div className=" row-span-2 col-span-1 relative rounded-lg overflow-clip">
+              <div className=" row-span-2 col-span-1 relative rounded-xl overflow-clip">
                 <Image
                   alt="Red dried Chillies"
                   src={RedChilli}
@@ -147,7 +197,7 @@ export default function ProductPortfolio() {
                   Red dried Chillies
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Mustard"
                   src={MustardImage}
@@ -162,7 +212,7 @@ export default function ProductPortfolio() {
           </div>
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-3 gap-2">
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Fennel"
                   src={FennelImage}
@@ -173,7 +223,7 @@ export default function ProductPortfolio() {
                   Fennel
                 </div>
               </div>
-              <div className=" row-span-2 col-span-2 relative rounded-lg overflow-clip">
+              <div className=" row-span-2 col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Semi Husked coconut"
                   src={CoconutImage}
@@ -184,7 +234,7 @@ export default function ProductPortfolio() {
                   Semi Husked coconut
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Tamarind"
                   src={TamarindImage}
@@ -195,7 +245,7 @@ export default function ProductPortfolio() {
                   Tamarind
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Black Pepper"
                   src={BlackPepperImage}
@@ -206,7 +256,7 @@ export default function ProductPortfolio() {
                   Black Pepper
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Ginger"
                   src={GingerImage}
@@ -221,7 +271,7 @@ export default function ProductPortfolio() {
           </div>
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-3 gap-2">
-              <div className=" row-span-2 col-span-2 relative rounded-lg overflow-clip">
+              <div className=" row-span-2 col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Semi Husked coconut"
                   src={CoconutImage}
@@ -232,7 +282,7 @@ export default function ProductPortfolio() {
                   Semi Husked coconut
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Chick Peas"
                   src={ChickPeasImage}
@@ -244,7 +294,7 @@ export default function ProductPortfolio() {
                 </div>
               </div>
 
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Maize"
                   src={MaizeImage}
@@ -255,7 +305,7 @@ export default function ProductPortfolio() {
                   Maize
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Tapioca"
                   src={TapiocaImage}
@@ -266,7 +316,7 @@ export default function ProductPortfolio() {
                   Tapioca
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Cumin"
                   src={CuminImage}
@@ -283,12 +333,13 @@ export default function ProductPortfolio() {
       </div>
       <div className="container mx-auto mt-150 px-3 hidden lg:block">
         <Carousel
-          navigation={({ setActiveIndex, activeIndex, length }) => {
-            return <></>;
-          }}
+          className="!overflow-x-clip"
+          navigation={CustomNavigation}
+          prevArrow={CustomPrevArrow}
+          nextArrow={CustomNextArrow}
         >
           <div className="relative ">
-            <div className="grid grid-cols-4 grid-rows-3 gap-2">
+            <div className="grid grid-cols-4 grid-rows-3 gap-2 lg:gap-4">
               <div className=" col-span-2 self-center">
                 <p className="font-medium text-2xl lg:text-5xl">
                   Product Portfolio
@@ -298,25 +349,25 @@ export default function ProductPortfolio() {
                   our portfolio.
                 </p>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image alt="Rice" src={Rice} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Non Basmati Rice
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image alt="img1" src={Sugar} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Sugar
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image alt="img1" src={Onion} fill className="object-cover" />
                 <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
                   Onions
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Rice"
                   src={Turmeric}
@@ -327,7 +378,7 @@ export default function ProductPortfolio() {
                   Turmeric
                 </div>
               </div>
-              <div className=" row-span-2 col-span-1 relative rounded-lg overflow-clip">
+              <div className=" row-span-2 col-span-1 relative rounded-xl overflow-clip">
                 <Image
                   alt="Red dried Chillies"
                   src={RedChilli}
@@ -335,7 +386,7 @@ export default function ProductPortfolio() {
                   className="object-cover"
                 />
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Corriander"
                   src={Corriander}
@@ -346,7 +397,7 @@ export default function ProductPortfolio() {
                   Corriander
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Fenugric"
                   src={Fenugric}
@@ -360,8 +411,8 @@ export default function ProductPortfolio() {
             </div>
           </div>
           <div className="relative ">
-            <div className="grid grid-cols-4 grid-rows-3 gap-2">
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+            <div className="grid grid-cols-4 grid-rows-3 gap-2 lg:gap-4">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Mustard"
                   src={MustardImage}
@@ -372,7 +423,7 @@ export default function ProductPortfolio() {
                   Mustard
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Fennel"
                   src={FennelImage}
@@ -383,7 +434,7 @@ export default function ProductPortfolio() {
                   Fennel
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Chick Peas"
                   src={ChickPeasImage}
@@ -394,7 +445,7 @@ export default function ProductPortfolio() {
                   Chick Peas
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Green Cardamom"
                   src={GreenCardomomImage}
@@ -405,7 +456,7 @@ export default function ProductPortfolio() {
                   Green Cardamom
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Ginger"
                   src={GingerImage}
@@ -416,7 +467,7 @@ export default function ProductPortfolio() {
                   Ginger
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Groundnuts"
                   src={GroundnutsImage}
@@ -427,7 +478,7 @@ export default function ProductPortfolio() {
                   Groundnuts
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Tamarind"
                   src={TamarindImage}
@@ -438,7 +489,7 @@ export default function ProductPortfolio() {
                   Tamarind
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Black Pepper"
                   src={BlackPepperImage}
@@ -449,7 +500,7 @@ export default function ProductPortfolio() {
                   Black Pepper
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Cumin"
                   src={CuminImage}
@@ -463,8 +514,8 @@ export default function ProductPortfolio() {
             </div>
           </div>
           <div className="relative ">
-            <div className="grid grid-cols-4 grid-rows-3 gap-2">
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+            <div className="grid grid-cols-4 grid-rows-3 gap-2 lg:gap-4">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Fennel"
                   src={FennelImage}
@@ -475,7 +526,7 @@ export default function ProductPortfolio() {
                   Fennel
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Chick Peas"
                   src={ChickPeasImage}
@@ -486,7 +537,7 @@ export default function ProductPortfolio() {
                   Chick Peas
                 </div>
               </div>
-              <div className=" row-span-2 col-span-2 relative rounded-lg overflow-clip">
+              <div className=" row-span-2 col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Semi Husked coconut"
                   src={CoconutImage}
@@ -497,7 +548,7 @@ export default function ProductPortfolio() {
                   Semi Husked coconut
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] col-span-2 relative rounded-xl overflow-clip">
                 <Image
                   alt="Ginger"
                   src={GingerImage}
@@ -508,7 +559,7 @@ export default function ProductPortfolio() {
                   Ginger
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Tamarind"
                   src={TamarindImage}
@@ -519,7 +570,7 @@ export default function ProductPortfolio() {
                   Tamarind
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Black Pepper"
                   src={BlackPepperImage}
@@ -530,7 +581,7 @@ export default function ProductPortfolio() {
                   Black Pepper
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px]  relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px]  relative rounded-xl overflow-clip">
                 <Image
                   alt="Maize"
                   src={MaizeImage}
@@ -541,7 +592,7 @@ export default function ProductPortfolio() {
                   Maize
                 </div>
               </div>
-              <div className="h-[120px] lg:h-[240px] relative rounded-lg overflow-clip">
+              <div className="h-[120px] lg:h-[240px] relative rounded-xl overflow-clip">
                 <Image
                   alt="Tapioca"
                   src={TapiocaImage}

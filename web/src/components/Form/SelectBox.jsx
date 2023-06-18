@@ -11,22 +11,6 @@ function RenderValue({ variant, parsedValue, isMultiple, Label, reset }) {
   }
   if (isMultiple) {
     return null;
-    return (
-      <div className="flex w-full">
-        <span className="w-full">
-          {parsedValue
-            .reduce((acc, item) => acc + ", " + item.value, "")
-            .replace(", ", "")}
-        </span>
-        <span className="bg-black hover:bg-red-50">
-          <XMarkIcon
-            strokeWidth={2}
-            className="h-5 w-5 cursor-pointer z-[9999999999]"
-            onClick={() => reset()}
-          />
-        </span>
-      </div>
-    );
   }
   return parsedValue.value;
 }
@@ -80,7 +64,7 @@ function Select({
             (Label ? <Label /> : <div>Custom label</div>)}
           <div
             className={
-              variant === "bordered" ? "" : "text-lg font-medium text-black"
+              variant === "bordered" ? "" : "text-sm lg:text-lg font-medium text-black"
             }
           >
             <RenderValue

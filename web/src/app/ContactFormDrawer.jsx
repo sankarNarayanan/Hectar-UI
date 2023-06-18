@@ -16,7 +16,7 @@ import { useSubmitEnquiryMutation } from "@/api/BaseAPI";
 
 export default function ContactFormDrawer({ drawerOpen, setDrawer }) {
   const [activeStep, setActiveStep] = useState(0);
-  const [submitEnquiry] = useSubmitEnquiryMutation();
+  const [submitEnquiry, submitEnquiryResult] = useSubmitEnquiryMutation();
   const methods = useForm({
     mode: "onBlur",
     reValidateMode: "onSubmit",
@@ -125,7 +125,7 @@ export default function ContactFormDrawer({ drawerOpen, setDrawer }) {
                 )}
 
                 {activeStep === 1 && (
-                  <Button className="w-full" type="submit">
+                  <Button className="w-full" type="submit" isLoading={submitEnquiryResult.isLoading}>
                     Submit
                   </Button>
                 )}

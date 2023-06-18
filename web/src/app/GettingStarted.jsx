@@ -11,7 +11,15 @@ export default function GetStarted() {
           </Bounce>
         </h2>
           <div className="text-center mt-8 lg:mt-50">
-            <Button className="px-50 w-auto">Get Quotes</Button>
+            {/* Onclick scroll To Top */}
+            <Button
+              className="px-50 !w-auto"
+              onClick={() =>
+                document.body?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get Quotes
+            </Button>
           </div>
       </div>
     </section>

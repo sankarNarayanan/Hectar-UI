@@ -18,7 +18,7 @@ const getProductItems = () => {
   }));
 };
 
-function FormSubmitted({setDrawer}) {
+function FormSubmitted({ setDrawer }) {
   return (
     <div className="flex flex-col items-center align-middle justify-center h-full p-30">
       <Image alt="Image Submitted" src={ImageSubmitted} />
@@ -43,26 +43,24 @@ function FormSubmitted({setDrawer}) {
 export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
   const productItems = getProductItems();
 
-  const [PrivateBetaEnquiry] = usePrivateBetaEnquiryMutation();
+  const [privateBetaEnquiry, privateBetaEnquiryResult] =
+    usePrivateBetaEnquiryMutation();
   const [activeStep, setActiveStep] = useState(0);
   const methods = useForm({
     mode: "onBlur",
     reValidateMode: "onBlur",
   });
-  const handleError = (value) => {
-    console.log("Error", value);
-  };
 
   const handleSubmit = (formdata) => {
-    PrivateBetaEnquiry({
+    // Api call to submit the Beta Enquiry Data
+    privateBetaEnquiry({
       ...formdata,
       interestedCommodities: JSON.stringify(
         JSON.parse(formdata.interestedCommodities).map((item) => item.value)
       ),
     }).then(() => {
-      setActiveStep("submitted")
+      setActiveStep("submitted");
     });
-    console.log("Submit", value);
   };
 
   return (
@@ -78,7 +76,6 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
             name="getdetails"
             methods={methods}
             onSubmit={handleSubmit}
-            onError={handleError}
           >
             <div className="flex flex-col h-screen">
               <div className="flex-grow overflow-y-auto p-20">
@@ -163,7 +160,11 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
                 </>
               </div>
               <div className="flex-none p-8">
-                <Button className="w-full" type="submit">
+                <Button
+                  className="w-full"
+                  type="submit"
+                  isLoading={privateBetaEnquiryResult.isLoading}
+                >
                   Submit
                 </Button>
               </div>
