@@ -64,7 +64,7 @@ function Select({
             (Label ? <Label /> : <div>Custom label</div>)}
           <div
             className={
-              variant === "bordered" ? "" : "text-lg font-medium text-black"
+              variant === "bordered" ? "" : "text-sm lg:text-lg font-medium text-black"
             }
           >
             <RenderValue

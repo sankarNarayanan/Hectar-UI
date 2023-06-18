@@ -12,7 +12,15 @@ export default function GetStarted() {
         </h2>
         <Fade triggerOnce>
           <div className="text-center mt-8 lg:mt-50">
-            <Button className="px-50 w-auto">Get Quotes</Button>
+            {/* Onclick scroll To Top */}
+            <Button
+              className="px-50 !w-auto"
+              onClick={() =>
+                document.body?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get Quotes
+            </Button>
           </div>
         </Fade>
       </div>

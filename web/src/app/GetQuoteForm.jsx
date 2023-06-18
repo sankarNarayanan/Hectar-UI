@@ -138,7 +138,7 @@ export default function GetQuoteForm({ setQuoteState }) {
     >
       <div className="bg-white rounded-lg m-3 lg:mx-130 py-20 px-30 mt-30 w-auto">
         <div className="flex lg:border border-gray-300 rounded-lg w-full place-content-stretch py-2 flex-col lg:flex-row gap-2">
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="product"
               onChange={() => resetFields("product")}
@@ -152,7 +152,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={productItems}
             />
           </div>
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="variant"
               onChange={() => resetFields("variant")}
@@ -166,7 +166,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={variantItems}
             />
           </div>
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select
               name="description"
               validators={["required"]}
@@ -182,7 +182,7 @@ export default function GetQuoteForm({ setQuoteState }) {
               options={descriptionItems}
             />
           </div>
-          <div className="w-full px-5 border rounded-lg lg:border-0 border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 border-r-gray-300">
             <Form.AutoComplete.Label
               content="Loading port"
               imageSrc={LocationImage}
@@ -196,18 +196,18 @@ export default function GetQuoteForm({ setQuoteState }) {
           </div>
         </div>
         <div className="flex lg:border lg:mt-20 border-gray-300 rounded-lg w-full lg:w-9/12 place-content-stretch py-2 gap-2 flex-col lg:flex-row">
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select.Label
               content="Container Type"
               imageSrc={ContainerIcon}
             />
             <p>{selectedVariant?.containerType}</p>
           </div>
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r border-r-gray-300">
             <Form.Select.Label content="Loadability" imageSrc={ProductIcon} />
             <p>{selectedVariant?.typicalLoadability}</p>
           </div>
-          <div className="w-full px-5 border rounded-lg lg:border-0 lg:border-r ">
+          <div className="w-full px-5 pt-2 lg:pt-0 border rounded-lg lg:border-0 lg:border-r ">
             <Form.Select
               name="unloadingport"
               validators={["required"]}
