@@ -1,7 +1,6 @@
 import Image from "next/image";
 import AnalyticsImage from "@/assets/svg/insights-image.svg";
 import AnalyticsMobileImage from "@/assets/svg/insights-mobile-image.svg";
-import { Slide } from "react-awesome-reveal";
 
 export default function Analytics() {
   return (
