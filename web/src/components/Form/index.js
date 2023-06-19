@@ -6,6 +6,7 @@ import Select from "./SelectBox";
 import AutoComplete from "./AutoComplete";
 import DatePicker from "./DatePicker";
 import { Option } from "@material-tailwind/react";
+import PhoneNumber from "./PhoneNumber";
 // import { FormControlLabel } from "@mui/material";
 
 Object.assign(Form, {
@@ -16,6 +17,7 @@ Object.assign(Form, {
   Option,
   AutoComplete,
   DatePicker,
+  PhoneNumber,
   // ControlLabel: FormControlLabel
 });
 

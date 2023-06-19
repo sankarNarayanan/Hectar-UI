@@ -136,7 +136,7 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
                     />
                   </div>
                   <div className="mt-20">
-                    <Form.TextField
+                    <Form.PhoneNumber
                       name="phoneNumber"
                       label="Phone number"
                       validators={["required"]}
