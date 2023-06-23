@@ -27,6 +27,22 @@ module.exports = withMT({
         130: "130px",
         150: "150px",
       },
+      keyframes: {
+        "bg-move": {
+          "0%": { "background-position-x": "0" },
+          "100%": { "background-position-x": "389px" },
+        },
+        wave: {
+          "0%": { transform: "rotate(2deg)" },
+          "50%": { transform: "rotate(-2deg)" },
+          "100%": { transform: "rotate(2deg)" },
+        },
+      },
+      animation: {
+        "bg-move": "bg-move 5s linear infinite",
+        "wave-3": "wave 3s ease infinite",
+        "wave-5": "wave 5s ease infinite",
+      },
     },
   },
   plugins: [],
