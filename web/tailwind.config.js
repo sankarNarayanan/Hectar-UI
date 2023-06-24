@@ -9,6 +9,15 @@ module.exports = withMT({
     "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
+    screens: {
+      sm: "540px", // => @media (min-width: 640px) { ... }
+      md: "768px", // => @media (min-width: 768px) { ... }
+      lg: "1024px", // => @media (min-width: 1024px) { ... }
+      xl: "1140px", // => @media (min-width: 1280px) { ... }
+    },
+    container: {
+      center: true,
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -27,6 +36,7 @@ module.exports = withMT({
         130: "130px",
         150: "150px",
       },
+      
     },
   },
   plugins: [],

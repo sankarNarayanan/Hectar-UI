@@ -4,10 +4,12 @@ import linesLeft from "@/assets/lines_left.svg";
 import linesRight from "@/assets/lines_right.svg";
 import Image from "next/image";
 import ImageSubmitted from "@/assets/svg/img-submitted.svg";
+import HeroBGImage from "@/assets/svg/hero-bg-image.svg";
+import CraneOutlineImage from "@/assets/svg/crane-outline.svg";
 
 import SuccessPoppersTopImage from "@/assets/svg/success-poppers-top.svg";
 import SuccessPoppersBottomImage from "@/assets/svg/success-poppers-bottom.svg";
-import GetQuoteForm from "./GetQuoteForm";
+// import GetQuoteForm from "./GetQuoteForm";
 import { useState } from "react";
 import SubmittedBlackImage from "@/assets/svg/img-submitted-black.svg";
 import Form, { useForm } from "@/components/Form";
@@ -178,42 +180,32 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
 export default function HeroBanner() {
   const [quoteState, setQuoteState] = useState({ isSubmitted: false });
   return (
-    <section className="px-4 lg:px-0">
-      <div className="container relative mx-auto bg-grad-primary pb-6 lg:pb-100 rounded-2xl">
-        {!quoteState.isSubmitted && (
-          <>
-            <div>
-              <Image
-                className="absolute left-0 bottom-[70px] hidden lg:block"
-                src={linesLeft}
-                alt="left design icons"
-              />
-              <Image
-                className="absolute right-0 top-[150px] hidden lg:block"
-                src={linesRight}
-                alt="right design icons"
-              />
-            </div>
-            <div>
-              <h1 className="text-2xl lg:text-6xl text-white pt-50 text-center font-light lg:leading-[80px]">
-                Agri Commodities Trade, <br />
-                <span className="font-bold">Reimagined! 🚜</span>
-              </h1>
+    <section id="HeroBanner" className="bg-[#E6F5F9] relative">
+      {/* TODO: color needs to be variablized */}
+      <div className="container flex items-center">
+        <div className="w-1/2">
+          <Typography variant="lead" size="h5">
+            AGRI TRADE REIMAGINED
+          </Typography>
+          <Typography variant="h1" size="h1" className="">
+            Enabling Global Wholesalers, Manufacturers & Retailers Source
+            Efficiently.
+          </Typography>
 
-              <p className="text-[#FFFEFF] opacity-70 text-center text-sm lg:text-xl pt-5">
-                Enabling global wholesalers, manufacturers and retailers
-                <br />
-                source efficiently.
-              </p>
+          <div className="absolute left-0 bottom-30">
+            <Image src={CraneOutlineImage} alt="CraneOutlineImage" />
+          </div>
+        </div>
 
-              <GetQuoteForm setQuoteState={setQuoteState} />
-            </div>
-          </>
-        )}
-
-        {quoteState.isSubmitted && (
-          <QuoteSuccess quoteState={quoteState} setQuoteState={setQuoteState} />
-        )}
+        <div className="w-1/2">
+          <div className="relative -right-150">
+            <Image
+              src={HeroBGImage}
+              alt="HeroBGImage"
+              className="lg:w-[640px]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
