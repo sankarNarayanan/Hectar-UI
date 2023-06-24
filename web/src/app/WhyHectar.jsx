@@ -8,10 +8,12 @@ import { Typography } from "@/components";
 export default function WhyHectar() {
   return (
     <section className="mt-50 lg:mt-100 px-4 lg:px-0">
-      <Typography variant="h2" className="text-center">Why Hectar?</Typography>
+      <Typography variant="h2" className="text-center">
+        Why Hectar?
+      </Typography>
 
       {/* Dont wait */}
-      <div className="container mx-auto bg-[#9A86BA] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
+      <div className="container mx-auto bg-[#9A86BA] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
             <Image
@@ -19,14 +21,13 @@ export default function WhyHectar() {
               alt="calender Icon"
               className="w-50 lg:w-auto"
             />
-            <h2 className="text-2xl lg:text-5xl mt-30 lg:mt-50 lg:leading-[64px] font-medium">
-              Don&apos;t Wait For <br />
-              Tomorrow&apos;s Prices
-            </h2>
-            <p className="text-xs lg:text-xl mt-3 opacity-70 mb-50">
-              Get real-time quotes and delivery dates to end ports to <br />
-              make informed decisions.
-            </p>
+            <Typography variant="h1" as="h2" className="py-30">
+              Don't Wait For <br /> Tomorrow's Prices
+            </Typography>
+            <Typography>
+              Get real-time quotes and delivery dates to <br />
+              end ports to make informed decisions.
+            </Typography>
           </Fade>
         </div>
         <div className="lg:w-1/2 pl-20">
@@ -41,7 +42,7 @@ export default function WhyHectar() {
       </div>
 
       {/* Track */}
-      <div className="container mx-auto bg-[#E6F5F9] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
+      <div className="container mx-auto bg-[#BED8A6] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
             className="w-50 lg:w-auto"
@@ -50,14 +51,14 @@ export default function WhyHectar() {
               alt="Track Icon"
               className="w-50 lg:w-auto"
             />
-            <h2 className="text-2xl lg:text-5xl mt-30 lg:mt-50 lg:leading-[64px] font-medium">
+            <Typography variant="h1" as="h2" className="py-30">
               Track And Trace <br />
               Every Order
-            </h2>
-            <p className="text-xs lg:text-xl mt-3 opacity-70 mb-50">
+            </Typography>
+            <Typography>
               Keep a tab on all your orders from one single <br />
               Dashboard.
-            </p>
+            </Typography>
           </Fade>
         </div>
         <div className="lg:w-1/2 pl-20">
@@ -72,7 +73,7 @@ export default function WhyHectar() {
       </div>
 
       {/* Document */}
-      <div className="container mx-auto bg-[#FCEB8F] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
+      <div className="container mx-auto bg-[#A9D9D7] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
             <Image
@@ -80,14 +81,14 @@ export default function WhyHectar() {
               alt="Track Icon"
               className="w-50 lg:w-auto"
             />
-            <h2 className="text-2xl lg:text-5xl mt-30 lg:mt-50 lg:leading-[64px] font-medium">
+            <Typography variant="h1" as="h2" className="py-30">
               Streamlined Trade <br />
               Documentation
-            </h2>
-            <p className="text-xs lg:text-xl mt-3 opacity-70 mb-50">
-              Let us handle the paperwork so you can focus on your <br />
-              Business.
-            </p>
+            </Typography>
+            <Typography>
+              Let us handle the paperwork so you can <br />
+              focus on your Business.
+            </Typography>
           </Fade>
         </div>
         <div className="lg:w-1/2 pl-20">

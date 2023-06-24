@@ -25,6 +25,10 @@ const CustomTheme = {
         lead: {
           className: "opacity-70 leading-[130%]",
         },
+        paragraph: {
+          fontSize: "text-lg",
+          className: "opacity-70",
+        },
       },
     },
   },
