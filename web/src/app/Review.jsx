@@ -9,7 +9,7 @@ import { Typography } from "@/components";
 export default function Review({ setDrawer }) {
   return (
     <section id="TrustHectar" className="bg-[#585858] text-white text-center">
-      <div className="h-[100px] relative w-full -top-px">
+      <div className="h-[120px] relative w-full -top-0.5">
         <Image src={CropImage} alt="CropImage" className="" fill />
       </div>
       <div className="py-100">
