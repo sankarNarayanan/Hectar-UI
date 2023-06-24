@@ -9,18 +9,15 @@ import DocumentAnimation from "@/assets/gif/Documents.gif";
 import LocationIconImage from "@/assets/svg/icon-location.svg";
 import DocumentIconImage from "@/assets/svg/icon-document.svg";
 import { Fade, Slide } from "react-awesome-reveal";
+import { Typography } from "@/components";
 
 export default function WhyHectar() {
   return (
-    <section className="mt-50 lg:mt-150 px-4 lg:px-0">
-      <h2 className="text-2xl lg:text-[62px] font-light text-center">
-        <Fade triggerOnce cascade damping={0.2}>
-          Why Hectar?
-        </Fade>
-      </h2>
+    <section className="mt-50 lg:mt-100 px-4 lg:px-0">
+      <Typography variant="h2" className="text-center">Why Hectar?</Typography>
 
       {/* Dont wait */}
-      <div className="container mx-auto bg-[#FCEB8F] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
+      <div className="container mx-auto bg-[#9A86BA] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
             <Image

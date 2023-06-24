@@ -16,7 +16,11 @@ const CustomTheme = {
       variants: {
         h1: {
           fontSize: "text-[2.5rem]",
-          className: "leading-[140%]"
+          className: "leading-[140%]",
+        },
+        h2: {
+          fontSize: "text-4xl",
+          className: "leading-[130%] font-normal",
         },
         lead: {
           className: "opacity-70 leading-[130%]",
