@@ -10,7 +10,6 @@ export default function GetStarted() {
             Start Trading Now!
           </Bounce>
         </h2>
-        <Fade triggerOnce>
           <div className="text-center mt-8 lg:mt-50">
             {/* Onclick scroll To Top */}
             <Button
@@ -22,7 +21,6 @@ export default function GetStarted() {
               Get Quotes
             </Button>
           </div>
-        </Fade>
       </div>
     </section>
   );

@@ -1,11 +1,5 @@
 import CalenderImage from "@/assets/svg/icon-calendar.svg";
-// import PricesImage from "@/assets/svg/prices.svg";
-import PricesAnimation from "@/assets/gif/TomorrowPrice.gif";
 import Image from "next/image";
-// import TrackImage from "@/assets/svg/track.svg";
-import TrackAnimation from "@/assets/gif/TracknTrace2.gif";
-//import DocumentImage from "@/assets/svg/documentation.svg";
-import DocumentAnimation from "@/assets/gif/Documents.gif";
 import LocationIconImage from "@/assets/svg/icon-location.svg";
 import DocumentIconImage from "@/assets/svg/icon-document.svg";
 import { Fade, Slide } from "react-awesome-reveal";
@@ -37,8 +31,8 @@ export default function WhyHectar() {
         </div>
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce>
-            <Image
-              src={PricesAnimation}
+            <img
+              src="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />
@@ -68,8 +62,8 @@ export default function WhyHectar() {
         </div>
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce direction="right">
-            <Image
-              src={TrackAnimation}
+            <img
+              src="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />
@@ -98,8 +92,8 @@ export default function WhyHectar() {
         </div>
         <div className="lg:w-1/2 pl-20">
           <Slide triggerOnce>
-            <Image
-              src={DocumentAnimation}
+            <img
+              src="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
               alt="prices image"
               className="relative -right-20 lg:right-0"
             />

@@ -1,6 +1,4 @@
 import Image from "next/image";
-//import MapImage from "@/assets/images/map.svg";
-import MapAnimation from "@/assets/gif/Borders-Line.gif";
 import MapMobileImage from "@/assets/svg/map-image-mobile.svg";
 import LocationImage from "@/assets/images/locations.jpg";
 import LocationMobileImage from "@/assets/svg/locations-mobile-image.svg";
@@ -17,7 +15,7 @@ export default function Vision() {
               Trading Without Borders - Is Our Ultimate Vision
             </h2>
             <div className=" pt-5 lg:hidden relative -mx-5">
-              <Image alt="Map Image" src={MapAnimation} />
+              <img alt="Map Image" src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Line.gif" />
             </div>
             <p className="textsm lg:text-xl pt-8 opacity-70">
               We believe in leveraging technology to create a seamless global
@@ -32,7 +30,7 @@ export default function Vision() {
           </div>
           <div className="w-1/2 pt-5 hidden lg:block">
             <Zoom triggerOnce direction="in">
-              <Image alt="Map Image" src={MapAnimation} />
+              <img alt="Map Image" src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Line.gif" />
             </Zoom>
           </div>
         </div>

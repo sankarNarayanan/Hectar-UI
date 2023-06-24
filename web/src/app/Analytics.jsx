@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AnalyticsImage from "@/assets/svg/insights-image.svg";
+// import AnalyticsImage from "@/assets/svg/insights-image.svg";
 import AnalyticsMobileImage from "@/assets/svg/insights-mobile-image.svg";
 
 export default function Analytics() {
@@ -32,7 +32,10 @@ export default function Analytics() {
             </p>
           </div>
           <div className="w-full lg:w-1/2 pt-5 hidden lg:block">
-            <Image alt="Analytics Image" src={AnalyticsImage} />
+            <img
+              alt="Analytics Image"
+              src="https://temp-hectar-s3.s3.amazonaws.com/AI-model.gif"
+            />
           </div>
         </div>
       </div>
