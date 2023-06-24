@@ -36,10 +36,9 @@ import CuminImage from "@/assets/images/cumin-image.jpg";
 import TapiocaImage from "@/assets/images/tapioca-image.jpg";
 import { useState } from "react";
 import { Slide } from "react-awesome-reveal";
-import { Button, Carousel } from "@material-tailwind/react";
+import { Button, Carousel, Typography } from "@/components";
 
 const CustomPrevArrow = (props) => {
-  console.log("props", props);
   return (
     <button
       className={`!absolute -bottom-50 lg:-bottom-100 lg:left-[300px] z-10 ${
@@ -90,7 +89,13 @@ const CustomNavigation = ({ setActiveIndex, activeIndex, length }) => {
 
 export default function ProductPortfolio() {
   return (
-    <>
+    <section id="ProductPortfolio" className="my-100 mb-100">
+      <Typography variant="h2" className="text-center">
+        Product Portfolio
+      </Typography>
+      <Typography className="text-center pt-30">
+        Quality audited by us and packaged to your preferences.
+      </Typography>
       <div className="container mx-auto py-100 px-3 lg:hidden">
         <Carousel
           className="!overflow-x-clip"
@@ -607,6 +612,6 @@ export default function ProductPortfolio() {
           </div>
         </Carousel>
       </div>
-    </>
+    </section>
   );
 }
