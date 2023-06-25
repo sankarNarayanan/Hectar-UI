@@ -3,25 +3,42 @@ import { Controller } from "react-hook-form";
 import PropTypes from "prop-types";
 import { useFormControl } from "./validations/hooks";
 import Label from "./Label";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 
-function RenderValue({ variant, parsedValue, isMultiple, Label, reset }) {
-  if (!parsedValue) {
-    return variant === "bordered" ? <></> : "Select";
-  }
-  if (isMultiple) {
-    return null;
-  }
-  return parsedValue.value;
+import ChevronDownIcon from "@/assets/svg/chevron-down.svg";
+
+function RenderValue({
+  variant,
+  parsedValue,
+  isMultiple,
+  icon: Icon,
+  label = "select",
+  reset,
+}) {
+  const getRenderedText = () => {
+    return (
+      <div className="flex items-center">
+        {Icon && <Icon className="text-[#DBDAE1] mr-2" />}
+        {/* Render Value if value is selected else render Label text */}
+        {parsedValue?.value || label}
+      </div>
+    );
+  };
+
+  const getRenderedTextBorder = () => parsedValue?.value || <></>;
+
+  if (variant === "bordered") return getRenderedTextBorder();
+
+  return getRenderedText();
 }
 
 function Select({
   name,
-  label: Label,
+  label,
   validators,
   errorMessage,
   children,
   onChange,
+  icon,
   variant = "",
   isMultiple = false,
   placeholder = "Select...",
@@ -58,22 +75,20 @@ function Select({
 
   return (
     <label>
-      <div className="relative w-full">
-        <div className="absolute w-full left-0 top-0">
-          {variant !== "bordered" &&
-            (Label ? <Label /> : <div>Custom label</div>)}
-          <div
-            className={
-              variant === "bordered" ? "" : "text-sm lg:text-lg font-medium text-black"
-            }
-          >
+      <div className="relative w-full  min-w-[120px] z-10">
+        <div className="absolute w-full left-0 top-[10px] px-2">
+          <div className="flex justify-between items-center">
             <RenderValue
-              Label={Label}
+              label={label}
+              icon={icon}
               variant={variant}
               parsedValue={parsedValue}
               isMultiple={isMultiple}
               reset={reset}
             />
+            <div>
+              <ChevronDownIcon />
+            </div>
           </div>
         </div>
 
@@ -89,7 +104,6 @@ function Select({
               options={options}
               isMultiple={isMultiple}
               placeholder={placeholder}
-              isSearchable={true}
               {...inputProps}
               classNames={{
                 menuButton: ({ isDisabled }) => {
@@ -116,6 +130,7 @@ Select.propTypes = {
   validators: PropTypes.array,
   errorMessage: PropTypes.object,
   onChange: PropTypes.func,
+  icon: PropTypes.object,
 };
 
 Object.assign(Select, {

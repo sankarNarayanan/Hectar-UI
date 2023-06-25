@@ -366,3 +366,22 @@ export const PRODUCT_DETAILS = [
     ],
   },
 ];
+
+class ProductDetails {
+  constructor() {
+    this.products = PRODUCT_DETAILS;
+  }
+
+  /**
+   * Extract the product details from the base object and
+   * format it to feed the Select input as options
+   */
+  get productItems() {
+    return this.products.map((item) => ({
+      value: item.name,
+      label: item.name,
+    }));
+  }
+}
+
+export const productDetails = new ProductDetails();

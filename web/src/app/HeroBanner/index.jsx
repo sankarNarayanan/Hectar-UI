@@ -14,16 +14,9 @@ import { useState } from "react";
 import SubmittedBlackImage from "@/assets/svg/img-submitted-black.svg";
 import Form, { useForm } from "@/components/Form";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
+import QuoteMiniForm from "./QuoteMiniForm";
 
 const quoteBaseValue = 2400;
-// const localtionItems = [
-//   { title: "Chennai, In", subtitle: "Port Of madras" },
-//   { title: "Mumbai, In", subtitle: "Port Of mumbai" },
-//   { title: "Kolkatta, In", subtitle: "Port Of Kolkatta" },
-//   { title: "Vizag, In", subtitle: "Port Of vizag" },
-//   { title: "Cochi, In", subtitle: "Port Of cochi" },
-//   { title: "Goa, In", subtitle: "Port Of Goa" },
-// ];
 
 function QuoteSuccess({ quoteState, setQuoteState }) {
   const methods = useForm();
@@ -183,7 +176,7 @@ export default function HeroBanner() {
     <section id="HeroBanner" className="bg-[#E6F5F9] relative">
       {/* TODO: color needs to be variablized */}
       <div className="container flex items-center">
-        <div className="w-1/2">
+        <div className="w-full">
           <Typography variant="lead" size="h5">
             AGRI TRADE REIMAGINED
           </Typography>
@@ -192,18 +185,15 @@ export default function HeroBanner() {
             Efficiently.
           </Typography>
 
+          <QuoteMiniForm />
           <div className="absolute left-0 bottom-30">
-            <Image src={CraneOutlineImage} alt="CraneOutlineImage" />
+            <CraneOutlineImage  />
           </div>
         </div>
 
-        <div className="w-1/2">
-          <div className="relative -right-150">
-            <Image
-              src={HeroBGImage}
-              alt="HeroBGImage"
-              className="lg:w-[640px]"
-            />
+        <div className="w-[600px]">
+          <div className="w-[640px] relative ">
+            <HeroBGImage />
           </div>
         </div>
       </div>

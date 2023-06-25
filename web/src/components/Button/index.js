@@ -1,5 +1,7 @@
 import { Spinner } from "@/components";
 import PropTypes from "prop-types";
+import { Button as CompButton } from "@material-tailwind/react";
+
 /**
  * The Custom component acts as a wrapper for Button component
  * @returns {JSX} - the component for Button
@@ -26,7 +28,7 @@ export default function Button({
   if (size === "xs") {
     className += " text-base py-2 px-[20px]";
   } else {
-    className += " text-sm lg:text-xl py-3 lg:py-4 lg:px-50 w-full lg:w-auto";
+    className += " text-sm lg:text-base py-3 lg:py-3 lg:px-5";
   }
 
   if (disabled || isLoading) {
@@ -36,7 +38,7 @@ export default function Button({
   return (
     // Render The button component
     // set computed class names, disaled attribute and pass original props
-    <button
+    <CompButton
       disabled={disabled || isLoading}
       className={className}
       {...orgProps}
@@ -49,7 +51,7 @@ export default function Button({
       ) : (
         children
       )}
-    </button>
+    </CompButton>
   );
 }
 
