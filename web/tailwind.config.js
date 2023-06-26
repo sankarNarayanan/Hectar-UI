@@ -10,11 +10,22 @@ module.exports = withMT({
   ],
   theme: {
     screens: {
-      sm: "540px", // => @media (min-width: 640px) { ... }
-      md: "768px", // => @media (min-width: 768px) { ... }
-      lg: "1024px", // => @media (min-width: 1024px) { ... }
-      xl: "1140px", // => @media (min-width: 1280px) { ... }
+      sm: "540px",
+      // => @media (min-width: 540px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1140px",
+      // => @media (min-width: 1140px) { ... }
+
+      "2xl": "1600px",
+      // => I dont need this anymore
     },
+
     container: {
       center: true,
     },
@@ -36,7 +47,6 @@ module.exports = withMT({
         130: "130px",
         150: "150px",
       },
-      
     },
   },
   plugins: [],

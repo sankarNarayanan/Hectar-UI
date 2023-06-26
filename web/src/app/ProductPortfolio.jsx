@@ -1,16 +1,4 @@
 "use client";
-
-// import styles
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-
-// Yet another ligtbox
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-
-// import plugins if you need
-
 import Image from "next/image";
 
 import Onion from "@/assets/images/onion.jpg";
@@ -34,8 +22,6 @@ import ChickPeasImage from "@/assets/images/chickpeas-image.jpg";
 import MaizeImage from "@/assets/images/maize-image.jpg";
 import CuminImage from "@/assets/images/cumin-image.jpg";
 import TapiocaImage from "@/assets/images/tapioca-image.jpg";
-import { useState } from "react";
-import { Slide } from "react-awesome-reveal";
 import { Button, Carousel, Typography } from "@/components";
 
 const CustomPrevArrow = (props) => {

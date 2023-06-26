@@ -186,13 +186,13 @@ export default function HeroBanner() {
           </Typography>
 
           <QuoteMiniForm />
-          <div className="absolute left-0 bottom-30">
+          <div className="absolute left-0 bottom-0">
             <CraneOutlineImage  />
           </div>
         </div>
 
-        <div className="w-[600px]">
-          <div className="w-[640px] relative ">
+        <div className="w-[540px]">
+          <div className="relative ">
             <HeroBGImage />
           </div>
         </div>
