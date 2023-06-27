@@ -15,7 +15,7 @@ const CustomTheme = {
     styles: {
       variants: {
         h1: {
-          fontSize: "text-[2.5rem]",
+          fontSize: "text-[1.375rem] lg:text-[2.5rem]",
           className: "leading-[140%]",
         },
         h2: {
@@ -23,7 +23,7 @@ const CustomTheme = {
           className: "leading-[130%] font-normal",
         },
         lead: {
-          className: "opacity-70 leading-[130%]",
+          className: "opacity-70 leading-[130%] text-xs lg:text-base",
         },
         paragraph: {
           fontSize: "text-lg",
@@ -49,7 +49,7 @@ export default function HomePage() {
   const [drawerOpen, setDrawer] = useState(false);
   return (
     <ThemeProvider value={CustomTheme}>
-      <div className="w-screen overflow-hidden">
+      <div className="w-screen overflow-x-clip">
         <HeroBanner setDrawer={setDrawer} />
         {/* <DashboardDummy /> */}
         <WhyHectar />

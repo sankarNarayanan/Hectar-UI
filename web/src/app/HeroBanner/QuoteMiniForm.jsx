@@ -11,8 +11,8 @@ export default function QuoteMiniForm() {
   const methods = useForm();
   return (
     <Form name="QuoteMiniForm" methods={methods}>
-      <div className="flex gap-0 bg-white w-full justify-evenly rounded-r-xl items-center mt-50 relative z-10">
-        <div className="w-full">
+      <div className="flex gap-0 lg:bg-white w-full justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row">
+        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="product"
             onChange={() => resetFields("product")}
@@ -27,7 +27,7 @@ export default function QuoteMiniForm() {
         </div>
         {/* TODO: colors needs to be standardised */}
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
-        <div className="w-full">
+        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="variant"
             onChange={() => resetFields("product")}
@@ -42,7 +42,7 @@ export default function QuoteMiniForm() {
         </div>
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
 
-        <div className="w-full">
+        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="destination"
             onChange={() => resetFields("product")}
@@ -55,8 +55,8 @@ export default function QuoteMiniForm() {
             options={productDetails.productItems}
           />
         </div>
-        <div className=" shrink-0">
-          <Button className="!rounded-r-xl !rounded-l-none">Get Quote</Button>
+        <div className="w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
+          <Button className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none">Get Quote</Button>
         </div>
       </div>
     </Form>

@@ -10,7 +10,7 @@ export default function Review({ setDrawer }) {
   return (
     <section id="TrustHectar" className="bg-[#585858] text-white text-center">
       <div className="h-[120px] relative w-full -top-0.5">
-        <Image src={CropImage} alt="CropImage" className="" fill />
+        <CropImage alt="CropImage" className="h-[120px] w-full" />
       </div>
       <div className="py-100">
         <Typography variant="h1" as="h2">
@@ -25,11 +25,7 @@ export default function Review({ setDrawer }) {
         <div className="flex justify-center mt-100 flex-col lg:flex-row gap-50">
           <div className="flex ">
             <div className="icon">
-              <Image
-                className="w-40"
-                alt="happy Icon"
-                src={HappyUsersIcon}
-              ></Image>
+              <HappyUsersIcon className="w-40" alt="happy Icon" />
             </div>
             <div className="content ms-4 text-left">
               <p className="font-semibold lg:text-xl">1000+</p>
@@ -38,11 +34,10 @@ export default function Review({ setDrawer }) {
           </div>
           <div className="flex ">
             <div className="icon">
-              <Image
+              <CompletedOrdersIcon
                 className="w-40"
                 alt="completed orders icon"
-                src={CompletedOrdersIcon}
-              ></Image>
+              />
             </div>
             <div className="content ms-4 text-left">
               <p className="font-semibold lg:text-xl">1000+</p>
@@ -53,7 +48,7 @@ export default function Review({ setDrawer }) {
           </div>
           <div className="flex ">
             <div className="icon">
-              <Image className="w-40" alt="tick Icon" src={CountryIcon}></Image>
+              <CountryIcon className="w-40" alt="tick Icon" />
             </div>
             <div className="content ms-4 text-left">
               <p className="font-semibold lg:text-xl">6</p>

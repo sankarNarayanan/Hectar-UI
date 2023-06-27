@@ -18,7 +18,7 @@ export default function Button({
   // compute the class names based on the variants
   // also use the class name passed into the component
   // TODO: Give priority to user defined classnames
-  className += " rounded-full transition-all duration-500";
+  className += " rounded-full transition-all duration-500 normal-case";
   if (variant === "outline") {
     className += " border border-solid border-black";
   } else {
@@ -26,7 +26,7 @@ export default function Button({
   }
 
   if (size === "xs") {
-    className += " text-base py-2 px-[20px]";
+    className += " textsm lg:text-base py-2 px-[20px]";
   } else {
     className += " text-sm lg:text-base py-3 lg:py-3 lg:px-5";
   }

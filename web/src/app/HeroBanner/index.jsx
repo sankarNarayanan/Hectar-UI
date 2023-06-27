@@ -173,27 +173,30 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
 export default function HeroBanner() {
   const [quoteState, setQuoteState] = useState({ isSubmitted: false });
   return (
-    <section id="HeroBanner" className="bg-[#E6F5F9] relative">
+    // This section will have an empty top and pushed behind header
+    <section
+      id="HeroBanner"
+      className="bg-[#E6F5F9] relative -mt-[140px] pt-[140px]"
+    >
       {/* TODO: color needs to be variablized */}
-      <div className="container flex items-center">
-        <div className="w-full">
+      <div className="container flex items-center flex-col lg:flex-row mt-15 lg:mt-0">
+        <div className="w-full px-4 lg:px-0">
           <Typography variant="lead" size="h5">
             AGRI TRADE REIMAGINED
           </Typography>
           <Typography variant="h1" size="h1" className="">
-            Enabling Global Wholesalers, Manufacturers & Retailers Source
-            Efficiently.
+            Enabling Global Food Buyers Source Efficiently.
           </Typography>
 
           <QuoteMiniForm />
           <div className="absolute left-0 bottom-0">
-            <CraneOutlineImage  />
+            <CraneOutlineImage className="hidden lg:block" />
           </div>
         </div>
 
-        <div className="w-[540px]">
+        <div className="lg:w-[540px] w-full hidden lg:block">
           <div className="relative ">
-            <HeroBGImage />
+            <HeroBGImage className="w-full lg:w-[671px]" />
           </div>
         </div>
       </div>
