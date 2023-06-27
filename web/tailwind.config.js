@@ -39,7 +39,8 @@ module.exports = withMT({
         poppins: ["var(--primary-font)"],
       },
       spacing: {
-        20: "20px",
+        15: "4rem", // 60px default
+        // 20: "20px", 
         30: "30px",
         40: "40px",
         50: "50px",
