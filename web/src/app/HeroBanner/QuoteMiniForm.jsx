@@ -6,11 +6,37 @@ import { productDetails } from "../ProductDetails";
 import ProductIcon from "@/assets/svg/product-icon.svg";
 import LocationIcon from "@/assets/svg/location.svg";
 import VariantIcon from "@/assets/svg/variant-icon.svg";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  updateDestination,
+  updateProduct,
+  updateVariant,
+} from "@/redux/productReducer";
+import { useRouter } from "next/navigation";
 
 export default function QuoteMiniForm() {
+  const productData = useSelector((state) => state.productDetails);
+  const dispatch = useDispatch();
   const methods = useForm();
+  const product = methods.watch("product");
+  const variantItems = productDetails.getVariantItems(product);
+  const router = useRouter();
+
+  const handleSubmit = (value) => {
+    // The hookform value will be stringified JSON.
+    // Need to parse it and extract the value
+    dispatch(updateProduct(value.product));
+    dispatch(updateVariant(value.variant));
+    dispatch(updateDestination(value.destination));
+    router.push("/submit-quote/");
+  };
   return (
-    <Form name="QuoteMiniForm" methods={methods}>
+    <Form
+      name="QuoteMiniForm"
+      methods={methods}
+      onSubmit={handleSubmit}
+      onSubmitError={(error) => console.log("error", error)}
+    >
       <div className="flex gap-0 lg:bg-white w-full justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row">
         <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
@@ -37,7 +63,7 @@ export default function QuoteMiniForm() {
             }}
             icon={VariantIcon}
             label="Variant"
-            options={productDetails.productItems}
+            options={variantItems}
           />
         </div>
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
@@ -52,11 +78,16 @@ export default function QuoteMiniForm() {
             }}
             icon={LocationIcon}
             label="Destination"
-            options={productDetails.productItems}
+            options={productDetails.unLoadingPorts}
           />
         </div>
         <div className="w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
-          <Button className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none">Get Quote</Button>
+          <Button
+            type="submit"
+            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none"
+          >
+            Get Quote
+          </Button>
         </div>
       </div>
     </Form>

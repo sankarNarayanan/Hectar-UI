@@ -370,6 +370,15 @@ export const PRODUCT_DETAILS = [
 class ProductDetails {
   constructor() {
     this.products = PRODUCT_DETAILS;
+
+    this.unLoadingPorts = [
+      { label: "Malasiya", value: "Malasiya" },
+      { label: "Colombo, Srilanka", value: "Colombo, Srilanka" },
+      { label: "Singapore", value: "Singapore" },
+      { label: "Malasiya", value: "Malasiya" },
+      { label: "Colombo, Srilanka", value: "Colombo, Srilanka" },
+      { label: "Singapore", value: "Singapore" },
+    ];
   }
 
   /**
@@ -382,6 +391,48 @@ class ProductDetails {
       label: item.name,
     }));
   }
+
+  /**
+   * Method that parses the stringified json and returns the
+   * value from the object
+   * @param {string} item
+   * @returns {string}
+   */
+  getValuefromItem(item) {
+    return item && JSON.parse(item).value;
+  }
+
+  /**
+   * Get the selected Variant Details from the product name
+   * @param {string} product - product item
+   * @returns {object} - selected variant details
+   */
+  getVariantItems(product) {
+    const selectedProduct = this.getProductDetails(product);
+    // return Empty if nothing is selected or not matched with product
+    if (!selectedProduct) {
+      return [];
+    }
+    // return select options acceptable format data
+    return selectedProduct.variants.map((variant) => ({
+      label: variant.name,
+      value: variant.name,
+    }));
+  }
+
+  /**
+   * get teh Product details with the items selected
+   * @param {string} product - stringified product
+   * @returns {object} - selected productdetails
+   */
+  getProductDetails(product) {
+    // the product item is stringified JSON
+    // need to parse it before using it can be undefined
+    product = product && JSON.parse(product);
+    // Find the variants respective to the selected product
+    return this.products.find((item) => item.name === product?.value);
+  }
+
 }
 
 export const productDetails = new ProductDetails();

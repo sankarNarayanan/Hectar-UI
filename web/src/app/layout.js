@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 // import { store } from './app/store'
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "../redux/store";
 import Script from "next/script";
 
 const poppins = Poppins({
