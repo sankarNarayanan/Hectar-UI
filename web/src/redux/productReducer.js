@@ -25,6 +25,10 @@ export const productDetails = createSlice({
     updateSelectedVariant: (state, action) => {
       state.selectedVariant = action.payload;
     },
+
+    resetData: (state) => {
+      state = {};
+    },
   },
 });
 
@@ -34,6 +38,7 @@ export const {
   updateVariant,
   updateDestination,
   updateSelectedVariant,
+  resetData
 } = productDetails.actions;
 
 export default productDetails.reducer;

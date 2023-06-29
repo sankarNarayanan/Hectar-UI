@@ -6,7 +6,7 @@ import { productDetails } from "../ProductDetails";
 import ProductIcon from "@/assets/svg/product-icon.svg";
 import LocationIcon from "@/assets/svg/location.svg";
 import VariantIcon from "@/assets/svg/variant-icon.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   updateDestination,
   updateProduct,
@@ -15,12 +15,16 @@ import {
 import { useRouter } from "next/navigation";
 
 export default function QuoteMiniForm() {
-  const productData = useSelector((state) => state.productDetails);
   const dispatch = useDispatch();
   const methods = useForm();
   const product = methods.watch("product");
   const variantItems = productDetails.getVariantItems(product);
   const router = useRouter();
+
+  const resetFields = () => {
+    // If the product field is changed need to reset variant
+    methods.resetField("variant");
+  };
 
   const handleSubmit = (value) => {
     // The hookform value will be stringified JSON.
@@ -37,11 +41,11 @@ export default function QuoteMiniForm() {
       onSubmit={handleSubmit}
       onSubmitError={(error) => console.log("error", error)}
     >
-      <div className="flex gap-0 lg:bg-white w-full justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row">
+      <div className="flex gap-0 lg:bg-white justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row">
         <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="product"
-            onChange={() => resetFields("product")}
+            onChange={() => resetFields()}
             validators={["required"]}
             errorMessage={{
               required: "Please select an option",
@@ -56,7 +60,6 @@ export default function QuoteMiniForm() {
         <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="variant"
-            onChange={() => resetFields("product")}
             validators={["required"]}
             errorMessage={{
               required: "Please select an option",
@@ -71,7 +74,6 @@ export default function QuoteMiniForm() {
         <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="destination"
-            onChange={() => resetFields("product")}
             validators={["required"]}
             errorMessage={{
               required: "Please select an option",

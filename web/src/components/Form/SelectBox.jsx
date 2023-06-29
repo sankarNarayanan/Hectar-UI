@@ -16,10 +16,10 @@ function RenderValue({
 }) {
   const getRenderedText = () => {
     return (
-      <div className="flex items-center">
+      <div className="flex items-center px-2 w-full">
         {Icon && <Icon className="text-[#DBDAE1] mr-2" />}
         {/* Render Value if value is selected else render Label text */}
-        {parsedValue?.value || label}
+        <p className="truncate">{parsedValue?.value || label}</p>
       </div>
     );
   };
@@ -75,9 +75,9 @@ function Select({
 
   return (
     <label>
-      <div className="relative w-full  min-w-[120px] z-10">
+      <div className="relative w-full max-w-[160px] min-w-[120px] z-10">
         <div className="absolute w-full left-0 top-[10px] px-2">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center w-full">
             <RenderValue
               label={label}
               icon={icon}
@@ -87,7 +87,7 @@ function Select({
               reset={reset}
             />
             <div>
-              <ChevronDownIcon />
+              <ChevronDownIcon className="relative right-2.5" />
             </div>
           </div>
         </div>

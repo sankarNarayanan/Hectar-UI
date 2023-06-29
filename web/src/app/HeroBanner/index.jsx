@@ -179,8 +179,8 @@ export default function HeroBanner() {
       className="bg-[#E6F5F9] relative -mt-[140px] pt-[140px]"
     >
       {/* TODO: color needs to be variablized */}
-      <div className="container flex items-center flex-col lg:flex-row mt-15 lg:mt-0">
-        <div className="w-full px-4 lg:px-0">
+      <div className="container flex items-center justify-between flex-col lg:flex-row mt-15 lg:mt-0">
+        <div className="px-4 lg:px-0">
           <Typography variant="lead" size="h5">
             AGRI TRADE REIMAGINED
           </Typography>

@@ -421,6 +421,25 @@ class ProductDetails {
   }
 
   /**
+   * Get the Variant details from product name and variant name
+   * @param {string} product
+   * @param {string} variant
+   * @returns {object} - Variant Details
+   */
+  getVariantDetails(product, variant) {
+    // the variant item is stringified JSON
+    // need to parse it before using it can be undefined
+    variant = this.getValuefromItem(variant);
+    // get the selected product first
+    const selectedProduct = this.getProductDetails(product);
+    // find the variant with the variant name
+    return (
+      selectedProduct &&
+      selectedProduct.variants.find((item) => item.name === variant)
+    );
+  }
+
+  /**
    * get teh Product details with the items selected
    * @param {string} product - stringified product
    * @returns {object} - selected productdetails
@@ -432,7 +451,6 @@ class ProductDetails {
     // Find the variants respective to the selected product
     return this.products.find((item) => item.name === product?.value);
   }
-
 }
 
 export const productDetails = new ProductDetails();
