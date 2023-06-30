@@ -13,9 +13,12 @@ export default function Header() {
       <div className="flex my-5 lg:my-12 justify-between">
         <HectarLogo alt="Header Logo" className="w-100 lg:w-[174px]" />
         <div>
-          <Button size="xs" className="me-3" onClick={() => setDrawer(true)}>
-            <span className="hidden lg:inline">Get Private Beta Access</span>
-            <span className="lg:hidden">Get Beta Access</span>
+          <Button
+            size="xs"
+            className="me-3 !bg-[#FF9D01] !text-black"
+            onClick={() => setDrawer(true)}
+          >
+            <span className="">Get Beta Access</span>
           </Button>
         </div>
       </div>

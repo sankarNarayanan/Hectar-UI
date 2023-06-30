@@ -176,13 +176,13 @@ export default function HeroBanner() {
     // This section will have an empty top and pushed behind header
     <section
       id="HeroBanner"
-      className="bg-[#E6F5F9] relative -mt-[140px] pt-[140px]"
+      className="bg-[#FAF8F4] relative -mt-[140px] pt-[140px]"
     >
       {/* TODO: color needs to be variablized */}
       <div className="container flex items-center justify-between flex-col lg:flex-row mt-15 lg:mt-0">
         <div className="px-4 lg:px-0">
-          <Typography variant="lead" size="h5">
-            AGRI TRADE REIMAGINED
+          <Typography variant="lead" size="h5" className="text-[#FF9D01] font-semibold opacity-100 lg:text-xl">
+            AGRI TRADE, REIMAGINED
           </Typography>
           <Typography variant="h1" size="h1" className="">
             Enabling Global Food Buyers Source Efficiently.

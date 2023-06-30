@@ -16,10 +16,9 @@ export default function WhyHectar() {
       <div className="container mx-auto bg-[#9A86BA] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
-            <Image
-              src={CalenderImage}
+            <CalenderImage
               alt="calender Icon"
-              className="w-50 lg:w-auto"
+              className="w-50 lg:w-[80px]"
             />
             <Typography variant="h1" as="h2" className="py-30">
               Don't Wait For <br /> Tomorrow's Prices
@@ -46,10 +45,9 @@ export default function WhyHectar() {
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
             className="w-50 lg:w-auto"
-            <Image
-              src={LocationIconImage}
+            <LocationIconImage
               alt="Track Icon"
-              className="w-50 lg:w-auto"
+              className="w-50 lg:w-[80px]"
             />
             <Typography variant="h1" as="h2" className="py-30">
               Track And Trace <br />
@@ -76,10 +74,9 @@ export default function WhyHectar() {
       <div className="container mx-auto bg-[#A9D9D7] mt-30 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row">
         <div className="lg:w-1/2 px-20 lg:px-0">
           <Fade triggerOnce>
-            <Image
-              src={DocumentIconImage}
+            <DocumentIconImage
               alt="Track Icon"
-              className="w-50 lg:w-auto"
+              className="w-50 lg:w-[80px]"
             />
             <Typography variant="h1" as="h2" className="py-30">
               Streamlined Trade <br />
