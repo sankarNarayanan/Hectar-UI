@@ -9,6 +9,7 @@ import Vision from "./Vision";
 import WhyHectar from "./WhyHectar";
 import ContactFormDrawer from "./ContactFormDrawer";
 import { ThemeProvider } from "@material-tailwind/react";
+import Offices from "./Offices";
 
 const CustomTheme = {
   typography: {
@@ -57,7 +58,7 @@ export default function HomePage() {
         <Review setDrawer={setDrawer} />
         <Analytics />
         <Vision />
-        <GetStarted />
+        <Offices />
         <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
       </div>
     </ThemeProvider>

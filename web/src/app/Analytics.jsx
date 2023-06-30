@@ -1,41 +1,56 @@
 import Image from "next/image";
 // import AnalyticsImage from "@/assets/svg/insights-image.svg";
-import AnalyticsMobileImage from "@/assets/svg/insights-mobile-image.svg";
+import AIBlobImage from "@/assets/svg/img-ai-blob.svg";
+import AICardsImage from "@/assets/svg/img-ai-cards.svg";
+import AIGraphImage from "@/assets/svg/img-ai-graph.svg";
+import { Typography } from "@/components";
 
 export default function Analytics() {
   return (
-    <section className="bg-[#E6F5F9]">
-      <div className="container mx-auto">
-        <div className="flex my-50 lg:my-150 flex-col lg:flex-row items-center">
-          <div className="w-full lg:w-1/2 px-5 lg:px-12">
-            <h2 className="text-2xl lg:text-5xl lg:leading-[64px] font-medium text-center lg:text-left">
-              AI Driven Insights & <br />
-              Predictive Analysis
-            </h2>
-            <div className="w-full lg:w-1/2 pt-5 pl-5 lg:hidden relative -right-5 ">
-              <Image alt="Analytics Image" src={AnalyticsMobileImage} />
-            </div>
-            <p className="text-sm lg:text-xl opacity-70 pt-8">
+    <section className="bg-[#EFEFEF] text-center py-100 ">
+      <Typography
+        variant="lead"
+        className="uppercase font-medium text-xl opacity-50"
+      >
+        Leverage our proprietary AI
+      </Typography>
+      <Typography
+        variant="h1"
+        as="h2"
+        className="font-medium text-center text-[32px] mt-2.5"
+      >
+        Plan Shipments Efficiently
+      </Typography>
+      <div className="flex justify-center my-50">
+        <AIBlobImage alt="Analytics Image" />
+      </div>
+      <div className="container">
+        <div className="flex gap-4 ">
+          <div className="w-1/2 p-50 bg-[#9A86BA] rounded-xl">
+            <Typography variant="h3">
+              AI Driven Insights & Predictive Analysis
+            </Typography>
+            <Typography className="mt-30">
               Get ahead of the curve with exclusive access to cutting-edge
               trading tools and insights that will help you stay ahead of the
               curve in the fast-paced world of agri commodities trading.
-            </p>
-            <p className="text-sm lg:text-xl opacity-70 pt-5">
+            </Typography>
+            <div className="-m-30">
+              <AICardsImage />
+            </div>
+          </div>
+          <div className="w-1/2 p-50 bg-[#000000] rounded-xl text-white text-left">
+            <Typography className="">
               With our Private Beta, you'll be at the forefront of innovation,
               gaining a competitive edge in the market and maximising your
               profits.
-            </p>
-            <p className="text-sm lg:text-xl opacity-70 pt-5">
+            </Typography>
+            <Typography className="mt-30">
               Don't leave your trades to chance - our data-driven price
               assistance ensures smarter trades and better outcomes - every time
               for every customer.
-            </p>
-          </div>
-          <div className="w-full lg:w-1/2 pt-5 hidden lg:block">
-            <img
-              alt="Analytics Image"
-              src="https://temp-hectar-s3.s3.amazonaws.com/AI-model.gif"
-            />
+            </Typography>
+            <AIGraphImage />
           </div>
         </div>
       </div>
