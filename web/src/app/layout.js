@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import "@/styles/custom.scss";
 import { Poppins } from "next/font/google";
-import Footer from "@/components/Footer";
+import Footer from "@/components/FooterV2";
 
 // import { store } from './app/store'
 import { Provider } from "react-redux";
