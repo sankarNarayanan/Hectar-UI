@@ -55,7 +55,8 @@ export default function WhyHectar() {
               Every Order
             </Typography>
             <Typography className="text-base lg:text-lg pt-2.5">
-              Keep a tab on all your orders from one single <br />
+              Keep a tab on all your orders from one single{" "}
+              <br className="hidden lg:block" />
               Dashboard.
             </Typography>
           </Fade>
@@ -85,7 +86,8 @@ export default function WhyHectar() {
               Documentation
             </Typography>
             <Typography className="text-base lg:text-lg pt-2.5">
-              Let us handle the paperwork so you can <br />
+              Let us handle the paperwork so you can{" "}
+              <br className="hidden lg:block" />
               focus on your Business.
             </Typography>
           </Fade>

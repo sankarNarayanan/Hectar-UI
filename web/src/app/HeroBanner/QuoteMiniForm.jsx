@@ -86,7 +86,7 @@ export default function QuoteMiniForm() {
         <div className="w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
           <Button
             type="submit"
-            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none"
+            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium"
           >
             Get Quote
           </Button>
