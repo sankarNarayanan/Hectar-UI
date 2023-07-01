@@ -75,7 +75,7 @@ const CustomNavigation = ({ setActiveIndex, activeIndex, length }) => {
 
 export default function ProductPortfolio() {
   return (
-    <section id="ProductPortfolio" className="my-50 py-50 lg:my-100 bg-[#F9F9F9]">
+    <section id="ProductPortfolio" className="mt-50 py-50 lg:py-100 bg-[#F9F9F9]">
       <Typography variant="h2" className="text-center text-[1.325rem] lg:text-4xl font-medium" >
         Product Portfolio
       </Typography>
