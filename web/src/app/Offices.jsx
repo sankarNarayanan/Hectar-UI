@@ -8,7 +8,7 @@ export default function Offices() {
           Our Offices
         </Typography>
 
-        <div className="flex flex-wrap gap-30 items-center">
+        <div className="flex flex-wrap gap-30 items-center mt-30">
           <div className=" bg-[#F5F5F5] px-5 py-30 rounded-lg">
             <Typography variant="lead" className="lg:text-xl font-semibold">
               Chennai, India
