@@ -27,7 +27,7 @@ const CustomTheme = {
           className: "opacity-70 leading-[130%] text-xs lg:text-base",
         },
         paragraph: {
-          fontSize: "text-lg",
+          fontSize: "lg:text-lg",
           className: "opacity-70",
         },
       },
