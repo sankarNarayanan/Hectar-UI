@@ -20,7 +20,7 @@ const CustomTheme = {
           className: "leading-[140%]",
         },
         h2: {
-          fontSize: "text-4xl",
+          fontSize: "text-[1.375rem] lg:text-4xl font-medium",
           className: "leading-[130%] font-normal",
         },
         lead: {
