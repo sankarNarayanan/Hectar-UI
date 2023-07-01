@@ -25,7 +25,7 @@ export default function Analytics() {
         <AIBlobImage alt="Analytics Image" className="w-16" />
       </div>
       <div className="container px-4">
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap lg:flex-nowrap gap-4 ">
           <div className="lg:w-1/2 px-4 py-30 lg:p-50 bg-[#9A86BA] rounded-xl text-left">
             <Typography variant="h2">
               AI Driven Insights & <br />
@@ -40,7 +40,7 @@ export default function Analytics() {
               <AICardsImage />
             </div>
           </div>
-          <div className="lg:w-1/2 px-4 py-30 p-50 bg-[#000000] rounded-xl text-white text-left">
+          <div className="lg:w-1/2 px-4 py-30 lg:p-50 bg-[#000000] rounded-xl text-white text-left">
             <Typography className="">
               With our Private Beta, you'll be at the forefront of innovation,
               gaining a competitive edge in the market and maximising your
