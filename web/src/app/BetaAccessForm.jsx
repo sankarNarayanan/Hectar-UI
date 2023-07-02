@@ -3,10 +3,10 @@ import Form, { useForm } from "@/components/Form";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Image from "next/image";
-import ImageSubmitted from "@/assets/svg/img-submitted.svg";
+import ImageSubmitted from "@/assets/svg/img-submitted-black.svg";
 import { PRODUCT_DETAILS } from "@/app/ProductDetails";
-import ProductIcon from "@/assets/svg/product-icon.svg";
 import { usePrivateBetaEnquiryMutation } from "@/api/BaseAPI";
+import { useGlobalState } from "@/redux/globalState";
 
 // Extract the product details from the base object and
 // format it to feed the Select input as options
@@ -21,26 +21,28 @@ const getProductItems = () => {
 function FormSubmitted({ setDrawer }) {
   return (
     <div className="flex flex-col items-center align-middle justify-center h-full p-30">
-      <Image alt="Image Submitted" src={ImageSubmitted} />
-      <Typography variant="h4" className="font-medium pt-30">
+      <ImageSubmitted alt="Image Submitted" className="w-15"/>
+      <Typography variant="h4" className="font-medium mt-30">
         Request Submitted
       </Typography>
       <Typography
         variant="p"
-        className="opacity-70 font-normal pt-3 text-center"
+        className="opacity-70 font-normal pt-3 text-center text-sm"
       >
         Your request has been successfully submitted and our
-        <br /> team is looking into it. You will hear back from our
-        <br /> team shortly.
+        <br className="hidden lg:block" /> team is looking into it. You will
+        hear back from our
+        <br className="hidden lg:block" /> team shortly.
       </Typography>
-      <Button onClick={() => setDrawer(false)} className="w-full mt-40">
+      <Button onClick={() => setDrawer(false)} className="w-full mt-5 lg:mt-40">
         Close
       </Button>
     </div>
   );
 }
 
-export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
+export default function GetPrivateAccessForm() {
+  const [drawerOpen, setDrawer] = useGlobalState("betaAccessDrawer");
   const productItems = getProductItems();
 
   const [privateBetaEnquiry, privateBetaEnquiryResult] =
@@ -69,38 +71,42 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
       onClose={() => setDrawer(false)}
       size={500}
       placement="right"
-      className="z-20"
     >
       <div className="relative h-full">
         {activeStep !== "submitted" && (
-          <Form
-            name="getdetails"
-            methods={methods}
-            onSubmit={handleSubmit}
-          >
+          <Form name="getdetails" methods={methods} onSubmit={handleSubmit}>
             <div className="flex flex-col h-screen">
               <div className="flex-grow overflow-y-auto p-5">
-                <div className="flex justify-between">
-                  <div>
-                    <Typography variant="h4">Submit Your Request</Typography>
-                  </div>
+                <div className="">
                   <div>
                     <IconButton
                       variant="text"
                       color="blue-gray"
                       onClick={() => setDrawer(false)}
+                      className="h-5 w-5"
                     >
                       <XMarkIcon strokeWidth={2} className="h-5 w-5" />
                     </IconButton>
                   </div>
+                  <div>
+                    <Typography
+                      variant="h4"
+                      className="text-xl font-medium mt-30"
+                    >
+                      Submit Your Request
+                    </Typography>
+                  </div>
                 </div>
-                <Typography variant="paragraph" className="opacity-70 pt-3">
+                <Typography
+                  variant="paragraph"
+                  className="opacity-70 pt-3 text-xs lg:text-base"
+                >
                   Don't see what you are looking for? Please send us your
                   requirement and the team will get back shortly with details.
                 </Typography>
 
                 <>
-                  <div className="mt-100">
+                  <div className="mt-30 lg:mt-100">
                     <Form.TextField
                       name="name"
                       label="Your Name"

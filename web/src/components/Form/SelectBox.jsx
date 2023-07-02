@@ -75,7 +75,7 @@ function Select({
 
   return (
     <label>
-      <div className="relative w-full max-w-[160px] min-w-[120px] z-10">
+      <div className="relative w-full min-w-[120px] z-10">
         <div className="absolute w-full left-0 top-[10px] px-2">
           <div className="flex justify-between items-center w-full">
             <RenderValue
@@ -86,9 +86,12 @@ function Select({
               isMultiple={isMultiple}
               reset={reset}
             />
-            <div>
-              <ChevronDownIcon className="relative right-2.5" />
-            </div>
+            {/* Do not render chevron drop down for multiple cases */}
+            {!isMultiple && (
+              <div>
+                <ChevronDownIcon className="relative right-2.5" />
+              </div>
+            )}
           </div>
         </div>
 
@@ -112,6 +115,7 @@ function Select({
 
                   return "opacity-0 w-full flex";
                 },
+                menu: "absolute z-10 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700",
               }}
             >
               {children}

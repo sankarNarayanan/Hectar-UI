@@ -4,9 +4,11 @@ import Image from "next/image";
 import Button from "../Button";
 import GetPrivateAccessForm from "../GetPrivateAcessForm";
 import { useState } from "react";
+import { useGlobalState } from "@/redux/globalState";
 
 export default function Header() {
-  const [drawerOpen, setDrawer] = useState(false);
+  // const [drawerOpen, setDrawer] = useState(false);
+  const [drawerOpen, setDrawer] = useGlobalState('betaAccessDrawer', false);
 
   return (
     <div className="container mx-auto px-4 lg:px-0 relative z-[1]">
@@ -22,7 +24,6 @@ export default function Header() {
           </Button>
         </div>
       </div>
-      <GetPrivateAccessForm drawerOpen={drawerOpen} setDrawer={setDrawer} />
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Button({
   // TODO: Give priority to user defined classnames
   className += " rounded-full transition-all duration-500 normal-case font-medium font-poppins";
   if (variant === "outline") {
-    className += " border border-solid border-black";
+    className += " border border-solid border-black bg-transparent text-black shadow-black/10 hover:shadow-black/20";
   } else {
     className += " bg-black text-white";
   }

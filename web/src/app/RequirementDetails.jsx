@@ -22,21 +22,21 @@ export default function RequiremenrDetails() {
           validators={["required"]}
         />
       </div>
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.TextField
           name="compantName"
           label="COMPANY NAME"
           validators={["required"]}
         />
       </div>
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.TextField
           name="companyRevenue"
           label="COMPANY REVENUE"
           validators={["required"]}
         />
       </div>
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.Select
           name="interestedCommodities"
           validators={["required"]}
@@ -51,7 +51,7 @@ export default function RequiremenrDetails() {
           options={productItems}
         />
       </div>
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.Textarea name="moreDetails" label="TELL US MORE" />
       </div>
     </>

@@ -10,6 +10,7 @@ import WhyHectar from "./WhyHectar";
 import ContactFormDrawer from "./ContactFormDrawer";
 import { ThemeProvider } from "@material-tailwind/react";
 import Offices from "./Offices";
+import GetPrivateAccessForm from "./BetaAccessForm";
 
 const CustomTheme = {
   typography: {
@@ -24,7 +25,8 @@ const CustomTheme = {
           className: "leading-[130%] font-normal font-poppins",
         },
         lead: {
-          className: "opacity-70 leading-[130%] text-xs lg:text-base font-poppins",
+          className:
+            "opacity-70 leading-[130%] text-xs lg:text-base font-poppins",
         },
         paragraph: {
           fontSize: "lg:text-lg",
@@ -62,7 +64,8 @@ export default function HomePage() {
         <Analytics />
         <Vision />
         <Offices />
-        <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
+        {/* <ContactFormDrawer /> */}
+        <GetPrivateAccessForm />;
       </div>
     </ThemeProvider>
   );
