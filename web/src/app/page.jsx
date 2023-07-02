@@ -17,21 +17,24 @@ const CustomTheme = {
       variants: {
         h1: {
           fontSize: "text-[1.375rem] lg:text-[2.5rem]",
-          className: "leading-[140%]",
+          className: "leading-[140%] font-poppins",
         },
         h2: {
           fontSize: "text-[1.375rem] lg:text-4xl font-medium",
-          className: "leading-[130%] font-normal",
+          className: "leading-[130%] font-normal font-poppins",
         },
         lead: {
-          className: "opacity-70 leading-[130%] text-xs lg:text-base",
+          className: "opacity-70 leading-[130%] text-xs lg:text-base font-poppins",
         },
         paragraph: {
           fontSize: "lg:text-lg",
-          className: "opacity-70",
+          className: "opacity-70 font-poppins",
         },
       },
     },
+  },
+  fontFamily: {
+    poppins: "var(--primary-font)",
   },
 };
 

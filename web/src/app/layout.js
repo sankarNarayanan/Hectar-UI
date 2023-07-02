@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         ></Script>
         {/* End of Tag manager Script */}
       </head>
-      <body className="font-poppins text-black">
+      <body className="!font-poppins text-black">
         <Provider store={store}>
           <Header />
           {children}

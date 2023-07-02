@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = withMT({
+import withMT from "@material-tailwind/react/utils/withMT";
+export default withMT({
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,8 +22,11 @@ module.exports = withMT({
       xl: "1140px",
       // => @media (min-width: 1140px) { ... }
 
-      "2xl": "1600px",
+      "2xl": "3600px",
       // => I dont need this anymore
+    },
+    fontFamily: {
+      poppins: ["var(--primary-font)"],
     },
 
     container: {
@@ -35,12 +38,9 @@ module.exports = withMT({
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontFamily: {
-        poppins: ["var(--primary-font)"],
-      },
       spacing: {
         15: "4rem", // 60px default
-        // 20: "20px", 
+        // 20: "20px",
         30: "30px",
         40: "40px",
         50: "50px",

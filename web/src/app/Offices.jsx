@@ -92,7 +92,7 @@ export default function Offices() {
           Our Offices
         </Typography>
 
-        <div className="w-screen grid-rows-1 overflow-x-scroll lg:grid-cols-3 gap-30 items-strech mt-30 hidden lg:grid">
+        <div className="grid-cols-3 gap-30 items-strech mt-30 hidden lg:grid">
           <Chennai />
           <Guntur />
           <Singapore />
