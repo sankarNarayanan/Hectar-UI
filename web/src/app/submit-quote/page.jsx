@@ -1,5 +1,5 @@
 "use client";
-import { useRequestQuoteMutation } from "@/api/BaseAPI";
+import { useRequestQuoteMutation, useSaveQuoteMutation } from "@/api/BaseAPI";
 import SubmittedBlackImage from "@/assets/svg/img-submitted-black.svg";
 import { Button, Radio, Typography } from "@/components";
 import Form, { useForm } from "@/components/Form";
@@ -9,7 +9,6 @@ import { productDetails } from "../ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { resetData } from "@/redux/productReducer";
 import TurnOver from "@/components/Turnover";
-
 
 function FormSubmitted() {
   const dispatch = useDispatch();
@@ -40,15 +39,18 @@ function FormSubmitted() {
 
 export default function SubmitQuote() {
   const methods = useForm();
+  const [getQuote, quoteResult] = useRequestQuoteMutation({
+    fixedCacheKey: "getQuote",
+  });
   const [revenue, setRevenue] = useState("less than 10");
   const [formstate, setFormState] = useState("initiated");
   const quoteData = useSelector((state) => state.productDetails);
   const router = useRouter();
-  const [requestQuote, requestQuoteResult] = useRequestQuoteMutation();
+  const [saveQuote, saveQuoteResult] = useSaveQuoteMutation();
 
   // Redirect to Home Page If no Quote Data available.
   // To handle refresh or browser back
-  if (!quoteData.product) {
+  if (!quoteResult.isSuccess) {
     router.push("/");
     return null;
   }
@@ -60,21 +62,18 @@ export default function SubmitQuote() {
     );
     const selectedProduct = productDetails.getProductDetails(quoteData.product);
     // Api call to submit the Quote request details using RTK Query hook
-    requestQuote({
+    saveQuote({
       ...formData,
       companyRevenue: revenue,
-      product: selectedProduct.name,
-      variant: selectedVariant.name,
+      product: quoteResult.data.product,
+      variant: quoteResult.data.variant,
       // description: selectedDescription.value,
-      unloadingPort: productDetails.getValuefromItem(quoteData.destination),
-      loadingPort:
-        selectedVariant.loadingPort.port +
-        ", " +
-        selectedVariant.loadingPort.country,
-      containerType: selectedVariant.containerType,
-      load: selectedVariant.typicalLoadability,
+      unloadingPort: "TODO:Hardcoded",
+      loadingPort: "TODO:Hardcoded",
+      containerType: quoteResult.data.container,
+      load: "TODO: hardcoded",
       // TODO: need to make this dynamic
-      estimatedCost: "14560",
+      estimatedCost: quoteResult.data.finalCost,
     }).then(() => {
       setFormState("submitted");
     });
@@ -98,7 +97,7 @@ export default function SubmitQuote() {
             </p>
             {/* TODO: need to fix fontsize here */}
             <Typography variant="h1" as="h3" className="text-[1.375rem] pt-30">
-              $3,200 - $3,520
+              ${quoteResult.data.startRange} - ${quoteResult.data.endRange}
             </Typography>
             <Typography className="text-xs">
               {/* TODO: need to fix teh Date */}
@@ -192,7 +191,7 @@ export default function SubmitQuote() {
                   <div className="mt-30 lg:px-30">
                     <Button
                       className="!w-full"
-                      isLoading={false}
+                      isLoading={saveQuoteResult.isLoading}
                       type="submit"
                       // {requestQuoteResult.isLoading}
                     >

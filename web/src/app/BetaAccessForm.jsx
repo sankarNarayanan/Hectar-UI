@@ -7,6 +7,7 @@ import ImageSubmitted from "@/assets/svg/img-submitted-black.svg";
 import { PRODUCT_DETAILS } from "@/app/ProductDetails";
 import { usePrivateBetaEnquiryMutation } from "@/api/BaseAPI";
 import { useGlobalState } from "@/redux/globalState";
+import TurnOver from "@/components/Turnover";
 
 // Extract the product details from the base object and
 // format it to feed the Select input as options

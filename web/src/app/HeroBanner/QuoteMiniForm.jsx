@@ -13,10 +13,14 @@ import {
   updateVariant,
 } from "@/redux/productReducer";
 import { useRouter } from "next/navigation";
+import { useRequestQuoteMutation } from "@/api/BaseAPI";
 
 export default function QuoteMiniForm() {
   const dispatch = useDispatch();
   const methods = useForm();
+  const [getQuote, quoteResult] = useRequestQuoteMutation({
+    fixedCacheKey: "getQuote",
+  });
   const product = methods.watch("product");
   const variantItems = productDetails.getVariantItems(product);
   const router = useRouter();
@@ -26,12 +30,19 @@ export default function QuoteMiniForm() {
     methods.resetField("variant");
   };
 
-  const handleSubmit = (value) => {
+  const handleSubmit = async (formData) => {
     // The hookform value will be stringified JSON.
     // Need to parse it and extract the value
-    dispatch(updateProduct(value.product));
-    dispatch(updateVariant(value.variant));
-    dispatch(updateDestination(value.destination));
+
+    const resp = await getQuote({
+      product: productDetails.getValuefromItem(formData.product),
+      variant: productDetails.getValuefromItem(formData.variant),
+      // TODO: need to fix hardcoded value
+      sourcePortCode: "[46.482526, 30.7233095]",
+      destinationPortCode: "[31.2303904, 121.4737021]",
+      containerString: "ST20",
+    }).unwrap();
+
     router.push("/submit-quote/");
   };
   return (
