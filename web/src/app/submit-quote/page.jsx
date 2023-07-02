@@ -8,55 +8,8 @@ import { useState } from "react";
 import { productDetails } from "../ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { resetData } from "@/redux/productReducer";
+import TurnOver from "@/components/Turnover";
 
-function TurnOver({ revenue, setRevenue }) {
-  const handleRadio = (value) => {
-    setRevenue(value);
-  };
-  return (
-    <div className="flex mb-4">
-      <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 rounded-l-lg grow transition-all duration-500 ${
-          revenue === "less than 10" ? "bg-black text-white" : "opacity-50"
-        }`}
-      >
-        &lt; $10 M
-        <input
-          type="radio"
-          name="name"
-          hidden
-          onChange={() => handleRadio("less than 10")}
-        />
-      </label>
-      <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 grow transition-all duration-500 ${
-          revenue === "10 - 100" ? "bg-black text-white" : "opacity-50"
-        }`}
-      >
-        <input
-          type="radio"
-          name="name"
-          hidden
-          onChange={() => handleRadio("10 - 100")}
-        />
-        $10 M - $100 M
-      </label>
-      <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 rounded-r-lg grow transition-all duration-500 ${
-          revenue === "greater than 100" ? "bg-black text-white" : "opacity-50"
-        }`}
-      >
-        <input
-          type="radio"
-          name="name"
-          hidden
-          onChange={() => handleRadio("greater than 100")}
-        />
-        &gt; $100 M
-      </label>
-    </div>
-  );
-}
 
 function FormSubmitted() {
   const dispatch = useDispatch();

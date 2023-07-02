@@ -21,7 +21,7 @@ const getProductItems = () => {
 function FormSubmitted({ setDrawer }) {
   return (
     <div className="flex flex-col items-center align-middle justify-center h-full p-30">
-      <ImageSubmitted alt="Image Submitted" className="w-15"/>
+      <ImageSubmitted alt="Image Submitted" className="w-15" />
       <Typography variant="h4" className="font-medium mt-30">
         Request Submitted
       </Typography>
@@ -44,6 +44,7 @@ function FormSubmitted({ setDrawer }) {
 export default function GetPrivateAccessForm() {
   const [drawerOpen, setDrawer] = useGlobalState("betaAccessDrawer");
   const productItems = getProductItems();
+  const [revenue, setRevenue] = useState();
 
   const [privateBetaEnquiry, privateBetaEnquiryResult] =
     usePrivateBetaEnquiryMutation();
@@ -57,6 +58,7 @@ export default function GetPrivateAccessForm() {
     // Api call to submit the Beta Enquiry Data
     privateBetaEnquiry({
       ...formdata,
+      companyRevenue: revenue,
       interestedCommodities: JSON.stringify(
         JSON.parse(formdata.interestedCommodities).map((item) => item.value)
       ),
@@ -136,11 +138,7 @@ export default function GetPrivateAccessForm() {
                     />
                   </div>
                   <div className="mt-5">
-                    <Form.TextField
-                      name="companyRevenue"
-                      label="Company Revenue"
-                      validators={["required"]}
-                    />
+                    <TurnOver revenue={revenue} setRevenue={setRevenue} />
                   </div>
                   <div className="mt-5">
                     <Form.PhoneNumber
