@@ -16,7 +16,7 @@ function TurnOver({ revenue, setRevenue }) {
   return (
     <div className="flex mb-4">
       <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center p-2 rounded-l-lg grow transition-all duration-500 ${
+        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 rounded-l-lg grow transition-all duration-500 ${
           revenue === "less than 10" ? "bg-black text-white" : "opacity-50"
         }`}
       >
@@ -29,7 +29,7 @@ function TurnOver({ revenue, setRevenue }) {
         />
       </label>
       <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center p-2 grow transition-all duration-500 ${
+        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 grow transition-all duration-500 ${
           revenue === "10 - 100" ? "bg-black text-white" : "opacity-50"
         }`}
       >
@@ -42,7 +42,7 @@ function TurnOver({ revenue, setRevenue }) {
         $10 M - $100 M
       </label>
       <label
-        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center p-2 rounded-r-lg grow transition-all duration-500 ${
+        className={`cursor-pointer border border-black/10 hover:border-black/50 hover:shadow-lg text-center py-2 lg:p-2 rounded-r-lg grow transition-all duration-500 ${
           revenue === "greater than 100" ? "bg-black text-white" : "opacity-50"
         }`}
       >
@@ -133,49 +133,51 @@ export default function SubmitQuote() {
       className="bg-[#F9F9F9] relative -mt-[140px] pt-[140px] pb-6 -mb-30"
     >
       <div className="container">
-        <div className="w-[950px] flex mx-auto bg-white rounded-xl py-30">
-          <div className="self-center text-center p-50 shrink-0">
+        <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-xl py-30">
+          <div className="self-center text-center p-4 lg:p-50 shrink-0">
             <SubmittedBlackImage
               alt="Image Submitted"
               className="mx-auto w-[80px]"
             />
-            <p className="lg:text-xl mt-3">
+            <p className="text-sm lg:text-xl mt-3">
               Congratulations!
               <br /> Your quote is now ready.
             </p>
             {/* TODO: need to fix fontsize here */}
-            <Typography variant="h1" as="h3" className="pt-30">
+            <Typography variant="h1" as="h3" className="text-[1.375rem] pt-30">
               $3,200 - $3,520
             </Typography>
             <Typography className="text-xs">
               {/* TODO: need to fix teh Date */}
               Next Available Vessel: 31st June, 2023
             </Typography>
-            <Typography className="text-xs pt-4">
+            {/* <Typography className="text-xs pt-4">
               Show Earliest arrival
-            </Typography>
+            </Typography> */}
 
             {/* Seperator */}
-            <div className="h-px w-full bg-black opacity-10 my-50"></div>
+            <div className="h-px w-full bg-black opacity-10 my-30 lg:my-50"></div>
 
-            <div className="flex justify-between">
-              <div>Product</div>
-              {/* TODO: make Dynamic */}
-              <div>Turmeric</div>
-            </div>
+            <div className="hidden lg:block">
+              <div className="flex justify-between">
+                <div className="opacity-50">Product</div>
+                {/* TODO: make Dynamic */}
+                <div className="font-medium">Turmeric</div>
+              </div>
 
-            <div className="flex justify-between">
-              <div>Variant</div>
-              {/* TODO: make Dynamic */}
-              <div>Erode</div>
-            </div>
+              <div className="flex justify-between">
+                <div className="opacity-50">Variant</div>
+                {/* TODO: make Dynamic */}
+                <div className="font-medium">Erode</div>
+              </div>
 
-            <div className="flex justify-between">
-              <div>Destination</div>
-              {/* TODO: make Dynamic */}
-              <div>
-                Port Of Madras,
-                <br /> Chennai
+              <div className="flex justify-between">
+                <div className="opacity-50">Destination</div>
+                {/* TODO: make Dynamic */}
+                <div className="font-medium">
+                  Port Of Madras,
+                  <br /> Chennai
+                </div>
               </div>
             </div>
           </div>
@@ -185,14 +187,14 @@ export default function SubmitQuote() {
               <FormSubmitted />
             ) : (
               <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
-                <div className="mx-3 lg:m-0 px-50 py-30 lg:py-30 rounded-lg bg-white">
-                  <p className="lg:text-xl font-medium">
+                <div className="mx-3 lg:m-0 px-8 lg:px-50 lg:py-30 rounded-lg bg-white">
+                  <p className="text-xl font-medium">
                     Proceed To Complete Your Request
                   </p>
-                  <p className="text:xs lg:xs opacity-50">
+                  <p className="text-xs lg:text-xs opacity-50">
                     For exact pricing, need few more details
                   </p>
-                  <div className="mt-20 lg:mt-30">
+                  <div className="mt-5 lg:mt-30">
                     <Form.TextField
                       name="name"
                       label="Full Name"
@@ -234,7 +236,7 @@ export default function SubmitQuote() {
                       validators={["required"]}
                     />
                   </div>
-                  <div className="mt-30 px-30">
+                  <div className="mt-30 lg:px-30">
                     <Button
                       className="!w-full"
                       isLoading={false}
