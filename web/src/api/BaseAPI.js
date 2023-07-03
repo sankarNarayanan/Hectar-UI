@@ -22,6 +22,13 @@ export const BaseAPI = createApi({
         body: data,
       }),
     }),
+    saveQuote: builder.mutation({
+      query: (data) => ({
+        url: "saveInstantQuote",
+        method: "POST",
+        body: data,
+      }),
+    }),
     submitEnquiry: builder.mutation({
       query: (data) => ({
         url: "submitenquiry",
@@ -38,4 +45,5 @@ export const {
   usePrivateBetaEnquiryMutation,
   useRequestQuoteMutation,
   useSubmitEnquiryMutation,
+  useSaveQuoteMutation,
 } = BaseAPI;

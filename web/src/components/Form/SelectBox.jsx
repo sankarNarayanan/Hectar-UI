@@ -3,25 +3,42 @@ import { Controller } from "react-hook-form";
 import PropTypes from "prop-types";
 import { useFormControl } from "./validations/hooks";
 import Label from "./Label";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 
-function RenderValue({ variant, parsedValue, isMultiple, Label, reset }) {
-  if (!parsedValue) {
-    return variant === "bordered" ? <></> : "Select";
-  }
-  if (isMultiple) {
-    return null;
-  }
-  return parsedValue.value;
+import ChevronDownIcon from "@/assets/svg/chevron-down.svg";
+
+function RenderValue({
+  variant,
+  parsedValue,
+  isMultiple,
+  icon: Icon,
+  label = "select",
+  reset,
+}) {
+  const getRenderedText = () => {
+    return (
+      <div className="flex items-center px-2 w-full">
+        {Icon && <Icon className="text-[#DBDAE1] mr-2" />}
+        {/* Render Value if value is selected else render Label text */}
+        <p className="truncate">{parsedValue?.value || label}</p>
+      </div>
+    );
+  };
+
+  const getRenderedTextBorder = () => parsedValue?.value || <></>;
+
+  if (variant === "bordered") return getRenderedTextBorder();
+
+  return getRenderedText();
 }
 
 function Select({
   name,
-  label: Label,
+  label,
   validators,
   errorMessage,
   children,
   onChange,
+  icon,
   variant = "",
   isMultiple = false,
   placeholder = "Select...",
@@ -58,25 +75,25 @@ function Select({
 
   return (
     <label>
-      <div className="relative w-full">
-        <div className="absolute w-full left-0 top-0">
-          {variant !== "bordered" &&
-            (Label ? <Label /> : <div>Custom label</div>)}
-          <div
-            className={
-              variant === "bordered" ? "" : "text-sm lg:text-lg font-medium text-black"
-            }
-          >
+      <div className="relative w-full min-w-[120px]">
+        <div className="absolute w-full left-0 top-[10px] px-2">
+          <div className="flex justify-between items-center w-full">
             <RenderValue
-              Label={Label}
+              label={label}
+              icon={icon}
               variant={variant}
               parsedValue={parsedValue}
               isMultiple={isMultiple}
               reset={reset}
             />
+            {/* Do not render chevron drop down for multiple cases */}
+            {!isMultiple && (
+              <div>
+                <ChevronDownIcon className="relative right-2.5" />
+              </div>
+            )}
           </div>
         </div>
-
         <Controller
           name={name}
           control={control}
@@ -89,21 +106,22 @@ function Select({
               options={options}
               isMultiple={isMultiple}
               placeholder={placeholder}
-              isSearchable={true}
               {...inputProps}
               classNames={{
                 menuButton: ({ isDisabled }) => {
                   if (variant === "bordered")
                     return "border border-gray-400 w-full flex rounded-lg";
 
-                  return "opacity-0 w-full flex";
+                  return "opacity-0 flex z-10 justify-strech";
                 },
+                menu: "absolute z-20 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700",
               }}
             >
               {children}
             </SelectBox>
           )}
         />
+
         {isError && <div className="text-red-500 text-sm pt-2">{message}</div>}
       </div>
     </label>
@@ -116,6 +134,7 @@ Select.propTypes = {
   validators: PropTypes.array,
   errorMessage: PropTypes.object,
   onChange: PropTypes.func,
+  icon: PropTypes.object,
 };
 
 Object.assign(Select, {

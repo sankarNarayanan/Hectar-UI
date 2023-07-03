@@ -4,24 +4,19 @@ import linesLeft from "@/assets/lines_left.svg";
 import linesRight from "@/assets/lines_right.svg";
 import Image from "next/image";
 import ImageSubmitted from "@/assets/svg/img-submitted.svg";
+import HeroBGImage from "@/assets/svg/hero-bg-image.svg";
+import CraneOutlineImage from "@/assets/svg/crane-outline.svg";
 
 import SuccessPoppersTopImage from "@/assets/svg/success-poppers-top.svg";
 import SuccessPoppersBottomImage from "@/assets/svg/success-poppers-bottom.svg";
-import GetQuoteForm from "./GetQuoteForm";
+// import GetQuoteForm from "./GetQuoteForm";
 import { useState } from "react";
 import SubmittedBlackImage from "@/assets/svg/img-submitted-black.svg";
 import Form, { useForm } from "@/components/Form";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
+import QuoteMiniForm from "./QuoteMiniForm";
 
 const quoteBaseValue = 2400;
-// const localtionItems = [
-//   { title: "Chennai, In", subtitle: "Port Of madras" },
-//   { title: "Mumbai, In", subtitle: "Port Of mumbai" },
-//   { title: "Kolkatta, In", subtitle: "Port Of Kolkatta" },
-//   { title: "Vizag, In", subtitle: "Port Of vizag" },
-//   { title: "Cochi, In", subtitle: "Port Of cochi" },
-//   { title: "Goa, In", subtitle: "Port Of Goa" },
-// ];
 
 function QuoteSuccess({ quoteState, setQuoteState }) {
   const methods = useForm();
@@ -178,42 +173,32 @@ function QuoteSuccess({ quoteState, setQuoteState }) {
 export default function HeroBanner() {
   const [quoteState, setQuoteState] = useState({ isSubmitted: false });
   return (
-    <section className="px-4 lg:px-0">
-      <div className="container relative mx-auto bg-grad-primary pb-6 lg:pb-100 rounded-2xl">
-        {!quoteState.isSubmitted && (
-          <>
-            <div>
-              <Image
-                className="absolute left-0 bottom-[70px] hidden lg:block"
-                src={linesLeft}
-                alt="left design icons"
-              />
-              <Image
-                className="absolute right-0 top-[150px] hidden lg:block"
-                src={linesRight}
-                alt="right design icons"
-              />
-            </div>
-            <div>
-              <h1 className="text-2xl lg:text-6xl text-white pt-50 text-center font-light lg:leading-[80px]">
-                Agri Commodities Trade, <br />
-                <span className="font-bold">Reimagined! 🚜</span>
-              </h1>
+    // This section will have an empty top and pushed behind header
+    <section
+      id="HeroBanner"
+      className="bg-[#FAF8F4] relative -mt-[140px] pt-[140px]"
+    >
+      {/* TODO: color needs to be variablized */}
+      <div className="container flex items-center justify-between flex-col lg:flex-row mt-15 lg:mt-0">
+        <div className="px-4 lg:px-0 lg:w-1/2">
+          <Typography variant="lead" size="h5" className="text-[#FF9D01] font-semibold opacity-100 lg:text-xl">
+            AGRI TRADE, REIMAGINED
+          </Typography>
+          <Typography variant="h1" size="h1" className="">
+            Enabling Global Food Buyers Source Efficiently.
+          </Typography>
 
-              <p className="text-[#FFFEFF] opacity-70 text-center text-sm lg:text-xl pt-5">
-                Enabling global wholesalers, manufacturers and retailers
-                <br />
-                source efficiently.
-              </p>
+          <QuoteMiniForm />
+          <div className="absolute left-0 bottom-0">
+            <CraneOutlineImage className="hidden lg:block" />
+          </div>
+        </div>
 
-              <GetQuoteForm setQuoteState={setQuoteState} />
-            </div>
-          </>
-        )}
-
-        {quoteState.isSubmitted && (
-          <QuoteSuccess quoteState={quoteState} setQuoteState={setQuoteState} />
-        )}
+        <div className="lg:basis-[540px] shrink-0 hidden lg:block">
+          <div className="relative lg:-right-[70px]">
+            <HeroBGImage className="w-full lg:w-[671px]" />
+          </div>
+        </div>
       </div>
     </section>
   );

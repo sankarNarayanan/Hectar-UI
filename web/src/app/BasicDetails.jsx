@@ -10,14 +10,14 @@ export default function BasicDetails() {
           validators={["required"]}
         />
       </div>
-      {/* <div className="mt-20">
+      {/* <div className="mt-5">
         <Form.TextField
           name="businessname"
           label="BUSINESS NAME"
           validators={["required"]}
         />
       </div> */}
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.TextField
           name="email"
           label="BUSINESS EMAIL"
@@ -25,7 +25,7 @@ export default function BasicDetails() {
         />
       </div>
       
-      <div className="mt-20">
+      <div className="mt-5">
         <Form.TextField
           name="phoneNumber"
           label="BUSINESS PHONE NO"

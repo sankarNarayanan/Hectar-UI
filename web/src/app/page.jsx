@@ -9,6 +9,36 @@ import Vision from "./Vision";
 import WhyHectar from "./WhyHectar";
 import ContactFormDrawer from "./ContactFormDrawer";
 import { ThemeProvider } from "@material-tailwind/react";
+import Offices from "./Offices";
+import GetPrivateAccessForm from "./BetaAccessForm";
+
+const CustomTheme = {
+  typography: {
+    styles: {
+      variants: {
+        h1: {
+          fontSize: "text-[1.375rem] lg:text-[2.5rem]",
+          className: "leading-[140%] font-poppins",
+        },
+        h2: {
+          fontSize: "text-[1.375rem] lg:text-4xl font-medium",
+          className: "leading-[130%] font-normal font-poppins",
+        },
+        lead: {
+          className:
+            "opacity-70 leading-[130%] text-xs lg:text-base font-poppins",
+        },
+        paragraph: {
+          fontSize: "lg:text-lg",
+          className: "opacity-70 font-poppins",
+        },
+      },
+    },
+  },
+  fontFamily: {
+    poppins: "var(--primary-font)",
+  },
+};
 
 export function DashboardDummy() {
   return (
@@ -24,8 +54,8 @@ export function DashboardDummy() {
 export default function HomePage() {
   const [drawerOpen, setDrawer] = useState(false);
   return (
-    <ThemeProvider>
-      <div className="w-screen overflow-hidden">
+    <ThemeProvider value={CustomTheme}>
+      <div className="w-screen overflow-x-clip">
         <HeroBanner setDrawer={setDrawer} />
         {/* <DashboardDummy /> */}
         <WhyHectar />
@@ -33,8 +63,9 @@ export default function HomePage() {
         <Review setDrawer={setDrawer} />
         <Analytics />
         <Vision />
-        <GetStarted />
-        <ContactFormDrawer drawerOpen={drawerOpen} setDrawer={setDrawer} />
+        <Offices />
+        {/* <ContactFormDrawer /> */}
+        <GetPrivateAccessForm />;
       </div>
     </ThemeProvider>
   );

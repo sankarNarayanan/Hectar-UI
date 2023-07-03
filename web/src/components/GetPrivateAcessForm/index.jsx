@@ -69,6 +69,7 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
       onClose={() => setDrawer(false)}
       size={500}
       placement="right"
+      className="z-20"
     >
       <div className="relative h-full">
         {activeStep !== "submitted" && (
@@ -78,7 +79,7 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col h-screen">
-              <div className="flex-grow overflow-y-auto p-20">
+              <div className="flex-grow overflow-y-auto p-5">
                 <div className="flex justify-between">
                   <div>
                     <Typography variant="h4">Submit Your Request</Typography>
@@ -106,7 +107,7 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
                       validators={["required"]}
                     />
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.Select
                       name="interestedCommodities"
                       validators={["required"]}
@@ -121,28 +122,28 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
                       options={productItems}
                     />
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.TextField
                       name="companyName"
                       label="Company Name"
                       validators={["required"]}
                     />
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.TextField
                       name="companyRevenue"
                       label="Company Revenue"
                       validators={["required"]}
                     />
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.PhoneNumber
                       name="phoneNumber"
                       label="Phone number"
                       validators={["required"]}
                     />
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.TextField
                       name="email"
                       label="Company Email ID"
@@ -150,7 +151,7 @@ export default function GetPrivateAccessForm({ drawerOpen, setDrawer }) {
                     />
                   </div>
 
-                  <div className="mt-20">
+                  <div className="mt-5">
                     <Form.TextField
                       name="baseLocation"
                       label="Location"

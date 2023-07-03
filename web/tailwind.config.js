@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = withMT({
+import withMT from "@material-tailwind/react/utils/withMT";
+export default withMT({
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,17 +9,38 @@ module.exports = withMT({
     "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
+    screens: {
+      sm: "540px",
+      // => @media (min-width: 540px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1140px",
+      // => @media (min-width: 1140px) { ... }
+
+      "2xl": "3600px",
+      // => I dont need this anymore
+    },
+    fontFamily: {
+      poppins: ["var(--primary-font)"],
+    },
+
+    container: {
+      center: true,
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontFamily: {
-        poppins: ["var(--primary-font)"],
-      },
       spacing: {
-        20: "20px",
+        15: "4rem", // 60px default
+        // 20: "20px",
         30: "30px",
         40: "40px",
         50: "50px",
