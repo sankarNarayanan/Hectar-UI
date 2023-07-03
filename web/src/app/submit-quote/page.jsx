@@ -55,6 +55,10 @@ export default function SubmitQuote() {
     return null;
   }
 
+  const destinationPortDetails = productDetails.findPortByCoordinates(
+    quoteResult.data?.destinationPortCode
+  );
+
   const handleQuoteFormSubmit = (formData) => {
     const selectedVariant = productDetails.getVariantDetails(
       quoteData.product,
@@ -99,10 +103,9 @@ export default function SubmitQuote() {
             <Typography variant="h1" as="h3" className="text-[1.375rem] pt-30">
               ${quoteResult.data.startRange} - ${quoteResult.data.endRange}
             </Typography>
-            <Typography className="text-xs">
-              {/* TODO: need to fix teh Date */}
+            {/* <Typography className="text-xs">
               Next Available Vessel: 31st June, 2023
-            </Typography>
+            </Typography> */}
             {/* <Typography className="text-xs pt-4">
               Show Earliest arrival
             </Typography> */}
@@ -114,21 +117,21 @@ export default function SubmitQuote() {
               <div className="flex justify-between">
                 <div className="opacity-50">Product</div>
                 {/* TODO: make Dynamic */}
-                <div className="font-medium">Turmeric</div>
+                <div className="font-medium">{quoteResult.data?.product}</div>
               </div>
 
               <div className="flex justify-between">
                 <div className="opacity-50">Variant</div>
                 {/* TODO: make Dynamic */}
-                <div className="font-medium">Erode</div>
+                <div className="font-medium">{quoteResult.data?.variant}</div>
               </div>
 
               <div className="flex justify-between">
                 <div className="opacity-50">Destination</div>
                 {/* TODO: make Dynamic */}
                 <div className="font-medium">
-                  Port Of Madras,
-                  <br /> Chennai
+                  Chennai
+                  {/* {destinationPortDetails.properties.Name} */}
                 </div>
               </div>
             </div>

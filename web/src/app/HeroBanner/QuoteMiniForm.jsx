@@ -33,14 +33,24 @@ export default function QuoteMiniForm() {
   const handleSubmit = async (formData) => {
     // The hookform value will be stringified JSON.
     // Need to parse it and extract the value
+    const product = productDetails.getValuefromItem(formData.product);
+    const variant = productDetails.getValuefromItem(formData.variant);
+    const destination = productDetails.getValuefromItem(formData.destination);
 
+    const variantDetails = productDetails.getVariantDetails(formData.product, formData.variant);
+    const loadingPortDetails = productDetails.findPortByName(
+      variantDetails.loadingPort
+    );
+    const destinationPortDetails = productDetails.findPortByName(destination);
     const resp = await getQuote({
-      product: productDetails.getValuefromItem(formData.product),
-      variant: productDetails.getValuefromItem(formData.variant),
+      product,
+      variant,
       // TODO: need to fix hardcoded value
-      sourcePortCode: "[46.482526, 30.7233095]",
-      destinationPortCode: "[31.2303904, 121.4737021]",
-      containerString: "ST20",
+      sourcePortCode: JSON.stringify(loadingPortDetails.geometry.coordinates),
+      destinationPortCode: JSON.stringify(
+        destinationPortDetails.geometry.coordinates
+      ),
+      containerString: variantDetails.containerType,
     }).unwrap();
 
     router.push("/submit-quote/");
@@ -53,7 +63,7 @@ export default function QuoteMiniForm() {
       onSubmitError={(error) => console.log("error", error)}
     >
       <div className="flex gap-0 lg:bg-white justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px]">
-        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="product"
             onChange={() => resetFields()}
@@ -68,7 +78,7 @@ export default function QuoteMiniForm() {
         </div>
         {/* TODO: colors needs to be standardised */}
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
-        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="variant"
             validators={["required"]}
@@ -82,7 +92,7 @@ export default function QuoteMiniForm() {
         </div>
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
 
-        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="destination"
             validators={["required"]}
@@ -91,12 +101,14 @@ export default function QuoteMiniForm() {
             }}
             icon={LocationIcon}
             label="Destination"
-            options={productDetails.unLoadingPorts}
+            isSearchable={true}
+            options={productDetails.getPortItems()}
           />
         </div>
         <div className=" lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
           <Button
             type="submit"
+            isLoading={quoteResult.isLoading}
             className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium"
           >
             Get Quote
