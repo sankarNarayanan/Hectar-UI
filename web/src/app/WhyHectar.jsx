@@ -73,7 +73,7 @@ export default function WhyHectar() {
       </div>
 
       {/* Document */}
-      <div className="container mx-auto bg-[#A9D9D7] mt-5 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row overflow-clip">
+      <div className="container mx-auto bg-[#A9D9D7] mt-5 lg:mt-50 flex rounded-2xl py-30 lg:p-50 flex-col lg:flex-row overflow-clip lg:justify-between">
         <div className="lg:w-1/2py-5 px-9 lg:px-0">
           <Fade triggerOnce>
             <DocumentIconImage alt="Track Icon" className="w-50 lg:w-[80px]" />
