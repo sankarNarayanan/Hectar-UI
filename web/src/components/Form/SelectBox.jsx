@@ -76,7 +76,7 @@ function Select({
   return (
     <label>
       <div className="relative w-full min-w-[120px]">
-        <div className="absolute w-full left-0 top-[10px] px-2 z-10">
+        <div className="absolute w-full left-0 top-[10px] px-2">
           <div className="flex justify-between items-center w-full">
             <RenderValue
               label={label}
@@ -94,7 +94,6 @@ function Select({
             )}
           </div>
         </div>
-
         <Controller
           name={name}
           control={control}
@@ -113,7 +112,7 @@ function Select({
                   if (variant === "bordered")
                     return "border border-gray-400 w-full flex rounded-lg";
 
-                  return "opacity-0 w-full flex";
+                  return "opacity-0 flex z-10 justify-strech";
                 },
                 menu: "absolute z-20 w-full bg-white shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700",
               }}
@@ -122,6 +121,7 @@ function Select({
             </SelectBox>
           )}
         />
+
         {isError && <div className="text-red-500 text-sm pt-2">{message}</div>}
       </div>
     </label>

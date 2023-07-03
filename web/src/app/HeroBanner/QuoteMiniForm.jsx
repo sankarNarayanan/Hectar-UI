@@ -52,8 +52,8 @@ export default function QuoteMiniForm() {
       onSubmit={handleSubmit}
       onSubmitError={(error) => console.log("error", error)}
     >
-      <div className="flex gap-0 lg:bg-white justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row">
-        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+      <div className="flex gap-0 lg:bg-white justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px]">
+        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="product"
             onChange={() => resetFields()}
@@ -68,7 +68,7 @@ export default function QuoteMiniForm() {
         </div>
         {/* TODO: colors needs to be standardised */}
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
-        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="variant"
             validators={["required"]}
@@ -82,7 +82,7 @@ export default function QuoteMiniForm() {
         </div>
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
 
-        <div className="w-full bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div className="w-full lg:w-[160px] bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="destination"
             validators={["required"]}
@@ -94,7 +94,7 @@ export default function QuoteMiniForm() {
             options={productDetails.unLoadingPorts}
           />
         </div>
-        <div className="w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
+        <div className=" lg:w-auto lg:shrink-0 mt-4 lg:mt-0 mb-50 lg:mb-0">
           <Button
             type="submit"
             className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium"
