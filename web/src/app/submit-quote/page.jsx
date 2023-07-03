@@ -90,7 +90,7 @@ export default function SubmitQuote() {
     >
       <div className="container">
         <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-xl py-30">
-          <div className="self-center text-center p-4 lg:p-50 shrink-0">
+          <div className="self-center text-center p-4 lg:p-50 shrink-0 lg:w-1/2">
             <SubmittedBlackImage
               alt="Image Submitted"
               className="mx-auto w-[80px]"
@@ -137,7 +137,7 @@ export default function SubmitQuote() {
             </div>
           </div>
           <div className="w-px bg-black self-stretch opacity-10"></div>
-          <div className="grow">
+          <div className="grow lg:w-1/2">
             {formstate === "submitted" ? (
               <FormSubmitted />
             ) : (
