@@ -86,10 +86,10 @@ export default function SubmitQuote() {
   return (
     <section
       id="QuoteForm"
-      className="bg-[#F9F9F9] relative -mt-[140px] pt-[140px] pb-6 -mb-30"
+      className="bg-[#F9F9F9] relative -mt-[140px] pt-[140px] pb-6 -mb-30 lg:mb-0"
     >
       <div className="container">
-        <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-xl py-30">
+        <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-3xl">
           <div className="self-center text-center p-4 lg:p-50 shrink-0 lg:w-1/2">
             <SubmittedBlackImage
               alt="Image Submitted"
@@ -100,9 +100,9 @@ export default function SubmitQuote() {
               <br /> Your quote is now ready.
             </p>
             {/* TODO: need to fix fontsize here */}
-            <Typography variant="h1" as="h3" className="text-[1.375rem] pt-30">
+            <h3 className="text-[1.375rem] lg:text-[2.5rem] font-semibold pt-30">
               ${quoteResult.data.startRange} - ${quoteResult.data.endRange}
-            </Typography>
+            </h3>
             {/* <Typography className="text-xs">
               Next Available Vessel: 31st June, 2023
             </Typography> */}

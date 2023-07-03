@@ -17,8 +17,7 @@ const CustomTheme = {
     styles: {
       variants: {
         h1: {
-          fontSize: "text-[1.375rem] lg:text-[2.5rem]",
-          className: "leading-[140%] font-poppins",
+          className: "leading-[140%] text-[1.375rem] lg:text-[2.5rem] font-poppins",
         },
         h2: {
           fontSize: "text-[1.375rem] lg:text-4xl font-medium",
