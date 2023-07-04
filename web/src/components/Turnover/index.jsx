@@ -1,21 +1,30 @@
+import { Typography } from "@/components";
 import Skeleton from "react-loading-skeleton";
 
 export default function TurnOver({ revenue, setRevenue, isLoading }) {
-    const handleRadio = (value) => {
-      setRevenue(value);
-    };
+  const handleRadio = (value) => {
+    setRevenue(value);
+  };
 
-    if(isLoading) {
-      return (
-        <div className="flex gap-1 justify-between">
-          <div className="w-full"><Skeleton className="h-10"/></div>
-          <div className="w-full"><Skeleton className="h-10"/></div>
-          <div className="w-full"><Skeleton className="h-10"/></div>
-        </div>
-      )
-    }
+  if (isLoading) {
     return (
-      <div className="flex mb-4">
+      <div className="flex gap-1 justify-between">
+        <div className="w-full">
+          <Skeleton className="h-10" />
+        </div>
+        <div className="w-full">
+          <Skeleton className="h-10" />
+        </div>
+        <div className="w-full">
+          <Skeleton className="h-10" />
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <Typography className="opacity-50 text-sm lg:text-sm">Annual Turnover</Typography>
+      <div className="flex mb-4 mt-1">
         <label
           className={`cursor-pointer border border-blue-gray-500 hover:border-blue-gray-700 hover:shadow-lg text-center py-2 lg:p-2 rounded-l-lg grow transition-all duration-500 ${
             revenue === "less than 10" ? "bg-black text-white" : "opacity-50"
@@ -44,7 +53,9 @@ export default function TurnOver({ revenue, setRevenue, isLoading }) {
         </label>
         <label
           className={`cursor-pointer border border-blue-gray-500 hover:border-blue-gray-700 hover:shadow-lg text-center py-2 lg:p-2 rounded-r-lg grow transition-all duration-500 ${
-            revenue === "greater than 100" ? "bg-black text-white" : "opacity-50"
+            revenue === "greater than 100"
+              ? "bg-black text-white"
+              : "opacity-50"
           }`}
         >
           <input
@@ -56,5 +67,6 @@ export default function TurnOver({ revenue, setRevenue, isLoading }) {
           &gt; $100 M
         </label>
       </div>
-    );
-  }
+    </div>
+  );
+}
