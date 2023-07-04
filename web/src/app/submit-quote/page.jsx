@@ -49,7 +49,7 @@ export default function SubmitQuote() {
   const router = useRouter();
   const [saveQuote, saveQuoteResult] = useSaveQuoteMutation();
 
-  const [loadingState, setLoadingState] = useState("");
+  const [loadingState, setLoadingState] = useState("analysing");
 
   // Redirect to Home Page If no Quote Data available.
   // To handle refresh or browser back

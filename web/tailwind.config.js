@@ -48,6 +48,10 @@ export default withMT({
         130: "130px",
         150: "150px",
       },
+      animation: {
+        'spin': 'spin 2s linear infinite',
+        'spin-slow': 'spin 30s linear infinite',
+      }
     },
   },
   plugins: [],
