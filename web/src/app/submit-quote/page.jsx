@@ -164,7 +164,7 @@ export default function SubmitQuote() {
                   <div className="mt-4">
                     <Form.TextField
                       name="businessNature"
-                      label="Nature Of Business"
+                      label="Other details/Packaging requirements"
                       isLoading={isLoading}
                       validators={["required"]}
                     />
