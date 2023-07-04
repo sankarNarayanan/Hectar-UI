@@ -4,6 +4,7 @@ import AIBlobImage from "@/assets/svg/img-ai-blob.svg";
 import AICardsImage from "@/assets/svg/img-ai-cards.svg";
 import AIGraphImage from "@/assets/svg/img-ai-graph.svg";
 import { Typography } from "@/components";
+import TypewriterComponent from "typewriter-effect";
 
 export default function Analytics() {
   return (
@@ -19,7 +20,23 @@ export default function Analytics() {
         as="h2"
         className="font-semibold text-center lg:text-[32px] mt-1 lg:mt-2.5"
       >
-        Plan Shipments Efficiently
+        <TypewriterComponent
+          options={{loop: true}}
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("Plan Shipments ")
+              .typeString("Efficiently.")
+              .pauseFor(2500)
+              .deleteChars(12)
+              .typeString("Intelligently.")
+              .pauseFor(2500)
+              .deleteChars(14)
+              .typeString("Remarkably.")
+              .pauseFor(2500)
+              .deleteAll()
+              .start()
+          }}
+        />
       </Typography>
       <div className="flex justify-center my-30 lg:my-50">
         <AIBlobImage alt="Analytics Image" className="lg:w-[162px] w-20" />
@@ -51,7 +68,7 @@ export default function Analytics() {
               assistance ensures smarter trades and better outcomes - every time
               for every customer.
             </Typography>
-            <AIGraphImage className="mt-30"/>
+            <AIGraphImage className="mt-30" />
           </div>
         </div>
       </div>
