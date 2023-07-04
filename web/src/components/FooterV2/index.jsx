@@ -17,7 +17,7 @@ export default function Footer() {
 
         <FooterShip className="absolute right-0 bottom-0 h-full" />
       </div>
-      <div className="h-px w-full px-4">
+      {/* <div className="h-px w-full px-4">
         <hr className="border-black/10" />
       </div>
       <div className="container flex justify-between px-4 py-5 lg:py-30">
@@ -34,7 +34,7 @@ export default function Footer() {
 
           <YoutubeImage className="w-4 lg:w-6" />
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }
