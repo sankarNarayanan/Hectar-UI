@@ -1,10 +1,10 @@
 "use client";
 import { useRequestQuoteMutation, useSaveQuoteMutation } from "@/api/BaseAPI";
 import SubmittedBlackImage from "@/assets/svg/img-submitted-black.svg";
-import { Button, Radio, Typography } from "@/components";
+import { Button, Typography } from "@/components";
 import Form, { useForm } from "@/components/Form";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { productDetails } from "../ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { resetData } from "@/redux/productReducer";
@@ -50,10 +50,13 @@ export default function SubmitQuote() {
 
   // Redirect to Home Page If no Quote Data available.
   // To handle refresh or browser back
-  if (!quoteResult.isSuccess) {
-    router.push("/");
-    return null;
-  }
+  useEffect(() => {
+    if (!quoteResult.isSuccess) {
+      router.push("/");
+      return null;
+    }
+    s;
+  }, []);
 
   const destinationPortDetails = productDetails.findPortByCoordinates(
     quoteResult.data?.destinationPortCode
@@ -101,7 +104,7 @@ export default function SubmitQuote() {
             </p>
             {/* TODO: need to fix fontsize here */}
             <h3 className="text-[1.375rem] lg:text-[2.5rem] font-semibold pt-30">
-              ${quoteResult.data.startRange} - ${quoteResult.data.endRange}
+              ${quoteResult.data?.startRange} - ${quoteResult.data?.endRange}
             </h3>
             {/* <Typography className="text-xs">
               Next Available Vessel: 31st June, 2023
