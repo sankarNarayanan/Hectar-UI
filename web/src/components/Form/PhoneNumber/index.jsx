@@ -7,6 +7,7 @@ import { Menu, MenuHandler, MenuItem, MenuList } from "@/components";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { useFormControl } from "../validations/hooks";
+import Skeleton from "react-loading-skeleton";
 
 /**
  * The component to manage the Pnone Number field
@@ -18,6 +19,7 @@ export default function PhoneNumber({
   className,
   validators,
   errorMessage,
+  isLoading,
   ...inputProps
 }) {
   // Getting the countries data from useCountries 3rd party Hook
@@ -55,6 +57,8 @@ export default function PhoneNumber({
   // customizing the text box class names along with user defined
   // TODO: need to prioritize user defined classes
   className += " rounded-l-none border-l-0 w-10";
+
+  if (isLoading) return <Skeleton className="h-10" />;
 
   return (
     <>
