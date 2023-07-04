@@ -117,29 +117,18 @@ export default function GetPrivateAccessForm() {
                     />
                   </div>
                   <div className="mt-5">
-                    <Form.Select
-                      name="interestedCommodities"
-                      validators={["required"]}
-                      className="border border-blue-gray-500"
-                      variant="bordered"
-                      placeholder="Select Products"
-                      isMultiple={true}
-                      errorMessage={{
-                        required: "Please select an option",
-                      }}
-                      label={() => <>product</>}
-                      options={productItems}
-                    />
-                  </div>
-                  <div className="mt-5">
                     <Form.TextField
                       name="companyName"
                       label="Company Name"
                       validators={["required"]}
                     />
-                  </div>
-                  <div className="mt-5">
-                    <TurnOver revenue={revenue} setRevenue={setRevenue} />
+                    </div>
+                    <div className="mt-5">
+                    <Form.TextField
+                      name="email"
+                      label="Company Email ID"
+                      validators={["required"]}
+                    />
                   </div>
                   <div className="mt-5">
                     <Form.PhoneNumber
@@ -150,18 +139,28 @@ export default function GetPrivateAccessForm() {
                   </div>
                   <div className="mt-5">
                     <Form.TextField
-                      name="email"
-                      label="Company Email ID"
-                      validators={["required"]}
+                      name="baseLocation"
+                      label="Company Website (Optional)"
+                      validators={["optional"]}
                     />
                   </div>
-
                   <div className="mt-5">
-                    <Form.TextField
-                      name="baseLocation"
-                      label="Other comments / Packaging requirements"
+                    <Form.Select
+                      name="interestedCommodities"
                       validators={["required"]}
+                      className="border border-blue-gray-500"
+                      variant="bordered"
+                      placeholder="Interested Commodities"
+                      isMultiple={true}
+                      errorMessage={{
+                        required: "Please select an option",
+                      }}
+                      label={() => <>product</>}
+                      options={productItems}
                     />
+                  </div>
+                  <div className="mt-5">
+                    <TurnOver revenue={revenue} setRevenue={setRevenue} />
                   </div>
                 </>
               </div>
