@@ -49,7 +49,7 @@ export default function SubmitQuote() {
   const router = useRouter();
   const [saveQuote, saveQuoteResult] = useSaveQuoteMutation();
 
-  const [loadingState, setLoadingState] = useState('analysing');
+  const [loadingState, setLoadingState] = useState("");
 
   // Redirect to Home Page If no Quote Data available.
   // To handle refresh or browser back
@@ -87,13 +87,15 @@ export default function SubmitQuote() {
     });
   };
 
+  const isLoading = loadingState !== "completed" || quoteResult.isLoading;
+
   return (
     <section
       id="QuoteForm"
-      className="bg-[#F9F9F9] relative -mt-[140px] pt-[140px] pb-6 -mb-30 lg:mb-0"
+      className="bg-[#F9F9F9] relative -mt-[140px] pt-[140px] pb-6 mb-0"
     >
       <div className="container">
-        <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-3xl">
+        <div className="lg:w-[950px] flex flex-col lg:flex-row lg:mx-auto bg-white rounded-3xl mx-4 my-5 lg:my-0">
           <QuoteProgress
             quoteResult={quoteResult}
             loadingState={loadingState}
@@ -105,7 +107,7 @@ export default function SubmitQuote() {
               <FormSubmitted />
             ) : (
               <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
-                <div className="mx-3 lg:m-0 px-8 lg:px-50 lg:py-30 rounded-lg bg-white">
+                <div className="px-4 lg:px-50 pb-30 rounded-lg bg-white">
                   <p className="text-xl font-medium">
                     Proceed To Complete Your Request
                   </p>
@@ -117,12 +119,14 @@ export default function SubmitQuote() {
                       name="name"
                       label="Full Name"
                       className="bg-white"
+                      isLoading={isLoading}
                       validators={["required"]}
                     />
                   </div>
                   <div className="mt-4">
                     <Form.TextField
                       name="bussinessName"
+                      isLoading={isLoading}
                       label="Bussiness Name"
                       validators={["required"]}
                     />
@@ -131,6 +135,7 @@ export default function SubmitQuote() {
                     <Form.TextField
                       name="email"
                       label="Bussiness Email"
+                      isLoading={isLoading}
                       validators={["required"]}
                     />
                   </div>
@@ -138,25 +143,38 @@ export default function SubmitQuote() {
                     <Form.PhoneNumber
                       name="phoneNumber"
                       label="Business Phone number"
+                      isLoading={isLoading}
                       validators={["required"]}
                     />
                   </div>
                   <div className="mt-4">
-                    <Form.TextField name="website" label="Website (Optional)" />
+                    <Form.TextField
+                      name="website"
+                      label="Website (Optional)"
+                      isLoading={isLoading}
+                    />
                   </div>
                   <div className="mt-4">
-                    <TurnOver revenue={revenue} setRevenue={setRevenue} />
+                    <TurnOver
+                      revenue={revenue}
+                      setRevenue={setRevenue}
+                      isLoading={isLoading}
+                    />
                   </div>
                   <div className="mt-4">
                     <Form.TextField
                       name="businessNature"
                       label="Nature Of Business"
+                      isLoading={isLoading}
                       validators={["required"]}
                     />
                   </div>
                   <div className="mt-30 lg:px-30">
                     <Button
                       className="!w-full"
+                      //   Displays skeleton loader
+                      isSkeleton={isLoading}
+                      //   Displays processing state
                       isLoading={saveQuoteResult.isLoading}
                       type="submit"
                       // {requestQuoteResult.isLoading}

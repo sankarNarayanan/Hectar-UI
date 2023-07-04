@@ -44,23 +44,23 @@ export default function QuoteProgress({
       <div className="self-center text-center p-4 lg:p-50 shrink-0 lg:w-1/2">
         {["analysing", "computing", "optimizing"].includes(loadingState) && (
           //   <Fade delay={200}>
-          <AIBlobImage className="w-[80px] mx-auto animate-spin" />
+          <AIBlobImage className="w-[80px] mx-auto animate-spin m-30" />
           //   </Fade>
         )}
         {["analysingDone", "computingDone", "optimizingDone"].includes(
           loadingState
         ) && (
           <Zoom delay={200}>
-            <CompletedIcon className="w-[80px] mx-auto" />
+            <CompletedIcon className="w-[80px] mx-auto m-30" />
           </Zoom>
         )}
 
         {["analysing", "analysingDone"].includes(loadingState) && (
           <>
-            <Typography variant="h2" className="text-xl mt-30">
+            <Typography variant="h2" className="text-base lg:text-xl mt-30">
               Analysing Crop Arrivals
             </Typography>
-            <Typography className="mt-2.5 opacity-70 lg:text-base">
+            <Typography className="mt-2.5 opacity-70 text-xs lg:text-base">
               Our algorithms analyse various data sources to provide
               comprehensive understanding of new stock arrivals
             </Typography>
@@ -69,10 +69,10 @@ export default function QuoteProgress({
 
         {["computing", "computingDone"].includes(loadingState) && (
           <>
-            <Typography variant="h2" className="text-xl mt-30">
+            <Typography variant="h2" className="text-base lg:text-xl mt-30">
               Computing Best Prices
             </Typography>
-            <Typography className="mt-2.5 opacity-70 lg:text-base">
+            <Typography className="mt-2.5 opacity-70 text-xs lg:text-base">
               By considering factors such as demand fluctuations, inventory
               levels, and competitor pricing, we adjust prices in realtime
             </Typography>
@@ -81,22 +81,25 @@ export default function QuoteProgress({
 
         {["optimizing", "optimizingDone"].includes(loadingState) && (
           <>
-            <Typography variant="h2" className="text-xl mt-30">
+            <Typography variant="h2" className="text-base lg:text-xl mt-30">
               Optimising Vessel Schedules
             </Typography>
-            <Typography className="mt-2.5 opacity-70 lg:text-base">
+            <Typography className="mt-2.5 opacity-70 text-xs lg:text-base">
               By analysing port congestion, vessel tracking, and supply chain
               events we adjust shipping schedules to account for changing
               conditions and minimize disruptions.
             </Typography>
           </>
         )}
+
+        {/* Seperator */}
+        <div className="h-px w-full bg-black opacity-10 my-30 lg:my-50"></div>
       </div>
     );
   }
 
   return (
-    <div className="self-center text-center p-4 lg:p-50 shrink-0 lg:w-1/2">
+    <div className="self-center text-center p-30 lg:p-50 shrink-0 lg:w-1/2">
       <SubmittedBlackImage alt="Image Submitted" className="mx-auto w-[80px]" />
       <p className="text-sm lg:text-xl mt-3">
         Congratulations!

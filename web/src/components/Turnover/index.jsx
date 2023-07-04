@@ -1,7 +1,19 @@
-export default function TurnOver({ revenue, setRevenue }) {
+import Skeleton from "react-loading-skeleton";
+
+export default function TurnOver({ revenue, setRevenue, isLoading }) {
     const handleRadio = (value) => {
       setRevenue(value);
     };
+
+    if(isLoading) {
+      return (
+        <div className="flex gap-1 justify-between">
+          <div className="w-full"><Skeleton className="h-10"/></div>
+          <div className="w-full"><Skeleton className="h-10"/></div>
+          <div className="w-full"><Skeleton className="h-10"/></div>
+        </div>
+      )
+    }
     return (
       <div className="flex mb-4">
         <label
