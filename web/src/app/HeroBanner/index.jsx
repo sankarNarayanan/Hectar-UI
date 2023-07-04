@@ -180,7 +180,7 @@ export default function HeroBanner() {
     >
       {/* TODO: color needs to be variablized */}
       <div className="container flex items-center justify-between flex-col lg:flex-row mt-15 lg:mt-0">
-        <div className="px-4 lg:px-0 lg:w-1/2">
+        <div className="px-4 lg:px-0 lg:w-1/2 lg:-mt-[120px]">
           <Typography variant="lead" size="h5" className="text-[#FF9D01] font-semibold opacity-100 lg:text-xl">
             AGRI TRADE, REIMAGINED
           </Typography>
@@ -195,8 +195,8 @@ export default function HeroBanner() {
         </div>
 
         <div className="lg:w-[540px] shrink-0 hidden lg:block">
-          <div className="relative lg:-right-[100px] pb-30">
-            <HeroBGImage className="w-full lg:w-[640px]" />
+          <div className="relative lg:-right-[90px] pb-30">
+            <HeroBGImage className="w-full lg:w-[700px]" />
           </div>
         </div>
       </div>

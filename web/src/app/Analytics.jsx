@@ -22,7 +22,7 @@ export default function Analytics() {
         Plan Shipments Efficiently
       </Typography>
       <div className="flex justify-center my-30 lg:my-50">
-        <AIBlobImage alt="Analytics Image" className="lg:w-44 w-20" />
+        <AIBlobImage alt="Analytics Image" className="lg:w-[162px] w-20" />
       </div>
       <div className="container px-4">
         <div className="flex flex-wrap lg:flex-nowrap gap-4 ">

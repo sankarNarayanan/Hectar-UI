@@ -57,7 +57,7 @@ export default function QuoteMiniForm() {
       onSubmit={handleSubmit}
       onSubmitError={(error) => console.log("error", error)}
     >
-      <div className="flex gap-0 lg:bg-white justify-evenly rounded-r-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px]">
+      <div className="flex gap-0 lg:bg-white justify-evenly rounded-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px] lg:border border-gray-300">
         <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
           <Form.Select
             name="product"
@@ -104,7 +104,7 @@ export default function QuoteMiniForm() {
           <Button
             type="submit"
             isLoading={quoteResult.isLoading}
-            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium"
+            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium lg:relative lg:-right-2.5"
           >
             Get Quote
           </Button>

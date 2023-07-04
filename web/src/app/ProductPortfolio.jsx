@@ -32,7 +32,7 @@ export default function ProductPortfolio() {
     >
       <Typography
         variant="h2"
-        className="text-center text-[1.325rem] lg:text-4xl font-medium"
+        className="text-center text-[1.325rem] lg:text-[40px] font-medium"
       >
         Product Portfolio
       </Typography>

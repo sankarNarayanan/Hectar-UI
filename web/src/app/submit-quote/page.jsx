@@ -117,6 +117,7 @@ export default function SubmitQuote() {
                       name="name"
                       label="Full Name"
                       className="bg-white"
+                      isLoading={true}
                       validators={["required"]}
                     />
                   </div>

@@ -19,7 +19,7 @@ function RenderValue({
       <div className="flex items-center px-2 w-full">
         {Icon && <Icon className="text-[#DBDAE1] mr-2" />}
         {/* Render Value if value is selected else render Label text */}
-        <p className="truncate">{parsedValue?.value || label}</p>
+        <p className={`truncate ${!parsedValue?.value && 'opacity-50'}`}>{parsedValue?.value || label}</p>
       </div>
     );
   };
@@ -89,7 +89,7 @@ function Select({
             {/* Do not render chevron drop down for multiple cases */}
             {!isMultiple && (
               <div>
-                <ChevronDownIcon className="relative right-2.5" />
+                <ChevronDownIcon className="relative right-2.5 opacity-50" />
               </div>
             )}
           </div>
