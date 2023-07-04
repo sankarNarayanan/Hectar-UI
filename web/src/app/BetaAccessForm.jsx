@@ -96,20 +96,20 @@ export default function GetPrivateAccessForm() {
                       variant="h4"
                       className="text-xl font-medium mt-30"
                     >
-                      Submit Your Request
+                      Access our Private Beta
                     </Typography>
                   </div>
                 </div>
-                <Typography
+                {/* <Typography
                   variant="paragraph"
                   className="opacity-70 pt-3 text-xs lg:text-base"
                 >
                   Don't see what you are looking for? Please send us your
                   requirement and the team will get back shortly with details.
-                </Typography>
+                </Typography> */}
 
                 <>
-                  <div className="mt-30 lg:mt-100">
+                  <div className="mt-10">
                     <Form.TextField
                       name="name"
                       label="Your Name"
@@ -159,7 +159,7 @@ export default function GetPrivateAccessForm() {
                   <div className="mt-5">
                     <Form.TextField
                       name="baseLocation"
-                      label="Location"
+                      label="Other comments / Packaging requirements"
                       validators={["required"]}
                     />
                   </div>

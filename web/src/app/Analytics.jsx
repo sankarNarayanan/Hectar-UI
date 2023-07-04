@@ -17,12 +17,12 @@ export default function Analytics() {
       <Typography
         variant="h1"
         as="h2"
-        className="font-medium text-center lg:text-[32px] mt-1 lg:mt-2.5"
+        className="font-semibold text-center lg:text-[32px] mt-1 lg:mt-2.5"
       >
         Plan Shipments Efficiently
       </Typography>
       <div className="flex justify-center my-30 lg:my-50">
-        <AIBlobImage alt="Analytics Image" className="w-16" />
+        <AIBlobImage alt="Analytics Image" className="lg:w-44 w-20" />
       </div>
       <div className="container px-4">
         <div className="flex flex-wrap lg:flex-nowrap gap-4 ">

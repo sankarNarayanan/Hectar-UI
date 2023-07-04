@@ -7,11 +7,6 @@ import ProductIcon from "@/assets/svg/product-icon.svg";
 import LocationIcon from "@/assets/svg/location.svg";
 import VariantIcon from "@/assets/svg/variant-icon.svg";
 import { useDispatch } from "react-redux";
-import {
-  updateDestination,
-  updateProduct,
-  updateVariant,
-} from "@/redux/productReducer";
 import { useRouter } from "next/navigation";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
 
@@ -30,7 +25,7 @@ export default function QuoteMiniForm() {
     methods.resetField("variant");
   };
 
-  const handleSubmit = async (formData) => {
+  const handleSubmit = (formData) => {
     // The hookform value will be stringified JSON.
     // Need to parse it and extract the value
     const product = productDetails.getValuefromItem(formData.product);
@@ -42,7 +37,7 @@ export default function QuoteMiniForm() {
       variantDetails.loadingPort
     );
     const destinationPortDetails = productDetails.findPortByName(destination);
-    const resp = await getQuote({
+    getQuote({
       product,
       variant,
       // TODO: need to fix hardcoded value
@@ -51,7 +46,7 @@ export default function QuoteMiniForm() {
         destinationPortDetails.geometry.coordinates
       ),
       containerString: variantDetails.containerType,
-    }).unwrap();
+    })
 
     router.push("/submit-quote/");
   };
