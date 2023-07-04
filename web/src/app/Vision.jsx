@@ -16,9 +16,13 @@ export default function Vision() {
               Borders
             </Typography>
           </div>
-          <div className="h-150 lg:h-auto">
-            <MapGreenImage />
-          </div>
+          {/* <div className="h-150 lg:h-auto"> */}
+          <img
+                  src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Left.gif"
+                  alt="prices image"
+                />
+            {/* <MapGreenImage /> */}
+          {/* </div> */}
         </div>
         <div className="lg:w-1/2 bg-[#A9D9D7]  text-center flex flex-col justify-between rounded-b-2xl lg:rounded-bl-none lg:rounded-r-2xl overflow-clip">
           <div className="px-4 py-50 lg:p-50">
@@ -29,7 +33,11 @@ export default function Vision() {
               imported food.
             </Typography>
           </div>
-          <MapBlackImage className="hidden lg:block" />
+          <img    className="hidden lg:block"
+                  src="https://temp-hectar-s3.s3.amazonaws.com/Borders-Right.gif"
+                  alt="prices image"
+                />
+          {/* <MapBlackImage className="hidden lg:block" /> */}
         </div>
       </div>
     </section>
