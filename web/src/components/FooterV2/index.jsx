@@ -1,16 +1,14 @@
-import Image from "next/image";
 import HectarLogo from "@/assets/svg/hectar-logo.svg";
 import FooterShip from "@/assets/images/img-ship-footer.svg";
 import TwitterImage from "@/assets/svg/icon-twitter.svg";
 import LinkedImage from "@/assets/svg/icon-linked.svg";
 import YoutubeImage from "@/assets/svg/icon-youtube.svg";
-import { Typography } from "@material-tailwind/react";
 
 
 export default function Footer() {
   return (
     <footer className="bg-[#F9F9F9] w-screen overflow-x-clip">
-      <div className="bg-[url('/curvyborder.svg')] w-screen h-4 relative -top-2.5">
+      <div className="bg-[url('/curvyborder.svg')] w-screen h-4 relative -top-0 lg:-top-2.5">
       </div>
       <div className="h-100 lg:h-[232px] w-screen relative">
         <div className="container flex items-center px-4 h-full">
@@ -19,7 +17,7 @@ export default function Footer() {
 
         <FooterShip className="absolute right-0 bottom-0 h-full" />
       </div>
-      <div className="h-px w-full px-4">
+      {/* <div className="h-px w-full px-4">
         <hr className="border-black/10" />
       </div>
       <div className="container flex justify-between px-4 py-5 lg:py-30">
@@ -36,7 +34,7 @@ export default function Footer() {
 
           <YoutubeImage className="w-4 lg:w-6" />
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

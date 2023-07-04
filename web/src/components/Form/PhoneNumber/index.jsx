@@ -7,6 +7,7 @@ import { Menu, MenuHandler, MenuItem, MenuList } from "@/components";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { useFormControl } from "../validations/hooks";
+import Skeleton from "react-loading-skeleton";
 
 /**
  * The component to manage the Pnone Number field
@@ -18,6 +19,7 @@ export default function PhoneNumber({
   className,
   validators,
   errorMessage,
+  isLoading,
   ...inputProps
 }) {
   // Getting the countries data from useCountries 3rd party Hook
@@ -56,13 +58,15 @@ export default function PhoneNumber({
   // TODO: need to prioritize user defined classes
   className += " rounded-l-none border-l-0 w-10";
 
+  if (isLoading) return <Skeleton className="h-10" />;
+
   return (
     <>
       <div className="relative flex w-full">
         <Menu placement="bottom-start">
           <MenuHandler>
             <div
-              className={`flex h-10 text-[11px] -mr-px .text-blue-gray-700 items-center gap-2 rounded-lg rounded-r-none border pl-3 w-100 ${
+              className={`flex h-10 text-[11px] -mr-px .text-blue-gray-700 items-center gap-1 lg:gap2 rounded-lg rounded-r-none border pl-2 lg:pl-3 w-100 ${
                 isError
                   ? "border-red-500"
                   : isSuccess
@@ -70,12 +74,15 @@ export default function PhoneNumber({
                   : "border-blue-gray-200"
               } `}
             >
-              <img
-                src={flags.svg}
-                alt={countryName}
-                className="h-4 w-4 rounded-full object-cover"
-              />
-              {countryCallingCode}
+              <div>
+                <img
+                  src={flags.svg}
+                  alt={countryName}
+                  className="h-4 w-4 rounded-full object-cover"
+                />
+              </div>
+
+              <div className="mt-1">{countryCallingCode}</div>
             </div>
           </MenuHandler>
           <MenuList className="max-h-[20rem] max-w-[18rem] z-[10000]">

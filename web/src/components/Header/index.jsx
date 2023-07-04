@@ -3,6 +3,7 @@ import HectarLogo from "@/assets/svg/hectar-logo.svg";
 import Button from "../Button";
 import { useGlobalState } from "@/redux/globalState";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
   // const [drawerOpen, setDrawer] = useState(false);
@@ -13,7 +14,9 @@ export default function Header() {
   return (
     <div className="container mx-auto px-4 lg:px-0 relative z-[1]">
       <div className="flex my-5 lg:my-30 justify-between">
-        <HectarLogo alt="Header Logo" className="w-100 lg:w-[200px]" />
+        <Link href="/">
+          <HectarLogo alt="Header Logo" className="w-100 lg:w-[200px]" />
+        </Link>
         <div>
           {pathname === "/" && (
             <Button

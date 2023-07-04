@@ -1,6 +1,7 @@
 import { Spinner } from "@/components";
 import PropTypes from "prop-types";
 import { Button as CompButton } from "@material-tailwind/react";
+import Skeleton from "react-loading-skeleton";
 
 /**
  * The Custom component acts as a wrapper for Button component
@@ -13,6 +14,7 @@ export default function Button({
   isLoading = false,
   className = "",
   disabled = false,
+  isSkeleton = false,
   ...orgProps
 }) {
   // compute the class names based on the variants
@@ -34,6 +36,10 @@ export default function Button({
   if (disabled || isLoading) {
     className += " opacity-30";
   }
+
+  if(isSkeleton) {
+    return <Skeleton className="h-10 !rounded-full"/>
+  }  
 
   return (
     // Render The button component
