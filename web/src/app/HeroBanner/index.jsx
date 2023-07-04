@@ -195,8 +195,8 @@ export default function HeroBanner() {
         </div>
 
         <div className="lg:w-[540px] shrink-0 hidden lg:block">
-          <div className="relative lg:-right-[100px] pb-30">
-            <HeroBGImage className="w-full lg:w-[640px]" />
+          <div className="relative lg:-right-[170px] pb-30">
+            <HeroBGImage className="w-full lg:w-[596px]" />
           </div>
         </div>
       </div>

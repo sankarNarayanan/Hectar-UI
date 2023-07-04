@@ -18,7 +18,7 @@ export default function Header() {
           {pathname === "/" && (
             <Button
               size="xs"
-              className="me-3 !bg-[#FF9D01] !text-black"
+              className="me-3 !bg-[#FF9D01] !text-black !py-3"
               onClick={() => setDrawer(true)}
             >
               <span className="">Get Beta Access</span>
