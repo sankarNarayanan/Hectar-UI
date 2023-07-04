@@ -26,10 +26,7 @@ import { Carousel, Typography } from "@/components";
 
 export default function ProductPortfolio() {
   return (
-    <section
-      id="ProductPortfolio"
-      className="mt-50 py-50 bg-[#F9F9F9]"
-    >
+    <section id="ProductPortfolio" className="mt-50 py-50 bg-[#F9F9F9]">
       <Typography
         variant="h2"
         className="text-center text-[1.325rem] lg:text-[40px] font-medium"
@@ -48,78 +45,6 @@ export default function ProductPortfolio() {
           prevArrow={Carousel.CustomPrevArrow}
           nextArrow={Carousel.CustomNextArrow}
         >
-          <div className="relative ">
-            <div className="grid grid-cols-6 grid-rows-2 gap-2 lg:gap-5">
-              <div className="h-150 relative rounded-xl overflow-clip">
-                <Image alt="Rice" src={Rice} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Non Basmati Rice
-                </div>
-              </div>
-              {/* Onions */}
-              <div className="col-span-2 row-span-2 relative rounded-xl overflow-clip">
-                <Image alt="img1" src={Onion} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Onions
-                </div>
-              </div>
-              {/* Turmeric */}
-              <div className="col-span-2 relative rounded-xl overflow-clip">
-                <Image
-                  alt="Turmeric"
-                  src={Turmeric}
-                  fill
-                  className="object-cover"
-                />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Turmeric
-                </div>
-              </div>
-              {/* Red dried Chillies */}
-              <div className="row-span-2 relative rounded-xl overflow-clip">
-                <Image
-                  alt="Red dried Chillies"
-                  src={RedChilli}
-                  fill
-                  className="object-cover"
-                />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Red dried Chillies
-                </div>
-              </div>
-              {/* Sugar */}
-              <div className=" relative rounded-xl overflow-clip">
-                <Image alt="img1" src={Sugar} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Sugar
-                </div>
-              </div>
-              {/* Corriander */}
-              <div className="relative rounded-xl overflow-clip">
-                <Image
-                  alt="Corriander"
-                  src={Corriander}
-                  fill
-                  className="object-cover"
-                />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Corriander
-                </div>
-              </div>
-              {/* Fenugric */}
-              <div className="relative rounded-xl overflow-clip">
-                <Image
-                  alt="Fenugric"
-                  src={Fenugric}
-                  fill
-                  className="object-cover"
-                />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Fenugric
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="relative ">
             <div className="grid grid-cols-6 grid-rows-2 gap-2 lg:gap-5">
               {/* Mustard */}
@@ -211,6 +136,79 @@ export default function ProductPortfolio() {
           </div>
           <div className="relative ">
             <div className="grid grid-cols-6 grid-rows-2 gap-2 lg:gap-5">
+              <div className="h-150 relative rounded-xl overflow-clip">
+                <Image alt="Rice" src={Rice} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Non Basmati Rice
+                </div>
+              </div>
+              {/* Onions */}
+              <div className="col-span-2 row-span-2 relative rounded-xl overflow-clip">
+                <Image alt="img1" src={Onion} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Onions
+                </div>
+              </div>
+              {/* Turmeric */}
+              <div className="col-span-2 relative rounded-xl overflow-clip">
+                <Image
+                  alt="Turmeric"
+                  src={Turmeric}
+                  fill
+                  className="object-cover"
+                />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Turmeric
+                </div>
+              </div>
+              {/* Red dried Chillies */}
+              <div className="row-span-2 relative rounded-xl overflow-clip">
+                <Image
+                  alt="Red dried Chillies"
+                  src={RedChilli}
+                  fill
+                  className="object-cover"
+                />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Red dried Chillies
+                </div>
+              </div>
+              {/* Sugar */}
+              <div className=" relative rounded-xl overflow-clip">
+                <Image alt="img1" src={Sugar} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Sugar
+                </div>
+              </div>
+              {/* Corriander */}
+              <div className="relative rounded-xl overflow-clip">
+                <Image
+                  alt="Corriander"
+                  src={Corriander}
+                  fill
+                  className="object-cover"
+                />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Corriander
+                </div>
+              </div>
+              {/* Fenugric */}
+              <div className="relative rounded-xl overflow-clip">
+                <Image
+                  alt="Fenugric"
+                  src={Fenugric}
+                  fill
+                  className="object-cover"
+                />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Fenugric
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative ">
+            <div className="grid grid-cols-6 grid-rows-2 gap-2 lg:gap-5">
               {/* Black pepper */}
               <div className="row-span-2 col-span-2 relative rounded-xl overflow-clip">
                 <Image
@@ -286,31 +284,6 @@ export default function ProductPortfolio() {
           prevArrow={Carousel.CustomPrevArrow}
           nextArrow={Carousel.CustomNextArrow}
         >
-          <div className="relative ">
-            <div className="grid grid-cols-3 grid-rows-2 gap-3">
-              {/* Basmathi Rice */}
-              <div className="h-[100px] relative rounded-xl overflow-clip">
-                <Image alt="Rice" src={Rice} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Non Basmati Rice
-                </div>
-              </div>
-              {/* Onions */}
-              <div className="col-span-2 row-span-2 relative rounded-xl overflow-clip">
-                <Image alt="img1" src={Onion} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Onions
-                </div>
-              </div>
-              {/* Sugar */}
-              <div className=" relative rounded-xl overflow-clip">
-                <Image alt="img1" src={Sugar} fill className="object-cover" />
-                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
-                  Sugar
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="relative">
             <div className="grid grid-cols-3 grid-rows-2 gap-3">
               {/* Turmeric */}
@@ -364,6 +337,32 @@ export default function ProductPortfolio() {
               </div>
             </div>
           </div>
+          <div className="relative ">
+            <div className="grid grid-cols-3 grid-rows-2 gap-3">
+              {/* Basmathi Rice */}
+              <div className="h-[100px] relative rounded-xl overflow-clip">
+                <Image alt="Rice" src={Rice} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Non Basmati Rice
+                </div>
+              </div>
+              {/* Onions */}
+              <div className="col-span-2 row-span-2 relative rounded-xl overflow-clip">
+                <Image alt="img1" src={Onion} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Onions
+                </div>
+              </div>
+              {/* Sugar */}
+              <div className=" relative rounded-xl overflow-clip">
+                <Image alt="img1" src={Sugar} fill className="object-cover" />
+                <div className="text-xs absolute bottom-0 left-0 w-full h-14 z-10 text-white justify-center items-end flex pb-3 bg-gradient-to-b from-transparent to-black">
+                  Sugar
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div className="relative ">
             <div className="grid grid-cols-3 grid-rows-2 gap-3">
               {/* Mustard */}
