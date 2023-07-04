@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import AnalyticsImage from "@/assets/svg/insights-image.svg";
 import AIBlobImage from "@/assets/svg/img-ai-blob.svg";
-import AICardsImage from "@/assets/svg/img-ai-cards.svg";
+// import AICardsImage from "@/assets/svg/img-ai-cards.svg";
 import AIGraphImage from "@/assets/svg/img-ai-graph.svg";
 import { Typography } from "@/components";
 
@@ -37,7 +37,11 @@ export default function Analytics() {
               curve in the fast-paced world of agri commodities trading.
             </Typography>
             <div className=" mt-30">
-              <AICardsImage />
+            <img
+                  src="https://temp-hectar-s3.s3.amazonaws.com/AI.gif"
+                  alt="prices image"
+                />
+              {/* <AICardsImage /> */}
             </div>
           </div>
           <div className="lg:w-1/2 px-4 py-30 lg:p-50 bg-[#000000] rounded-xl text-white text-left">
