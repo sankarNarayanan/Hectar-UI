@@ -107,7 +107,7 @@ export default function SubmitQuote() {
               <FormSubmitted />
             ) : (
               <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
-                <div className="px-4 lg:px-50 pb-30 rounded-lg bg-white">
+                <div className="px-4 lg:px-50 pb-30 lg:py-30 rounded-lg bg-white">
                   <p className="text-xl font-medium">
                     Proceed To Complete Your Request
                   </p>
