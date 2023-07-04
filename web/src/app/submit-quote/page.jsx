@@ -62,6 +62,9 @@ export default function SubmitQuote() {
   const destinationPortDetails = productDetails.findPortByCoordinates(
     quoteResult.data?.destinationPortCode
   );
+  const sourcePortDetails = productDetails.findPortByCoordinates(
+    quoteResult.data?.sourcePortCode
+  );
 
   const handleQuoteFormSubmit = (formData) => {
     const selectedVariant = productDetails.getVariantDetails(
@@ -76,11 +79,10 @@ export default function SubmitQuote() {
       product: quoteResult.data.product,
       variant: quoteResult.data.variant,
       // description: selectedDescription.value,
-      unloadingPort: "TODO:Hardcoded",
-      loadingPort: "TODO:Hardcoded",
+      unloadingPort: destinationPortDetails.properties.Name,
+      loadingPort: sourcePortDetails.properties.Name,
       containerType: quoteResult.data.container,
-      load: "TODO: hardcoded",
-      // TODO: need to make this dynamic
+      // load: "TODO: hardcoded",
       estimatedCost: quoteResult.data.finalCost,
     }).then(() => {
       setFormState("submitted");

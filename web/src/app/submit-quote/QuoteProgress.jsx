@@ -4,6 +4,8 @@ import AIBlobImage from "@/assets/svg/img-ai-blob.svg";
 import CompletedIcon from "@/assets/svg/completed-icon.svg";
 import { Typography } from "@/components";
 import { Fade, Zoom } from "react-awesome-reveal";
+import moment from "moment";
+import { productDetails } from "../ProductDetails";
 
 export default function QuoteProgress({
   quoteResult,
@@ -19,6 +21,10 @@ export default function QuoteProgress({
     "optimizingDone",
     "completed",
   ];
+
+  const destinationDetails = productDetails.findPortByCoordinates(
+    quoteResult.data?.destinationPortCode
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -107,14 +113,23 @@ export default function QuoteProgress({
       </p>
       {/* TODO: need to fix fontsize here */}
       <h3 className="text-[1.375rem] lg:text-[2.5rem] font-semibold pt-30">
-        ${quoteResult.data?.startRange} - ${quoteResult.data?.endRange}
+        {quoteResult.data?.startRange} - {quoteResult.data?.endRange}
       </h3>
-      {/* <Typography className="text-xs">
-              Next Available Vessel: 31st June, 2023
-            </Typography> */}
-      {/* <Typography className="text-xs pt-4">
-              Show Earliest arrival
-            </Typography> */}
+
+      {quoteResult.data?.transitTime && (
+        <Typography className="text-xs">
+          Ealiest available date to {destinationDetails.properties.Name}{" "}
+          {moment()
+            .add(quoteResult.data?.transitTime, "days")
+            .format("Do MMMM, YYYY")}
+        </Typography>
+      )}
+
+      {quoteResult.data?.shippingLine && (
+        <Typography className="text-xs pt-4">
+          Liner: {quoteResult.data?.shippingLine}
+        </Typography>
+      )}
 
       {/* Seperator */}
       <div className="h-px w-full bg-black opacity-10 my-30 lg:my-50"></div>
@@ -136,8 +151,7 @@ export default function QuoteProgress({
           <div className="opacity-50">Destination</div>
           {/* TODO: make Dynamic */}
           <div className="font-medium">
-            Chennai
-            {/* {destinationPortDetails.properties.Name} */}
+            {destinationDetails.properties.Name}
           </div>
         </div>
       </div>
