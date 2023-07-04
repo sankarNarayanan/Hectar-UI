@@ -127,16 +127,16 @@ export default function SubmitQuote() {
                   </div>
                   <div className="mt-4">
                     <Form.TextField
-                      name="bussinessName"
+                      name="businessName"
                       isLoading={isLoading}
-                      label="Bussiness Name"
+                      label="Business Name"
                       validators={["required"]}
                     />
                   </div>
                   <div className="mt-4">
                     <Form.TextField
                       name="email"
-                      label="Bussiness Email"
+                      label="Business Email"
                       isLoading={isLoading}
                       validators={["required"]}
                     />
