@@ -104,7 +104,7 @@ export default function QuoteMiniForm() {
           <Button
             type="submit"
             isLoading={quoteResult.isLoading}
-            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium"
+            className="rounded-full !w-full lg:w-auto lg:!rounded-r-xl lg:!rounded-l-none !bg-[#FF9D01] !text-black !text-base !font-medium lg:relative lg:-right-2.5"
           >
             Get Quote
           </Button>
