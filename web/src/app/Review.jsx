@@ -13,7 +13,7 @@ export default function Review({ setDrawer }) {
       className="bg-[#585858] text-white text-center mt-30 lg:mt-0"
     >
       <div className="h-30 lg:h-100 relative w-full -top-0.5">
-        <CropImage alt="CropImage" className="h-30 lg:h-100 w-full" />
+        <CropImage alt="CropImage" className="h-30 lg:h-100 w-full text-[#F9F9F9]" />
       </div>
       <div className="py-[70px] lg:py-100 px-4">
         <Typography variant="h1" as="h2">
