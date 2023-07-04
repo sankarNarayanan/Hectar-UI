@@ -21,20 +21,19 @@ export default function Analytics() {
         className="font-semibold text-center lg:text-[32px] mt-1 lg:mt-2.5"
       >
         <TypewriterComponent
-          options={{loop: true}}
+          options={{ loop: true, cursor: "" }}
           onInit={(typewriter) => {
             typewriter
-              .typeString("Plan Shipments ")
-              .typeString("Efficiently.")
-              .pauseFor(2500)
-              .deleteChars(12)
-              .typeString("Intelligently.")
-              .pauseFor(2500)
-              .deleteChars(14)
-              .typeString("Remarkably.")
+              .typeString("Get best prices.")
               .pauseFor(2500)
               .deleteAll()
-              .start()
+              .typeString("Time your purchases.")
+              .pauseFor(2500)
+              .deleteAll()
+              .typeString("Plan shipments efficiently.")
+              .pauseFor(2500)
+              .deleteAll()
+              .start();
           }}
         />
       </Typography>
@@ -54,10 +53,10 @@ export default function Analytics() {
               curve in the fast-paced world of agri commodities trading.
             </Typography>
             <div className=" mt-30">
-            <img
-                  src="https://temp-hectar-s3.s3.amazonaws.com/AI.gif"
-                  alt="prices image"
-                />
+              <img
+                src="https://temp-hectar-s3.s3.amazonaws.com/AI.gif"
+                alt="prices image"
+              />
               {/* <AICardsImage /> */}
             </div>
           </div>
