@@ -28,7 +28,7 @@ export default function ProductPortfolio() {
   return (
     <section
       id="ProductPortfolio"
-      className="mt-50 py-50 lg:py-100 bg-[#F9F9F9]"
+      className="mt-50 py-50 bg-[#F9F9F9]"
     >
       <Typography
         variant="h2"
@@ -36,12 +36,12 @@ export default function ProductPortfolio() {
       >
         Product Portfolio
       </Typography>
-      <Typography className="text-center mt-2.5 lg:mt-30">
+      <Typography className="text-center mt-2 ">
         Quality audited by us and packaged to your preferences.
       </Typography>
 
       {/* New carousel design */}
-      <div className="container mx-auto mt-100 px-3 hidden lg:block">
+      <div className="container mx-auto mt-50 px-3 hidden lg:block">
         <Carousel
           className="!overflow-x-clip"
           navigation={Carousel.CustomNavigation}
