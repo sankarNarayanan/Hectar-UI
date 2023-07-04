@@ -37,7 +37,7 @@ export const CustomNavigation = ({ setActiveIndex, activeIndex, length }) => {
   };
   const left = LEFT_MAP[activeIndex];
   return (
-    <div className="flex justify-center px-50 !absolute !-bottom-[35px] lg:!-bottom-[87px] w-full">
+    <div className="flex justify-center px-50 !absolute !-bottom-[35px] lg:!-bottom-[87px] w-full z-10">
       <div className=" w-[400px] h-[3px] lg:h-[5px] bg-gray-300 rounded-full relative">
         <div
           className={`absolute bg-blue-600 rounded-full transition-all duration-500 w-10 lg:w-130 h-[3px] lg:h-[5px] ${left}`}
