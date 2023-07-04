@@ -9,6 +9,7 @@ import { productDetails } from "../ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { resetData } from "@/redux/productReducer";
 import TurnOver from "@/components/Turnover";
+import QuoteProgress from "./QuoteProgress";
 
 function FormSubmitted() {
   const dispatch = useDispatch();
@@ -48,14 +49,14 @@ export default function SubmitQuote() {
   const router = useRouter();
   const [saveQuote, saveQuoteResult] = useSaveQuoteMutation();
 
+  const [loadingState, setLoadingState] = useState('analysing');
+
   // Redirect to Home Page If no Quote Data available.
   // To handle refresh or browser back
   useEffect(() => {
-    if (!quoteResult.isSuccess) {
+    if (quoteResult.isUninitialized) {
       router.push("/");
-      return null;
     }
-    s;
   }, []);
 
   const destinationPortDetails = productDetails.findPortByCoordinates(
@@ -93,52 +94,11 @@ export default function SubmitQuote() {
     >
       <div className="container">
         <div className="lg:w-[950px] flex flex-col lg:flex-row mx-auto bg-white rounded-3xl">
-          <div className="self-center text-center p-4 lg:p-50 shrink-0 lg:w-1/2">
-            <SubmittedBlackImage
-              alt="Image Submitted"
-              className="mx-auto w-[80px]"
-            />
-            <p className="text-sm lg:text-xl mt-3">
-              Congratulations!
-              <br /> Your quote is now ready.
-            </p>
-            {/* TODO: need to fix fontsize here */}
-            <h3 className="text-[1.375rem] lg:text-[2.5rem] font-semibold pt-30">
-              ${quoteResult.data?.startRange} - ${quoteResult.data?.endRange}
-            </h3>
-            {/* <Typography className="text-xs">
-              Next Available Vessel: 31st June, 2023
-            </Typography> */}
-            {/* <Typography className="text-xs pt-4">
-              Show Earliest arrival
-            </Typography> */}
-
-            {/* Seperator */}
-            <div className="h-px w-full bg-black opacity-10 my-30 lg:my-50"></div>
-
-            <div className="hidden lg:block">
-              <div className="flex justify-between">
-                <div className="opacity-50">Product</div>
-                {/* TODO: make Dynamic */}
-                <div className="font-medium">{quoteResult.data?.product}</div>
-              </div>
-
-              <div className="flex justify-between">
-                <div className="opacity-50">Variant</div>
-                {/* TODO: make Dynamic */}
-                <div className="font-medium">{quoteResult.data?.variant}</div>
-              </div>
-
-              <div className="flex justify-between">
-                <div className="opacity-50">Destination</div>
-                {/* TODO: make Dynamic */}
-                <div className="font-medium">
-                  Chennai
-                  {/* {destinationPortDetails.properties.Name} */}
-                </div>
-              </div>
-            </div>
-          </div>
+          <QuoteProgress
+            quoteResult={quoteResult}
+            loadingState={loadingState}
+            setLoadingState={setLoadingState}
+          />
           <div className="w-px bg-black self-stretch opacity-10"></div>
           <div className="grow lg:w-1/2">
             {formstate === "submitted" ? (
