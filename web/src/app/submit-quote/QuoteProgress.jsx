@@ -119,7 +119,7 @@ export default function QuoteProgress({
 
       {quoteResult.data?.transitTime && (
         <Typography className="text-xs">
-          ETA {destinationDetails.properties.Name}{": "}
+          ETA {destinationDetails?.properties?.Name}{": "}
           {moment()
             .add(quoteResult.data?.transitTime, "days")
             .format("Do MMMM, YYYY")}
