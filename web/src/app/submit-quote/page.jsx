@@ -112,10 +112,10 @@ export default function SubmitQuote() {
               <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
                 <div className="px-4 lg:px-50 pb-30 lg:py-30 rounded-lg bg-white">
                   <p className="text-xl font-medium">
-                    {true ? <Skeleton /> : "Proceed To Complete Your Request"}
+                    {isLoading ? <Skeleton /> : "Proceed To Complete Your Request"}
                   </p>
                   <p className="text-xs lg:text-xs opacity-50">
-                    {true ? (
+                    {isLoading ? (
                       <Skeleton className="!w-3/4"/>
                     ) : (
                       "For exact pricing, need few more details"

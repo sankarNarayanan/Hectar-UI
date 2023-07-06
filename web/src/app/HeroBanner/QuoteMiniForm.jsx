@@ -11,8 +11,8 @@ import { useRouter } from "next/navigation";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
 
 export default function QuoteMiniForm() {
-  const dispatch = useDispatch();
   const methods = useForm();
+  const { formState } = methods;
   const [getQuote, quoteResult] = useRequestQuoteMutation({
     fixedCacheKey: "getQuote",
   });
@@ -32,7 +32,10 @@ export default function QuoteMiniForm() {
     const variant = productDetails.getValuefromItem(formData.variant);
     const destination = productDetails.getValuefromItem(formData.destination);
 
-    const variantDetails = productDetails.getVariantDetails(formData.product, formData.variant);
+    const variantDetails = productDetails.getVariantDetails(
+      formData.product,
+      formData.variant
+    );
     const loadingPortDetails = productDetails.findPortByName(
       variantDetails.loadingPort
     );
@@ -46,7 +49,7 @@ export default function QuoteMiniForm() {
         destinationPortDetails.geometry.coordinates
       ),
       containerString: variantDetails.containerType,
-    })
+    });
 
     router.push("/submit-quote/");
   };
@@ -57,8 +60,20 @@ export default function QuoteMiniForm() {
       onSubmit={handleSubmit}
       onSubmitError={(error) => console.log("error", error)}
     >
-      <div className="flex gap-0 lg:bg-white justify-evenly rounded-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px] lg:border border-gray-300">
-        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+      <div
+        className={`flex gap-0 lg:bg-white justify-evenly rounded-xl items-center mt-50 relative z-10 flex-col lg:flex-row lg:w-[660px] lg:border ${
+          !formState.isValid && formState.isSubmitted
+            ? "border-red-300"
+            : "border-gray-300"
+        } `}
+      >
+        <div
+          className={`w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border ${
+            !formState.isValid && formState.isSubmitted
+              ? "border-red-300"
+              : "border-gray-300"
+          } lg:border-none lg:bg-transparent`}
+        >
           <Form.Select
             name="product"
             onChange={() => resetFields()}
@@ -73,7 +88,13 @@ export default function QuoteMiniForm() {
         </div>
         {/* TODO: colors needs to be standardised */}
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
-        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div
+          className={`w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border ${
+            !formState.isValid && formState.isSubmitted
+              ? "border-red-300"
+              : "border-gray-300"
+          } lg:border-none lg:bg-transparent`}
+        >
           <Form.Select
             name="variant"
             validators={["required"]}
@@ -87,7 +108,13 @@ export default function QuoteMiniForm() {
         </div>
         <div className="w-px bg-[#DBDAE1] my-2 self-stretch" />
 
-        <div className="w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border border-gray-300 lg:border-none lg:bg-transparent">
+        <div
+          className={`w-full lg:w-[160px] lg:overflow-x-clip bg-white rounded-lg lg:rounded-none border ${
+            !formState.isValid && formState.isSubmitted
+              ? "border-red-300"
+              : "border-gray-300"
+          } lg:border-none lg:bg-transparent`}
+        >
           <Form.Select
             name="destination"
             validators={["required"]}

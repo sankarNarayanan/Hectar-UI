@@ -122,7 +122,7 @@ function Select({
           )}
         />
 
-        {isError && <div className="text-red-500 text-sm pt-2">{message}</div>}
+        {/* {isError && <div className="text-red-500 text-sm pt-2">{message}</div>} */}
       </div>
     </label>
   );
