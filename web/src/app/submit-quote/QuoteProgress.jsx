@@ -112,13 +112,14 @@ export default function QuoteProgress({
         <br /> Your quote is now ready.
       </p>
       {/* TODO: need to fix fontsize here */}
-      <h3 className="text-[1.375rem] lg:text-[2.5rem] font-semibold pt-30">
-        {quoteResult.data?.startRange} - {quoteResult.data?.endRange}
+      <h3 className="text-[1.375rem] lg:text-[1.5rem] font-semibold pt-30">
+        US$ {quoteResult.data?.startRange} - {quoteResult.data?.endRange} 
       </h3>
+      <div className="font-medium">/MT/CIF {destinationDetails.properties.Name}</div>
 
       {quoteResult.data?.transitTime && (
         <Typography className="text-xs">
-          Ealiest available date to {destinationDetails.properties.Name}{" "}
+          ETA {destinationDetails?.properties?.Name}{": "}
           {moment()
             .add(quoteResult.data?.transitTime, "days")
             .format("Do MMMM, YYYY")}

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetData } from "@/redux/productReducer";
 import TurnOver from "@/components/Turnover";
 import QuoteProgress from "./QuoteProgress";
+import Skeleton from "react-loading-skeleton";
 
 function FormSubmitted() {
   const dispatch = useDispatch();
@@ -111,10 +112,14 @@ export default function SubmitQuote() {
               <Form methods={methods} onSubmit={handleQuoteFormSubmit}>
                 <div className="px-4 lg:px-50 pb-30 lg:py-30 rounded-lg bg-white">
                   <p className="text-xl font-medium">
-                    Proceed To Complete Your Request
+                    {true ? <Skeleton /> : "Proceed To Complete Your Request"}
                   </p>
                   <p className="text-xs lg:text-xs opacity-50">
-                    For exact pricing, need few more details
+                    {true ? (
+                      <Skeleton className="!w-3/4"/>
+                    ) : (
+                      "For exact pricing, need few more details"
+                    )}
                   </p>
                   <div className="mt-5 lg:mt-30">
                     <Form.TextField

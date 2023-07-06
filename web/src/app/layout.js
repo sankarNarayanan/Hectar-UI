@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
         {/* Adding Google Tag manager Script 
             Google analytycs will be configured within GTM
         */}
+        <title>Hectar | Home | Reimagining Agri Commodities Trade</title>
         <Script
           strategy="afterInteractive"
           id="GTMContainer"

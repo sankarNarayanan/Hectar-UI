@@ -141,7 +141,6 @@ export default function GetPrivateAccessForm() {
                     <Form.TextField
                       name="baseLocation"
                       label="Company Website (Optional)"
-                      validators={["optional"]}
                     />
                   </div>
                   <div className="mt-5">
