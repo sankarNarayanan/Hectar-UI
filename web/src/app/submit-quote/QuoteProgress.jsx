@@ -115,7 +115,7 @@ export default function QuoteProgress({
       <h3 className="text-[1.375rem] lg:text-[1.5rem] font-semibold pt-30">
         US$ {quoteResult.data?.startRange} - {quoteResult.data?.endRange} 
       </h3>
-      <div className="font-medium">/MT/CIF {destinationDetails.properties.Name}</div>
+      <div className="font-medium">/MT/CIF {destinationDetails?.properties?.Name}</div>
 
       {quoteResult.data?.transitTime && (
         <Typography className="text-xs">
