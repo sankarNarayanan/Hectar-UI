@@ -152,7 +152,7 @@ export default function QuoteProgress({
           <div className="opacity-50">Destination</div>
           {/* TODO: make Dynamic */}
           <div className="font-medium">
-            {destinationDetails.properties.Name}
+            {destinationDetails?.properties?.Name}
           </div>
         </div>
       </div>
