@@ -319,45 +319,6 @@ export const PRODUCT_DETAILS = [
       },
     ],
   },
-  {
-    name: "Cumin ",
-    variants: [
-      {
-        name: "European Quality cumin",
-        typicalLoadability: "14 MT",
-        typicalLoadabilityValue: 14,
-        containerType: "ST20",
-        loadingPort: "Mundra",
-        description: [
-          { name: "CRE 101 - 99.5 % Purity" },
-          { name: "CRE 102 - 99% Purity" },
-          { name: "CRE 103 - 98% Purity" },
-        ],
-      },
-      {
-        name: "Gulf Quality cumin",
-        typicalLoadability: "14 MT",
-        typicalLoadabilityValue: 14,
-        containerType: "ST20",
-        loadingPort: "Mundra",
-        description: [
-          { name: "CRE 104 - 99% Purity" },
-          { name: "CRE 105 - 98% Purity" },
-        ],
-      },
-      {
-        name: "Singapore Quality cumin",
-        typicalLoadability: "14 MT",
-        typicalLoadabilityValue: 14,
-        containerType: "ST20",
-        loadingPort: "Mundra",
-        description: [
-          { name: "CRE 106 - 99% Purity" },
-          { name: "CRE 107 - 98% Purity" },
-        ],
-      },
-    ],
-  },
 ];
 
 import { PORTS } from "@/utils/attributed_ports.js";
