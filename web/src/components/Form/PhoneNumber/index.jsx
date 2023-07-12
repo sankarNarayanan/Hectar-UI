@@ -1,4 +1,4 @@
-import { Input } from "@/components";
+import { Input, Typography } from "@/components";
 
 import { useCountries } from "use-react-countries";
 import { Controller } from "react-hook-form";
@@ -31,7 +31,7 @@ export default function PhoneNumber({
   // fetch the selected country name, flag icon and country code
   const { countryName, flags, countryCallingCode } = countries[country];
   validators.push("phone");
-  const { error, control, validatorConfig, isSuccess, isError, setValue } =
+  const { message, control, validatorConfig, isSuccess, isError, setValue } =
     useFormControl(name, validators, errorMessage);
 
   // customizing the change handler to handle multiple things
@@ -132,6 +132,7 @@ export default function PhoneNumber({
           )}
         />
       </div>
+      {isError && <Typography variant="small" className="text-xs text-red-500 mt-1"> {message}</Typography>}
     </>
   );
 }

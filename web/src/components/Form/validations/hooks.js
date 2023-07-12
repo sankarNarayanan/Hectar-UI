@@ -21,7 +21,7 @@ export function useFormControl(name, validatorArray, errorMessage) {
   }
 
   //   Compute Error message from the message map
-  const message = errorMessage?.[error?.type] || "this field is invalid";
+  const message = errorMessage?.[error?.type] || `please enter a valid ${name}`;
   return {
     validatorConfig,
     error,

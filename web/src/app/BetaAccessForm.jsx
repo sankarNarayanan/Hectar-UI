@@ -74,6 +74,10 @@ export default function GetPrivateAccessForm() {
       onClose={() => setDrawer(false)}
       size={500}
       placement="right"
+      dismiss={{ enabled: false }}
+      overlayProps={{
+        className: "fixed"
+      }}
     >
       <div className="relative h-full">
         {activeStep !== "submitted" && (
@@ -122,12 +126,16 @@ export default function GetPrivateAccessForm() {
                       label="Company Name"
                       validators={["required"]}
                     />
-                    </div>
-                    <div className="mt-5">
+                  </div>
+                  <div className="mt-5">
                     <Form.TextField
                       name="email"
                       label="Company Email ID"
-                      validators={["required"]}
+                      validators={["required", "email"]}
+                      errorMessage={{
+                        required: "Please enter your Email",
+                        email: "Please enter valid Email",
+                      }}
                     />
                   </div>
                   <div className="mt-5">
