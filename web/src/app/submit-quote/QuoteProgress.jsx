@@ -6,6 +6,7 @@ import { Typography } from "@/components";
 import { Fade, Zoom } from "react-awesome-reveal";
 import moment from "moment";
 import { productDetails } from "../ProductDetails";
+import { useSelector } from "react-redux";
 
 export default function QuoteProgress({
   quoteResult,
@@ -21,6 +22,13 @@ export default function QuoteProgress({
     "optimizingDone",
     "completed",
   ];
+
+  const quoteData = useSelector((state) => state.productDetails);
+  const selectedProduct = productDetails.getValuefromItem(quoteData.product);
+  const selectedVariant = productDetails.getValuefromItem(quoteData.variant);
+  const selectedDestination = productDetails.getValuefromItem(
+    quoteData.destination
+  );
 
   const destinationDetails = productDetails.findPortByCoordinates(
     quoteResult.data?.destinationPortCode
@@ -113,13 +121,17 @@ export default function QuoteProgress({
       </p>
       {/* TODO: need to fix fontsize here */}
       <h3 className="text-[1.375rem] lg:text-[1.5rem] font-semibold pt-30">
-        US$ {quoteResult.data?.startRange} - {quoteResult.data?.endRange} 
+        US$ {quoteResult.data?.startRange || 2250} -{" "}
+        {quoteResult.data?.endRange || 2750}
       </h3>
-      <div className="font-medium">/MT/CIF {destinationDetails?.properties?.Name}</div>
+      <div className="font-medium">
+        /MT/CIF {destinationDetails?.properties?.Name || selectedDestination}
+      </div>
 
       {quoteResult.data?.transitTime && (
         <Typography className="text-xs">
-          ETA {destinationDetails?.properties?.Name}{": "}
+          ETA {destinationDetails?.properties?.Name}
+          {": "}
           {moment()
             .add(quoteResult.data?.transitTime, "days")
             .format("Do MMMM, YYYY")}
@@ -139,20 +151,24 @@ export default function QuoteProgress({
         <div className="flex justify-between">
           <div className="opacity-50">Product</div>
           {/* TODO: make Dynamic */}
-          <div className="font-medium">{quoteResult.data?.product}</div>
+          <div className="font-medium">
+            {quoteResult.data?.product || selectedProduct}
+          </div>
         </div>
 
         <div className="flex justify-between">
           <div className="opacity-50">Variant</div>
           {/* TODO: make Dynamic */}
-          <div className="font-medium">{quoteResult.data?.variant}</div>
+          <div className="font-medium">
+            {quoteResult.data?.variant || selectedVariant}
+          </div>
         </div>
 
         <div className="flex justify-between">
           <div className="opacity-50">Destination</div>
           {/* TODO: make Dynamic */}
           <div className="font-medium">
-            {destinationDetails?.properties?.Name}
+            {destinationDetails?.properties?.Name || selectedDestination}
           </div>
         </div>
       </div>
