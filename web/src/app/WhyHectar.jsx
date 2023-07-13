@@ -38,12 +38,9 @@ export default function WhyHectar() {
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
           >
             <source src="/videos/TomorrowPrice.webm" type="video/webm" />
-            <img
-              src="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
-              alt="prices image"
-            />
           </video>
         </div>
       </div>
@@ -76,12 +73,9 @@ export default function WhyHectar() {
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
           >
             <source src="/videos/track.webm" type="video/webm" />
-            <img
-              src="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
-              alt="prices image"
-            />
           </video>
         </div>
       </div>
@@ -114,12 +108,9 @@ export default function WhyHectar() {
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
           >
             <source src="/videos/documentation.webm" type="video/webm" />
-            <img
-              src="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
-              alt="prices image"
-            />
           </video>
         </div>
       </div>
