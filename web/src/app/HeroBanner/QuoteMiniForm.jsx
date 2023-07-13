@@ -9,6 +9,11 @@ import VariantIcon from "@/assets/svg/variant-icon.svg";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useRequestQuoteMutation } from "@/api/BaseAPI";
+import {
+  updateProduct,
+  updateVariant,
+  updateDestination,
+} from "@/redux/productReducer";
 
 export default function QuoteMiniForm() {
   const methods = useForm();
@@ -19,6 +24,7 @@ export default function QuoteMiniForm() {
   const product = methods.watch("product");
   const variantItems = productDetails.getVariantItems(product);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const resetFields = () => {
     // If the product field is changed need to reset variant
@@ -31,6 +37,10 @@ export default function QuoteMiniForm() {
     const product = productDetails.getValuefromItem(formData.product);
     const variant = productDetails.getValuefromItem(formData.variant);
     const destination = productDetails.getValuefromItem(formData.destination);
+
+    dispatch(updateProduct(formData.product))
+    dispatch(updateVariant(formData.variant))
+    dispatch(updateDestination(formData.destination))
 
     const variantDetails = productDetails.getVariantDetails(
       formData.product,
