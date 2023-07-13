@@ -31,9 +31,16 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video loop autoPlay muted width={520} height={400} className="relative -right-20 lg:right-0">
+          <video
+            loop
+            autoPlay
+            muted
+            width={520}
+            height={400}
+            className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
+          >
             <source src="/videos/TomorrowPrice.webm" type="video/webm" />
-            <source src="/videos/TomorrowPrice.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -59,9 +66,16 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video loop autoPlay muted width={520} height={400} className="relative -right-20 lg:right-0">
+          <video
+            loop
+            autoPlay
+            muted
+            width={520}
+            height={400}
+            className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
+          >
             <source src="/videos/track.webm" type="video/webm" />
-            <source src="/videos/track.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -87,9 +101,16 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video loop autoPlay muted width={520} height={400} className="relative -right-20 lg:right-0">
+          <video
+            loop
+            autoPlay
+            muted
+            width={520}
+            height={400}
+            className="relative -right-20 lg:right-0"
+            poster="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
+          >
             <source src="/videos/documentation.webm" type="video/webm" />
-            <source src="/videos/documentation.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
