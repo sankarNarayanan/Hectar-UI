@@ -5,6 +5,23 @@ import { Fade, Slide } from "react-awesome-reveal";
 import { Typography } from "@/components";
 
 export default function WhyHectar() {
+
+  function supportsVideoType(type) {
+    const formats = {
+      ogg: 'video/ogg; codecs="theora"',
+      h264: 'video/mp4; codecs="avc1.42E01E"',
+      webm: 'video/webm; codecs="vp8, vorbis"',
+      vp9: 'video/webm; codecs="vp9"',
+      hls: 'application/x-mpegURL; codecs="avc1.42E01E"'
+    };
+  
+    const video = document.createElement('video');
+    if(video.canPlayType(formats[type] || type) == 'probably'){
+      return true;
+    }
+    return false;
+  }
+
   return (
     <section className="mt-50 lg:mt-100 px-4 lg:px-0">
       <Typography variant="h2" className="text-center">
@@ -31,17 +48,22 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video
+          {supportsVideoType('webm') ? (
+            <video
             loop
             autoPlay
             muted
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
-            poster="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
           >
-            <source src="/videos/TomorrowPrice.webm" type="video/webm" />
-          </video>
+          <source src="/videos/TomorrowPrice.webm" type="video/webm" />
+          </video>) : 
+          (<img
+              src="https://temp-hectar-s3.s3.amazonaws.com/TomorrowPrice.gif"
+              alt="prices image"
+              className="relative -right-20 lg:right-0"
+            />)};
         </div>
       </div>
 
@@ -66,17 +88,22 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video
+        {supportsVideoType('webm') ? (
+            <video
             loop
             autoPlay
             muted
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
-            poster="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
           >
-            <source src="/videos/track.webm" type="video/webm" />
-          </video>
+          <source src="/videos/track.webm" type="video/webm" />
+          </video>) : 
+          (<img
+              src="https://temp-hectar-s3.s3.amazonaws.com/TracknTrace2.gif"
+              alt="prices image"
+              className="relative -right-20 lg:right-0"
+            />)};
         </div>
       </div>
 
@@ -101,17 +128,22 @@ export default function WhyHectar() {
           </Fade>
         </div>
         <div className="lg:w-1/2 mt-30">
-          <video
+        {supportsVideoType('webm') ? (
+            <video
             loop
             autoPlay
             muted
             width={520}
             height={400}
             className="relative -right-20 lg:right-0"
-            poster="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
           >
-            <source src="/videos/documentation.webm" type="video/webm" />
-          </video>
+          <source src="/videos/documentation.webm" type="video/webm" />
+          </video>) : 
+          (<img
+              src="https://temp-hectar-s3.s3.amazonaws.com/Documents.gif"
+              alt="prices image"
+              className="relative -right-20 lg:right-0"
+            />)};
         </div>
       </div>
     </section>
